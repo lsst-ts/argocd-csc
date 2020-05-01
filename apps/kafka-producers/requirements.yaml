@@ -1,4 +1,4 @@
 dependencies:
 - name: kafka-producers
-  version: 0.3.0
+  version: 0.3.1
   repository: https://lsst-ts.github.io/charts/
