@@ -1,0 +1,9 @@
+csc:
+  image:
+    repository: ts-dockerhub.lsst.org/love-commander
+    tag: c0017
+    pullPolicy: Always
+    nexus3: nexus3-docker
+  env:
+    LSST_DDS_PARTITION_PREFIX: ncsa
+  shmemDir: /scratch.local/ospl

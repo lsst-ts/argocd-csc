@@ -1,0 +1,6 @@
+csc:
+  namespace: love
+  env:
+    OSPL_INFOFILE: /tmp/ospl-info-love-commander.log
+    OSPL_ERRORFILE: /tmp/ospl-error-love-commander.log
+  osplVersion: V6.10.4
