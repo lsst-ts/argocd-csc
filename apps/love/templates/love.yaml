@@ -1,0 +1,21 @@
+{{- range $app := .Values.apps }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $app }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: love
+    server: {{ $.Values.spec.destination.server }}
+  project: default
+  source:
+    path: apps/{{ $app }}
+    repoURL: {{ $.Values.spec.source.repoURL }}
+    targetRevision: {{ $.Values.spec.source.targetRevision }}
+    helm:
+      valueFiles:
+        - values-{{ $.Values.env }}.yaml
+{{ end }}

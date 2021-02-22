@@ -1,0 +1,4 @@
+apiVersion: v2
+description: Parent application to bootstrap LOVE deployment
+name: love
+version: 0.1.0

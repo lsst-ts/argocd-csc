@@ -1,0 +1,10 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/lsst-ts/argocd-csc
+    targetRevision: HEAD
+apps:
+  - love-commander
+  - love-frontend
+  - love-nginx
