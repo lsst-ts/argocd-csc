@@ -1,0 +1,6 @@
+love-frontend:
+  image:
+    repository: lsstts/love-frontend
+    tag: develop
+    pullPolicy: IfNotPresent
+  restartPolicy: Never
