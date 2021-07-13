@@ -2,3 +2,8 @@ csc:
   env:
     RUN_ARG: 33
   namespace: auxtel
+  pvcMountpoint:
+  - name: www
+    path: /home/saluser/www
+    accessMode: ReadWriteOnce
+    claimSize: 50Gi
