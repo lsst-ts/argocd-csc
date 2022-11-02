@@ -7,6 +7,7 @@ A Helm chart for deploying the RubinTV broadcaster services.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | This specifies the scheduling constraints of the pod. |
+| butlerSecret | object | `{}` | This section allows for specification of Butler secret information. If this section is used, it must contain the following attributes: _key_ (The vault key for the Butler secret), _containerPath_ (The directory location for the Butler secret), _dbUser_ (The username for the Butler backend database) |
 | credentialFile | string | `""` | The name of the expected credential file for the broadcasters |
 | credentialSecretsPath | string | `""` | The key for the credentials including any sub-paths. |
 | env | object | `{}` | This section holds a set of key, value pairs for environmental variables (ENV_VAR: value). NOTE: RUN_ARG is taken care of by the chart using _script_. |

@@ -11,6 +11,9 @@ env:
   RUN_ARG: 1 --state enabled
 shmemDir: /run/ospl
 osplVersion: V6.10.4
+butlerSecret:
+  containerPath: /home/saluser/.lsst
+  dbUser: oods
 nfsMountpoint:
 - name: auxtel-gen3-data
   containerPath: /repo/LATISS

@@ -9,6 +9,9 @@ env:
   OSPL_INFOFILE: /tmp/ospl-info-mtaos.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtaos.log
 shmemDir: /run/ospl
+butlerSecret:
+  containerPath: /home/saluser/.lsst
+  dbUser: oods
 nfsMountpoint:
 - name: comcam-gen3-data
   containerPath: /repo/LSSTComCam
