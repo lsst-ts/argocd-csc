@@ -38,6 +38,19 @@ spec:
               value: {{ $env_value | quote }}
           {{- end }}
           {{- end }}
+          {{- if or .Values.env .Values.envSecrets }}
+          {{- range $env_var, $env_value := .Values.env }}
+            - name: {{ $env_var }}
+              value: {{ $env_value | quote }}
+          {{- end }}
+          {{- range $env := .Values.envSecrets }}
+            - name: {{ $env.name }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Values.namespace }}-{{ $env.secretName }}
+                  key: {{ $env.secretKey }}
+          {{- end }}
+          {{- end }}
           envFrom:
             - configMapRef:
                 name: {{ include "rubintv-broadcaster.fullname" $ }}-env-configmap
