@@ -1,2 +1,2 @@
 env:
-  RUN_ARG: 1
+  RUN_ARG: 1 --state disabled
