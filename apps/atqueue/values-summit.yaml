@@ -10,6 +10,9 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-atqueue.log
   RUN_ARG: 2 --state enabled
 shmemDir: /run/ospl
+butlerSecret:
+  containerPath: /home/saluser/.lsst
+  dbUser: oods
 nfsMountpoint:
 - name: auxtel-gen3-data
   containerPath: /repo/LATISS

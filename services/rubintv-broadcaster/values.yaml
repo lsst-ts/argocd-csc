@@ -21,6 +21,12 @@ pullSecretsPath: ""
 # If this section is used, each object listed can have the following attributes defined:
 # _name_ (The label identifying the pull-secret to use)
 imagePullSecrets: []
+# -- This section allows for specification of Butler secret information.
+# If this section is used, it must contain the following attributes:
+# _key_ (The vault key for the Butler secret),
+# _containerPath_ (The directory location for the Butler secret),
+# _dbUser_ (The username for the Butler backend database)
+butlerSecret: {}
 # -- This section holds the information necessary to create a NFS mount for the container.
 # If this section is used, each object listed can have the following attributes defined:
 # _name_ (A label identifier for the mountpoint),
