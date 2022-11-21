@@ -5,14 +5,21 @@ image:
 env:
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
 scripts:
+- runAllSky.py
+- runBackgroundService.py
+- runCalibrateCcdRunner.py
 - runImExaminer.py
 - runIsrRunner.py
+- runMetadataServer.py
+- runMisc.py
 - runMonitor.py
 - runMountTorquePlotter.py
+- runNightReporter.py
 - runSpecExaminer.py
-- runAllSky.py
-- runMetadataServer.py
-- runBackgroundService.py
+- runStarTracker.py
+- runStarTrackerCatchup.py
+- runStarTrackerMetadata.py
+- runStarTrackerWide.py
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: ts/software/nexus3-docker
