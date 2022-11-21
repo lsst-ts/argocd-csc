@@ -12,10 +12,18 @@ scripts: []
 # -- This section holds a set of key, value pairs for environmental variables (ENV_VAR: value).
 # NOTE: RUN_ARG is taken care of by the chart using _script_.
 env: {}
+# -- This section holds specifications for secret injection.
+# If this section is used, each object listed must have the following attributes defined:
+# _name_ (The label for the secret),
+# _secretName_ (The name of the vault store reference. Uses the _namespace_ attribute to construct the full name),
+# _secretKey_ (The key in the vault store containing the necessary secret)
+envSecrets: []
 # -- The Vault prefix path
 vaultPrefixPath: ""
 # The key for the pull secrets including any sub-paths.
 pullSecretsPath: ""
+# Path for the rubin tv specific secrets vault.
+rubinTvSecretsPath: ""
 # -- This key allows specification of a script to override the entrypoint.
 # -- The list of pull secrets needed for the images.
 # If this section is used, each object listed can have the following attributes defined:

@@ -23,11 +23,16 @@ scripts:
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: ts/software/nexus3-docker
+rubinTvSecretsPath: ts/software/rubintv
 credentialSecretsPath: rubintv-broadcaster
 butlerSecret:
   key: butler-secret
   containerPath: /home/saluser/.lsst
   dbUser: oods
+envSecrets:
+- name: ASTROMETRY_NET_API_KEY
+  secretName: rubintv
+  secretKey: astrometry-net-api-key
 imagePullSecrets:
 - name: rubintv-broadcaster-pull-secret
 nfsMountpoint:

@@ -32,10 +32,17 @@ spec:
           env:
             - name: RUN_ARG
               value: {{ $script }}
-          {{- if or $.Values.env }}
+          {{- if or $.Values.env $.Values.envSecrets }}
           {{- range $env_var, $env_value := $.Values.env }}
             - name: {{ $env_var }}
               value: {{ $env_value | quote }}
+          {{- end }}
+          {{- range $env := $.Values.envSecrets }}
+            - name: {{ $env.name }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Values.namespace }}-{{ $env.secretName }}
+                  key: {{ $env.secretKey }}
           {{- end }}
           {{- end }}
           {{- if $.Values.butlerSecret }}

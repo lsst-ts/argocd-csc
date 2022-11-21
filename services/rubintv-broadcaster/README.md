@@ -11,6 +11,7 @@ A Helm chart for deploying the RubinTV broadcaster services.
 | credentialFile | string | `""` | The name of the expected credential file for the broadcasters |
 | credentialSecretsPath | string | `""` | The key for the credentials including any sub-paths. |
 | env | object | `{}` | This section holds a set of key, value pairs for environmental variables (ENV_VAR: value). NOTE: RUN_ARG is taken care of by the chart using _script_. |
+| envSecrets | list | `[]` | This section holds specifications for secret injection. If this section is used, each object listed must have the following attributes defined: _name_ (The label for the secret), _secretName_ (The name of the vault store reference. Uses the _namespace_ attribute to construct the full name), _secretKey_ (The key in the vault store containing the necessary secret) |
 | fullnameOverride | string | `""` | Specify the deployed application name specifically. Overrides all other names. |
 | image.pullPolicy | string | `"IfNotPresent"` | The policy to apply when pulling an image for deployment. |
 | image.repository | string | `"ts-dockerhub.lsst.org/rubintv-broadcaster"` | The Docker registry name for the container image. |
@@ -23,6 +24,7 @@ A Helm chart for deploying the RubinTV broadcaster services.
 | podAnnotations | object | `{}` | This allows the specification of pod annotations. |
 | pullSecretsPath | string | `""` |  |
 | resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the container. |
+| rubinTvSecretsPath | string | `""` |  |
 | scripts | list | `[]` | List of the script to run for the broadcaster. |
 | tolerations | list | `[]` | This specifies the tolerations of the pod for any system taints. |
 | vaultPrefixPath | string | `""` | The Vault prefix path |
