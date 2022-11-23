@@ -8,6 +8,5 @@ env:
   LSST_SITE: summit
   OSPL_INFOFILE: /tmp/ospl-info-mtdome.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtdome.log
-  RUN_ARG: --simulate 1
 shmemDir: /run/ospl
 osplVersion: V6.10.4
