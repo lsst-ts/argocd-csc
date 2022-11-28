@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/mtaos
-  tag: c0027
+  tag: c0028
   pullPolicy: Always
   nexus3: nexus3-docker
 env:

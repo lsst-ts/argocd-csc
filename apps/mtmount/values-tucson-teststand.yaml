@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/mtmount
-  tag: c0027.000
+  tag: c0028
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
