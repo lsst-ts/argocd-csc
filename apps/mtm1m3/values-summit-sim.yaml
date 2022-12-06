@@ -6,6 +6,7 @@ image:
 env:
   LSST_DDS_PARTITION_PREFIX: summit
   LSST_SITE: summit
+  LSST_DDS_ENABLE_AUTHLIST: 1
   OSPL_INFOFILE: /tmp/ospl-info-mtm1m3.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtm1m3.log
   OSPL_RELEASE: v6.10.4
