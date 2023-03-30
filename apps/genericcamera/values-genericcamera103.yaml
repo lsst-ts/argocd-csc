@@ -1,0 +1,7 @@
+namespace: maintel
+env:
+  RUN_ARG: 103
+  OSPL_INFOFILE: /tmp/ospl-info-genericcamera103.log
+  OSPL_ERRORFILE: /tmp/ospl-error-genericcamera103.log
+service:
+  type: LoadBalancer
