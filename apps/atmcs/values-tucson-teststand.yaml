@@ -6,6 +6,7 @@ image:
   nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
+  LSST_DDS_ENABLE_AUTHLIST: 1
   OSPL_INFOFILE: /tmp/ospl-info-atmcs.log
   OSPL_ERRORFILE: /tmp/ospl-error-atmcs.log
 shmemDir: /run/ospl
