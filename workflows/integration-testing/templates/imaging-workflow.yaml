@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: Imaging-Test-Workflow
+  name: imaging-test-workflow
   labels:
     workflows.argoproj.io/type: "integration-test"
     argocd.argoproj.io/instance: integration-testing
