@@ -5,6 +5,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: {{ $values.name }}
+  namespace: {{ $.Values.namespace }}
   {{- if $values.ids }}
   annotations:
     {{- if $values.ids.uid }}

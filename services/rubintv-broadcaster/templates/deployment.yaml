@@ -53,7 +53,7 @@ spec:
             - name: {{ $env.name }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ $.Values.namespace }}-{{ $env.secretName }}
+                  name: {{ include "rubintv-broadcaster.fullname" $ }}-{{ $env.secretName }}
                   key: {{ $env.secretKey }}
           {{- end }}
           {{- end }}
@@ -155,7 +155,7 @@ spec:
           emptyDir: {}
         - name: {{ $.Release.Name }}-raw-butler-secret
           secret:
-            secretName: {{ $.Values.namespace }}-butler-secret
+            secretName: {{ include "rubintv-broadcaster.fullname" $ }}-butler-secret
             defaultMode: 0600
       {{- end }}
       {{- with $.Values.nodeSelector }}
