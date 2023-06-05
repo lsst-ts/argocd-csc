@@ -2,7 +2,7 @@ namespace: rubintv-fullcamera
 fullnameOverride: u
 image:
   repository: lsstts/rubintv-broadcaster
-  tag: c0028_usdf
+  tag: c0030_usdf
   pullPolicy: Always
 env:
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
