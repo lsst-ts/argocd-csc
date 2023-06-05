@@ -40,6 +40,7 @@ Helm chart for the LOVE manager service.
 | env.LOVE_PRODUCER_WEBSOCKET_HOST | string | `"love-service/manager/ws/subscription"` | The URL path for the LOVE producer websocket host |
 | env.LOVE_SITE | string | `"local"` | The site tag where LOVE is being run |
 | env.REDIS_HOST | string | `"love-manager-redis-service"` | The name of the redis service |
+| env.REMOTE_STORAGE | bool | `true` | Set the manager to use LFA storage |
 | env.SERVER_URL | string | `"love.lsst.local"` | The external URL from the NGINX server for LOVE |
 | envSecretKeyName | string | `"love"` | The top-level secret key name that houses the rest of the secrets |
 | envSecrets.ADMIN_USER_PASS | string | `"admin-user-pass"` | The LOVE manager admin user password secret key name |

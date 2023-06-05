@@ -23,6 +23,8 @@ env:
   LOVE_SITE: local
   # -- The external URL from the NGINX server for LOVE
   SERVER_URL: love.lsst.local
+  # -- Set the manager to use LFA storage
+  REMOTE_STORAGE: true
   # -- The URL path for the LOVE producer websocket host
   LOVE_PRODUCER_WEBSOCKET_HOST: love-service/manager/ws/subscription
   # -- Label for the LOVE commander service.
