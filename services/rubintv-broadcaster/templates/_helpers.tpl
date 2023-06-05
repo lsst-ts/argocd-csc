@@ -85,3 +85,37 @@ Deployment name
 {{- define "rubintv-broadcaster.deploymentName" -}}
 {{ include "rubintv-broadcaster.fullname" . }}-{{ include "rubintv-broadcaster.jobName" . }}
 {{- end }}
+
+{{/*
+Create a default fully qualified app name for redis.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+If release name contains chart name it will be used as a full name.
+*/}}
+{{- define "rubintv-broadcaster.redis.fullname" -}}
+{{- if .Values.fullnameOverride }}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- $name := default .Chart.Name .Values.nameOverride }}
+{{- if contains $name .Release.Name }}
+{{- printf "%s-redis" .Release.Name | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- printf "%s-%s-redis" .Release.Name $name | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{/*
+Common labels - redis
+*/}}
+{{- define "rubintv-broadcaster.redis.labels" -}}
+helm.sh/chart: {{ include "rubintv-broadcaster.chart" . }}
+{{ include "rubintv-broadcaster.redis.selectorLabels" . }}
+{{- end }}
+
+{{/*
+Selector labels - redis
+*/}}
+{{- define "rubintv-broadcaster.redis.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "rubintv-broadcaster.name" . }}
+app.kubernetes.io/instance: {{ include "rubintv-broadcaster.redis.fullname" . }}
+{{- end }}

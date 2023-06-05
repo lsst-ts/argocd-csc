@@ -25,6 +25,18 @@ A Helm chart for deploying the RubinTV broadcaster services.
 | pullSecretsPath | string | `""` |  |
 | pvcMountpoint | list | `[]` | This section holds information about existing volume claims. If the section is used, each object listed can have the following attributes defined: _name_ (The name ot the persistent volume), _containerPath_ (The path inside the container to mount), _subPath_ (persistent volume subpath, optional) |
 | pvcMountpointClaim | list | `[]` | This section holds the information necessary to claim persistent volumes. If the section is used, each object listed can have the following attributes defined: _name_ (The name ot the persistent volume), _containerPath_ (The path inside the container to mount), _subPath_ (persistent volume subpath, optional) |
+| redis.affinity | object | `{}` | Affinity rules for the LOVE redis pods |
+| redis.enabled | bool | `false` | This specifies whether to use redis or not. |
+| redis.env | object | `{}` | This section holds a set of key, value pairs for environmental variables (ENV_VAR: value). NOTE: RUN_ARG is taken care of by the chart using _script_. |
+| redis.envSecrets | list | `[]` | This section holds specifications for secret injection. If this section is used, each object listed must have the following attributes defined: _name_ (The label for the secret), _secretName_ (The name of the vault store reference. Uses the _namespace_ attribute to construct the full name), _secretKey_ (The key in the vault store containing the necessary secret) |
+| redis.image.pullPolicy | string | `"IfNotPresent"` | The policy to apply when pulling an image for deployment. |
+| redis.image.repository | string | `"docker.io/redis"` | The Docker registry name for the redis container image. |
+| redis.image.tag | string | `"latest"` | The tag of the redis container image to use. |
+| redis.nodeSelector | object | `{}` | Node selection rules for the LOVE redis pods |
+| redis.resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the redis container. |
+| redis.storage.classname | string | `"default"` | The storage class name for the data store request. |
+| redis.storage.request | string | `"1Gi"` | The size of the storage request. |
+| redis.tolerations | list | `[]` | Toleration specifications for the LOVE redis pods |
 | resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the container. |
 | rubinTvSecretsPath | string | `""` |  |
 | scripts | list | `[]` | List of the script to run for the broadcaster. |

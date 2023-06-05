@@ -1,4 +1,4 @@
 apiVersion: v2
 name: rubintv-broadcaster
-version: 0.6.0
+version: 0.7.0
 description: A Helm chart for deploying the RubinTV broadcaster services.

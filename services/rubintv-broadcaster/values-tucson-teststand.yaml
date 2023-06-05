@@ -84,3 +84,22 @@ nfsMountpoint:
   readOnly: false
   server: nfs-scratch.tu.lsst.org
   serverPath: /scratch/rubintv
+redis:
+  enabled: true
+  port: 6379
+  env:
+    MASTER: true
+  envSecrets:
+  - name: REDIS_PASSWORD
+    secretName: rubintv
+    secretKey: redis-password
+  storage:
+    classname: rook-ceph-block
+    request: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 50Gi

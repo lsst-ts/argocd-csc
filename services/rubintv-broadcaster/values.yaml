@@ -81,3 +81,35 @@ affinity: {}
 # _gid_ (Group id of the user that runs the application),
 # _fid_ (File system context user id),
 securityContext: {}
+redis:
+  # -- This specifies whether to use redis or not.
+  enabled: false
+  image:
+    # -- The Docker registry name for the redis container image.
+    repository: docker.io/redis
+    # -- The tag of the redis container image to use.
+    tag: latest
+    # -- The policy to apply when pulling an image for deployment.
+    pullPolicy: IfNotPresent
+  # -- This section holds a set of key, value pairs for environmental variables (ENV_VAR: value).
+  # NOTE: RUN_ARG is taken care of by the chart using _script_.
+  env: {}
+  # -- This section holds specifications for secret injection.
+  # If this section is used, each object listed must have the following attributes defined:
+  # _name_ (The label for the secret),
+  # _secretName_ (The name of the vault store reference. Uses the _namespace_ attribute to construct the full name),
+  # _secretKey_ (The key in the vault store containing the necessary secret)
+  envSecrets: []
+  storage:
+    # -- The storage class name for the data store request.
+    classname: default
+    # -- The size of the storage request.
+    request: 1Gi
+  # -- This allows the specification of resources (CPU, memory) requires to run the redis container.
+  resources: {}
+  # -- Node selection rules for the LOVE redis pods
+  nodeSelector: {}
+  # -- Toleration specifications for the LOVE redis pods
+  tolerations: []
+  # -- Affinity rules for the LOVE redis pods
+  affinity: {}
