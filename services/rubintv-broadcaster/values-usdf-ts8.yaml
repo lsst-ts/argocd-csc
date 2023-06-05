@@ -5,7 +5,6 @@ image:
   tag: c0030_usdf
   pullPolicy: Always
 env:
-  DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
   http_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
   https_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
   squid_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
