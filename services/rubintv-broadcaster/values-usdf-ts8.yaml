@@ -16,7 +16,6 @@ env:
   DEPLOY_BRANCH: deploy-slac
   S3_ENDPOINT_URL: https://s3dfrgw.slac.stanford.edu
 scripts:
-- runMisc.py
 - slac/ts8/runButlerWatcher.py
 - slac/ts8/runIsrRunner_018.py
 - slac/ts8/runIsrRunner_019.py
