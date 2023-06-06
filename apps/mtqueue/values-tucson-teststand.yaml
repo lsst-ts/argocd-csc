@@ -8,6 +8,7 @@ env:
   USER_USERNAME: user
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
   LSST_DDS_PARTITION_PREFIX: tucson
+  LSST_SITE: tucson
   OSPL_INFOFILE: /tmp/ospl-info-mtqueue.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtqueue.log
   RUN_ARG: 1 --state enabled
