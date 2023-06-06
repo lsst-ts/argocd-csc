@@ -11,20 +11,6 @@ env:
   LOVE_SITE: tucson
 envSecrets:
   AUTHLIST_USER_PASS: authlist-user-pass
-configMount: /usr/src/love/manager/media/configs
-config: |
-  {
-    "alarms": {
-      "minSeveritySound": "serious",
-      "minSeverityNotification": "warning"
-    },
-    "camFeeds": {
-      "simcam": "/simcam"
-    },
-    "efd": {
-      "defaultEfdInstance": "tucson_teststand_efd"
-    }
-  }
 autoscaling:
   enabled: true
   minReplicas: 2
