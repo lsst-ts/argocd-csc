@@ -12,8 +12,6 @@ Helm chart for the LOVE manager service.
 | autoscaling.minReplicas | int | `1` | The allowed minimum number of replicas |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | The percentage of CPU utilization that will trigger the scaling |
 | autoscaling.targetMemoryUtilizationPercentage | int | `""` | The percentage of memory utilization that will trigger the scaling |
-| config | string | `"{\n  \"alarms\": {\n    \"minSeveritySound\": \"serious\",\n    \"minSeverityNotification\": \"warning\"\n  },\n  \"camFeeds\": {\n    \"generic\": \"/gencam\",\n    \"allSky\": \"/gencam\"\n  }\n}\n"` | The specification of the LOVE manager configuration (JSON) |
-| configMount | string | `"/usr/src/love/manager/config"` | The container path to mount the LOVE manager configuration |
 | database.affinity | object | `{}` | Affinity rules for the LOVE database pods |
 | database.env.POSTGRES_DB | string | `"postgres"` | Define the database type |
 | database.env.POSTGRES_USER | string | `"postgres"` | Define the database user |

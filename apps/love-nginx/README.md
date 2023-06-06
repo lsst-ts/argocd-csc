@@ -7,7 +7,6 @@ Helm chart for the LOVE Nginx server.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity rules for the NGINX pod |
-| config | string | `"server {\n  listen 80;\n  server_name localhost;\n  location / {\n    root   /usr/src/love-frontend;\n    try_files $uri$args $uri$args/ $uri/ /index.html;\n  }\n  location /manager {\n      proxy_pass http://love-manager-service:8000;\n      proxy_http_version 1.1;\n      proxy_set_header Upgrade $http_upgrade;\n      proxy_set_header Connection \"upgrade\";\n      proxy_set_header Host $host;\n      proxy_redirect off;\n  }\n  location /manager/static {\n      alias /usr/src/love-manager/static;\n  }\n  location /manager/media {\n      alias /usr/src/love-manager/media;\n  }\n}\n"` | Configuration specification for the NGINX service |
 | image.pullPolicy | string | `"IfNotPresent"` | The pull policy on the NGINX image |
 | image.repository | string | `"nginx"` | The NGINX image to use |
 | image.tag | string | `"1.14.2"` | The tag to use for the NGINX image |
@@ -24,7 +23,9 @@ Helm chart for the LOVE Nginx server.
 | initContainers.manager.image.pullPolicy | string | `"IfNotPresent"` | The pull policy to use for the love-manager static content image |
 | initContainers.manager.image.repository | string | `"lsstts/love-manager"` | The static love-manager content image to use |
 | initContainers.manager.image.tag | string | `"develop"` | The tag to use for the love-manager static content image |
+| loveConfig | string | `"{\n  \"alarms\": {\n    \"minSeveritySound\": \"serious\",\n    \"minSeverityNotification\": \"warning\"\n  },\n  \"camFeeds\": {\n    \"generic\": \"/gencam\",\n    \"allSky\": \"/gencam\"\n  }\n}\n"` | Configuration specificiation for the LOVE service |
 | namespace | string | `"love"` | The overall namespace for the application |
+| nginxConfig | string | `"server {\n  listen 80;\n  server_name localhost;\n  location / {\n    root   /usr/src/love-frontend;\n    try_files $uri$args $uri$args/ $uri/ /index.html;\n  }\n  location /manager {\n      proxy_pass http://love-manager-service:8000;\n      proxy_http_version 1.1;\n      proxy_set_header Upgrade $http_upgrade;\n      proxy_set_header Connection \"upgrade\";\n      proxy_set_header Host $host;\n      proxy_redirect off;\n  }\n  location /manager/static {\n      alias /usr/src/love-manager/static;\n  }\n  location /manager/media {\n      alias /usr/src/love-manager/media;\n  }\n}\n"` | Configuration specification for the NGINX service |
 | nodeSelector | object | `{}` | Node selection rules for the NGINX pod |
 | ports.container | int | `80` | Container port for the NGINX service |
 | ports.node | int | `30000` | Node port for the NGINX service |

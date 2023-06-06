@@ -5,4 +5,4 @@ metadata:
   name: love-conf
 data:
   default.json: |
-{{ .Values.config | indent 4 }}
+{{ .Values.loveConfig | indent 4 }}

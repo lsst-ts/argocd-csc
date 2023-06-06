@@ -51,6 +51,8 @@ spec:
             name: nginx-conf
           - mountPath: /usr/src
             name: {{ .Values.staticStore.name }}
+          - mountPath: /usr/src/love-manager/media/configs
+            name: love-conf
         {{- with $.Values.resources }}
         resources:
           {{- toYaml $.Values.resources | nindent 10 }}
@@ -65,6 +67,12 @@ spec:
         - name: {{ .Values.staticStore.name }}
           persistentVolumeClaim:
             claimName: {{ .Values.staticStore.name }}-pvc
+        - name: love-conf
+          configMap:
+            name: love-conf
+            items:
+              - key: default.json
+                path: default.json
       {{- with $.Values.nodeSelector }}
       nodeSelector:
         {{- toYaml $ | nindent 8 }}
