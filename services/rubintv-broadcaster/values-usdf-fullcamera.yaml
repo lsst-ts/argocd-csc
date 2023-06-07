@@ -19,6 +19,7 @@ scripts:
 - slac/bot/runButlerWatcher.py
 - slac/bot/runMetadataServer.py
 - slac/bot/runPlotter.py
+- slac/bot/runReplotter.py
 - slac/bot/runIsrRunner_000.py
 - slac/bot/runIsrRunner_001.py
 - slac/bot/runIsrRunner_002.py
