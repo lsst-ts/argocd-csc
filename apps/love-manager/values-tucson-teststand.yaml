@@ -6,11 +6,16 @@ image:
 secret_path: tucson-teststand.lsst.codes
 env:
   SERVER_URL: love.tu.lsst.org
+  OLE_API_HOSTNAME: tucson-teststand.lsst.codes
+  AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
+  AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
+  AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
   REDIS_CONFIG_EXPIRY: 5
   REDIS_CONFIG_CAPACITY: 5000
   LOVE_SITE: tucson
 envSecrets:
   AUTHLIST_USER_PASS: authlist-user-pass
+  AUTH_LDAP_BIND_PASSWORD: auth-ldap-bind-password
 autoscaling:
   enabled: true
   minReplicas: 2
