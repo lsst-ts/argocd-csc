@@ -9,6 +9,7 @@ metadata:
   labels:
     {{- include "rubintv-broadcaster.labels" $ | nindent 4 }}
 spec:
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       {{- include "rubintv-broadcaster.selectorLabels" $ | nindent 6 }}
