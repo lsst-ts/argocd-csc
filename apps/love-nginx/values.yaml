@@ -26,7 +26,7 @@ ingress:
   # -- Annotations for the NGINX ingress
   annotations: {}
 # -- Configuration specification for the NGINX service
-config: |
+nginxConfig: |
   server {
     listen 80;
     server_name localhost;
@@ -47,6 +47,18 @@ config: |
     }
     location /manager/media {
         alias /usr/src/love-manager/media;
+    }
+  }
+# -- Configuration specificiation for the LOVE service
+loveConfig: |
+  {
+    "alarms": {
+      "minSeveritySound": "serious",
+      "minSeverityNotification": "warning"
+    },
+    "camFeeds": {
+      "generic": "/gencam",
+      "allSky": "/gencam"
     }
   }
 # -- The list of pull secrets needed for the images.

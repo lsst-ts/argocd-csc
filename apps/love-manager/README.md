@@ -12,8 +12,6 @@ Helm chart for the LOVE manager service.
 | autoscaling.minReplicas | int | `1` | The allowed minimum number of replicas |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | The percentage of CPU utilization that will trigger the scaling |
 | autoscaling.targetMemoryUtilizationPercentage | int | `""` | The percentage of memory utilization that will trigger the scaling |
-| config | string | `"{\n  \"alarms\": {\n    \"minSeveritySound\": \"serious\",\n    \"minSeverityNotification\": \"warning\"\n  },\n  \"camFeeds\": {\n    \"generic\": \"/gencam\",\n    \"allSky\": \"/gencam\"\n  }\n}\n"` | The specification of the LOVE manager configuration (JSON) |
-| configMount | string | `"/usr/src/love/manager/config"` | The container path to mount the LOVE manager configuration |
 | database.affinity | object | `{}` | Affinity rules for the LOVE database pods |
 | database.env.POSTGRES_DB | string | `"postgres"` | Define the database type |
 | database.env.POSTGRES_USER | string | `"postgres"` | Define the database user |
@@ -30,6 +28,9 @@ Helm chart for the LOVE manager service.
 | database.storage.path | string | `"/var/lib/postgresql/data"` | Path within the running container |
 | database.storage.storageClass | string | `"local-store"` | The storage class to request the disk allocation from |
 | database.tolerations | list | `[]` | Toleration specifications for the LOVE database pods |
+| env.AUTH_LDAP_1_SERVER_URI | string | `"ldap://ipa1.lsst.local"` | Set the URI for the 1st LDAP server |
+| env.AUTH_LDAP_2_SERVER_URI | string | `"ldap://ipa2.lsst.local"` | Set the URI for the 2nd LDAP server |
+| env.AUTH_LDAP_3_SERVER_URI | string | `"ldap://ipa3.lsst.local"` | Set the URI for the 3rd LDAP server |
 | env.COMMANDER_HOSTNAME | string | `"love-commander-service"` | Label for the LOVE commander service. Must match the one spcified in the LOVE commander chart |
 | env.COMMANDER_PORT | int | `5000` | Port number for the LOVE commander service. Must match the one spcified in the LOVE commander chart |
 | env.DB_ENGINE | string | `"postgresql"` | The type of database engine being used for the LOVE manager |
@@ -37,9 +38,13 @@ Helm chart for the LOVE manager service.
 | env.DB_NAME | string | `"postgres"` | The name of the database being used for the LOVE manager. Must match `database.env.POSTGRES_DB` |
 | env.DB_PORT | int | `5432` | The port for the database Must match `database.port` |
 | env.DB_USER | string | `"postgres"` | The database user needed for access from the LOVE manager. Must match `database.env.POSTGRES_USER` |
+| env.JIRA_API_HOSTNAME | string | `"jira.lsstcorp.org"` | Set the hostname for the Jira instance |
+| env.JIRA_PROJECT_ID | int | `14601` | Set the Jira project ID |
 | env.LOVE_PRODUCER_WEBSOCKET_HOST | string | `"love-service/manager/ws/subscription"` | The URL path for the LOVE producer websocket host |
 | env.LOVE_SITE | string | `"local"` | The site tag where LOVE is being run |
+| env.OLE_API_HOSTNAME | string | `"site.lsst.local"` | Set the URL for the OLE instance |
 | env.REDIS_HOST | string | `"love-manager-redis-service"` | The name of the redis service |
+| env.REMOTE_STORAGE | bool | `true` | Set the manager to use LFA storage |
 | env.SERVER_URL | string | `"love.lsst.local"` | The external URL from the NGINX server for LOVE |
 | envSecretKeyName | string | `"love"` | The top-level secret key name that houses the rest of the secrets |
 | envSecrets.ADMIN_USER_PASS | string | `"admin-user-pass"` | The LOVE manager admin user password secret key name |

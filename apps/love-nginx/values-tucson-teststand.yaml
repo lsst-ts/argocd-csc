@@ -29,7 +29,7 @@ staticStore:
   storageClass: rook-ceph-block
   accessMode: ReadWriteOnce
   claimSize: 2Gi
-config: |
+nginxConfig: |
   server {
     listen 80;
     server_name localhost;
@@ -57,5 +57,18 @@ config: |
     location /simcam {
         proxy_pass http://simulation-gencam-service.calsys:5013;
         proxy_redirect off;
+    }
+  }
+loveConfig: |
+  {
+    "alarms": {
+      "minSeveritySound": "serious",
+      "minSeverityNotification": "warning"
+    },
+    "camFeeds": {
+      "simcam": "/simcam"
+    },
+    "efd": {
+      "defaultEfdInstance": "tucson_teststand_efd"
     }
   }

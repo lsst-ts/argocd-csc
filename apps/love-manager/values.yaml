@@ -23,6 +23,20 @@ env:
   LOVE_SITE: local
   # -- The external URL from the NGINX server for LOVE
   SERVER_URL: love.lsst.local
+  # -- Set the manager to use LFA storage
+  REMOTE_STORAGE: true
+  # -- Set the hostname for the Jira instance
+  JIRA_API_HOSTNAME: jira.lsstcorp.org
+  # -- Set the Jira project ID
+  JIRA_PROJECT_ID: 14601
+  # -- Set the URL for the OLE instance
+  OLE_API_HOSTNAME: site.lsst.local
+  # -- Set the URI for the 1st LDAP server
+  AUTH_LDAP_1_SERVER_URI: ldap://ipa1.lsst.local
+  # -- Set the URI for the 2nd LDAP server
+  AUTH_LDAP_2_SERVER_URI: ldap://ipa2.lsst.local
+  # -- Set the URI for the 3rd LDAP server
+  AUTH_LDAP_3_SERVER_URI: ldap://ipa3.lsst.local
   # -- The URL path for the LOVE producer websocket host
   LOVE_PRODUCER_WEBSOCKET_HOST: love-service/manager/ws/subscription
   # -- Label for the LOVE commander service.
@@ -63,20 +77,6 @@ envSecrets:
   # -- The redis password secret key name.
   # Must match `redis.envSecrets.REDIS_PASS`
   REDIS_PASS: redis-pass
-# -- The container path to mount the LOVE manager configuration
-configMount: /usr/src/love/manager/config
-# -- The specification of the LOVE manager configuration (JSON)
-config: |
-    {
-      "alarms": {
-        "minSeveritySound": "serious",
-        "minSeverityNotification": "warning"
-      },
-      "camFeeds": {
-        "generic": "/gencam",
-        "allSky": "/gencam"
-      }
-    }
 # -- Set the default number of LOVE manager pod replicas
 replicas: 1
 autoscaling:
