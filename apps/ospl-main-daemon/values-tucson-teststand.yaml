@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/ospl-daemon
-  tag: c0030
+  tag: c0031
   pullPolicy: Always
 imagePullSecrets:
 - name: ospl-daemon-nexus3-docker
