@@ -29,8 +29,6 @@ scripts:
 - summit/comCam/runMetadataServer.py
 - summit/comCam/runPlotter.py
 - summit/misc/runAllSky.py
-- summit/misc/runMisc.py
-- summit/misc/runMisc2.py
 - summit/misc/runStarTracker.py
 - summit/misc/runStarTrackerCatchup.py
 - summit/misc/runStarTrackerFast.py
