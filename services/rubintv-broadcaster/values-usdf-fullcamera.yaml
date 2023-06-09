@@ -2,10 +2,9 @@ namespace: rubintv-fullcamera
 fullnameOverride: u
 image:
   repository: lsstts/rubintv-broadcaster
-  tag: c0028_usdf
+  tag: c0030_usdf
   pullPolicy: Always
 env:
-  DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
   http_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
   https_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
   squid_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
@@ -20,6 +19,7 @@ scripts:
 - slac/bot/runButlerWatcher.py
 - slac/bot/runMetadataServer.py
 - slac/bot/runPlotter.py
+- slac/bot/runReplotter.py
 - slac/bot/runIsrRunner_000.py
 - slac/bot/runIsrRunner_001.py
 - slac/bot/runIsrRunner_002.py
@@ -209,6 +209,22 @@ scripts:
 - slac/bot/runIsrRunner_186.py
 - slac/bot/runIsrRunner_187.py
 - slac/bot/runIsrRunner_188.py
+- slac/bot/runIsrRunner_189.py
+- slac/bot/runIsrRunner_190.py
+- slac/bot/runIsrRunner_191.py
+- slac/bot/runIsrRunner_192.py
+- slac/bot/runIsrRunner_193.py
+- slac/bot/runIsrRunner_194.py
+- slac/bot/runIsrRunner_195.py
+- slac/bot/runIsrRunner_196.py
+- slac/bot/runIsrRunner_197.py
+- slac/bot/runIsrRunner_198.py
+- slac/bot/runIsrRunner_199.py
+- slac/bot/runIsrRunner_200.py
+- slac/bot/runIsrRunner_201.py
+- slac/bot/runIsrRunner_202.py
+- slac/bot/runIsrRunner_203.py
+- slac/bot/runIsrRunner_204.py
 credentialFile: google_write_creds
 vaultPrefixPath: secret/rubin/usdf-rubintv-broadcaster-cleanroom
 pullSecretsPath: ts/software/nexus3-docker
@@ -224,13 +240,13 @@ envSecrets:
   secretKey: astrometry-net-api-key
 imagePullSecrets:
 - name: rubintv-broadcaster-pull-secret
-pvcMountpoint:
-- name: sdf-data-rubin
-  containerPath: /repo
-  subPath: repo
 pvcMountpointClaim:
 - name: sdf-group-rubin
   containerPath: /sdf/group/rubin
+  claimSize: 1Gi
+  accessMode: ReadWriteMany
+- name: sdf-data-rubin
+  containerPath: /sdf/data/rubin
   claimSize: 1Gi
   accessMode: ReadWriteMany
 - name: sdf-scratch

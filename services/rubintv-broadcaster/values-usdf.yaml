@@ -2,7 +2,7 @@ namespace: rubintv-ts8
 fullnameOverride: usdf
 image:
   repository: lsstts/rubintv-broadcaster
-  tag: c0028_usdf
+  tag: c0030_usdf
   pullPolicy: Always
 env:
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
