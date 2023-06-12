@@ -34,7 +34,7 @@ A Helm chart for deploying the RubinTV broadcaster services.
 | redis.image.tag | string | `"latest"` | The tag of the redis container image to use. |
 | redis.nodeSelector | object | `{}` | Node selection rules for the LOVE redis pods |
 | redis.resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the redis container. |
-| redis.storage.classname | string | `"default"` | The storage class name for the data store request. |
+| redis.storage.classname | string | `nil` |  |
 | redis.storage.request | string | `"1Gi"` | The size of the storage request. |
 | redis.tolerations | list | `[]` | Toleration specifications for the LOVE redis pods |
 | resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the container. |

@@ -101,8 +101,8 @@ redis:
   # _secretKey_ (The key in the vault store containing the necessary secret)
   envSecrets: []
   storage:
-    # -- The storage class name for the data store request.
-    classname: default
+    # str -- The storage class name for the data store request.
+    classname:
     # -- The size of the storage request.
     request: 1Gi
   # -- This allows the specification of resources (CPU, memory) requires to run the redis container.

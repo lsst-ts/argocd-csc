@@ -80,7 +80,6 @@ redis:
     secretName: rubintv
     secretKey: redis-password
   storage:
-    classname: fixme
     request: 10Gi
   resources:
     requests:
