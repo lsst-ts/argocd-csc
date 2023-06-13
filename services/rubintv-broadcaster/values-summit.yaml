@@ -29,8 +29,6 @@ scripts:
 - summit/comCam/runMetadataServer.py
 - summit/comCam/runPlotter.py
 - summit/misc/runAllSky.py
-- summit/misc/runMisc.py
-- summit/misc/runMisc2.py
 - summit/misc/runStarTracker.py
 - summit/misc/runStarTrackerCatchup.py
 - summit/misc/runStarTrackerFast.py
@@ -98,3 +96,22 @@ nfsMountpoint:
   readOnly: false
   server: nfs1.cp.lsst.org
   serverPath: /scratch/rubintv
+redis:
+  enabled: true
+  port: 6379
+  env:
+    MASTER: true
+  envSecrets:
+  - name: REDIS_PASSWORD
+    secretName: rubintv
+    secretKey: redis-password
+  storage:
+    classname: rook-ceph-block
+    request: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 50Gi

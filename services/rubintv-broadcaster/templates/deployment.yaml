@@ -66,6 +66,19 @@ spec:
             - name: AWS_SHARED_CREDENTIALS_FILE
               value: "{{ $.Values.butlerSecret.containerPath }}/aws-credentials.ini"
           {{- end }}
+          {{- if $.Values.redis.enabled }}
+            - name: REDIS_HOST
+              value: "{{ include "rubintv-broadcaster.redis.fullname" $ }}-service"
+          {{- if $.Values.redis.envSecrets }}
+          {{- range $env := $.Values.redis.envSecrets }}
+            - name: {{ $env.name }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "rubintv-broadcaster.fullname" $ }}-{{ $env.secretName }}
+                  key: {{ $env.secretKey }}
+          {{- end }}
+          {{- end }}
+          {{- end }}
           envFrom:
             - configMapRef:
                 name: {{ include "rubintv-broadcaster.fullname" $ }}-env-configmap
