@@ -15,7 +15,7 @@ applications:
   - mtmount-sim
   - mtrotator-sim
   - mtm2hexapod-sim
-  - mtcamhaxapod-sim
+  - mtcamhexapod-sim
   - mtm1m3-sim
   - mtm2-sim
   - mtdome-sim
