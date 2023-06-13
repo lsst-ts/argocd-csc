@@ -22,8 +22,8 @@ nfsMountpoint:
 - name: auxtel-gen3-data
   containerPath: /repo/LATISS
   readOnly: false
-  server: auxtel-archiver.cp.lsst.org
-  serverPath: /repo/LATISS
+  server: nfs-auxtel.cp.lsst.org
+  serverPath: /auxtel/repo/LATISS
 - name: comcam-gen3-data
   containerPath: /repo/LSSTComCam
   readOnly: false
@@ -32,8 +32,8 @@ nfsMountpoint:
 - name: auxtel-data
   containerPath: /readonly/lsstdata/auxtel
   readOnly: true
-  server: auxtel-archiver.cp.lsst.org
-  serverPath: /lsstdata
+  server: nfs-auxtel.cp.lsst.org
+  serverPath: /auxtel/lsstdata
 - name: comcam-data
   containerPath: /readonly/lsstdata/comcam
   readOnly: true
@@ -47,8 +47,8 @@ nfsMountpoint:
 - name: auxtel-gen3-data-temp
   containerPath: /data/lsstdata/base/auxtel
   readOnly: true
-  server: auxtel-archiver.cp.lsst.org
-  serverPath: /lsstdata/base/auxtel
+  server: nfs-auxtel.cp.lsst.org
+  serverPath: /auxtel/lsstdata/base/auxtel
 - name: comcam-gen3-data-temp
   containerPath: /data/lsstdata/base/comcam
   readOnly: true
