@@ -28,7 +28,6 @@ spec:
     dag:
       tasks:
       - name: auxtel-housekeeping
-        depends: enabled
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -39,7 +38,6 @@ spec:
           - name: jobname
             value: auxtel-housekeeping
       - name: maintel-housekeeping
-        depends: enabled
         templateRef:
           name: integration-test-job-template
           template: inttest-template
