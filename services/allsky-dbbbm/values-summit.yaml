@@ -1,0 +1,52 @@
+image:
+  repository: lsstts/dbbbm
+  tag: 1.4.3-w_2023_14
+vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
+annotations:
+  k8s.v1.cni.cncf.io/networks: kube-system/lhn
+nfsMountpoint:
+- name: allsky-original-data
+  containerPath: /data/buffer
+  readOnly: false
+  server: nfs1.cp.lsst.org
+  serverPath: /dimm/allsky
+- name: allsky-data
+  containerPath: /data/holding
+  readOnly: false
+  server: nfs-auxtel.cp.lsst.org
+  serverPath: /auxtel/allsky
+configfile:
+  path: /home/mgr/local/etc
+  filename: obs-allsky-hdfmgr.yaml
+  content: |
+    database:
+      engine: sqlite:////var/dbbbm/obs-allsky-hdfmgr.db
+    handoff:
+      buffer: /data/buffer
+      holding: /data/holding
+    endpoint:
+      user: lsstdbot
+      host: s3dfdtn.slac.stanford.edu
+      buffer: /sdf/data/rubin/offline/allsky/storage
+      staging: /sdf/data/rubin/offline/allsky/staging
+      commands:
+        remote: "ssh -o StrictHostKeyChecking=no -l {user} {host} \"{command}\""
+        transfer: "bbcp -D -T \"ssh -a -x -oFallBackToRsh=no %4 %I -l %U %H /sdf/home/l/lsstdbot/bin/bbcp\" -f -s 4 -n {batch} {user}@{host}:{dest}"
+    logging:
+      level: INFO
+    general:
+      chunk_size: 128
+      exclude_list:
+        - capt.*\.cr2
+        - capt.*\.jpg
+        - counter
+        - current\.jpg
+        - tmp.*
+        - \.tmp
+        - \.\$tmp\$
+      pause: 60
+storage:
+  classname: rook-ceph-block
+  request: 20Gi
+service:
+  port: 5031

@@ -1,0 +1,130 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  {{- with $.Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  serviceName: {{ .Release.Name }}-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ $.Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        app.kubernetes.io/instance: {{ $.Release.Name }}
+      {{- with $.Values.annotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      securityContext:
+        fsGroup: {{ .Values.mgr.gid }}
+      setHostnameAsFQDN: true
+      containers:
+        - name: {{ .Release.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          stdin: true
+          tty: true
+          args: ["{{ .Values.configfile.path }}/{{ .Values.configfile.filename }}"]
+          env:
+            - name: USR_ID
+              value: {{ .Values.mgr.uid | quote }}
+            - name: GRP_ID
+              value: {{ .Values.mgr.gid | quote }}
+          volumeMounts:
+          {{- if .Values.configfile }}
+            - name: configfile
+              mountPath: {{ .Values.configfile.path }}/{{ .Values.configfile.filename }}
+              subPath: {{ .Values.configfile.filename }}
+          {{- end }}
+            - name: {{ $.Release.Name }}-dbbbm-secret
+              mountPath: {{ .Values.sshSecrets.containerPath }}
+            - name: {{ .Release.Name }}-pvc
+              mountPath: {{ .Values.storage.path }}
+          {{- if .Values.nfsMountpoint }}
+          {{- range $values := .Values.nfsMountpoint }}
+            - name: {{ $values.name }}
+              mountPath: {{ $values.containerPath }}
+              readOnly: {{ $values.readOnly }}
+          {{- end}}
+          {{- end}}
+          {{- with $.Values.resources }}
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+          {{- end }}
+      initContainers:
+        - name: {{ $.Release.Name }}-secret-perm-fixer
+          image: "alpine:latest"
+          command:
+            - "/bin/ash"
+            - "-c"
+            - |
+              cp -RL /secrets-raw/* /secrets
+              chown {{ .Values.mgr.uid }}:{{ .Values.mgr.gid }} /secrets/*
+              chmod 0600 /secrets/*
+              chmod 0644 /secrets/*.*
+          volumeMounts:
+            - name: {{ $.Release.Name }}-raw-dbbbm-secret
+              mountPath: /secrets-raw
+              readOnly: true
+            - name: {{ $.Release.Name }}-dbbbm-secret
+              mountPath: /secrets
+      volumes:
+      {{- if .Values.configfile }}
+        - name: configfile
+          configMap:
+            name: {{ .Release.Name }}-configfile
+            items:
+              - key: {{ .Values.configfile.filename }}
+                path: {{ .Values.configfile.filename }}
+      {{- end }}
+        - name: {{ $.Release.Name }}-dbbbm-secret
+          emptyDir: {}
+        - name: {{ $.Release.Name }}-raw-dbbbm-secret
+          secret:
+            secretName: {{ .Release.Name }}-secrets
+            defaultMode: 0600
+      {{- if .Values.nfsMountpoint }}
+      {{- range $values := .Values.nfsMountpoint }}
+        - name: {{ $values.name }}
+          nfs:
+            path: {{ $values.serverPath }}
+            readOnly: {{ $values.readOnly }}
+            server: {{ $values.server }}
+      {{- end }}
+      {{- end }}
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ .Release.Name }}-pvc
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      {{- if .Values.storage.classname }}
+      storageClassName: {{ .Values.storage.classname }}
+      {{- end }}
+      resources:
+        requests:
+          storage: {{ .Values.storage.request }}

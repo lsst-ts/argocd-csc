@@ -54,6 +54,7 @@ services:
   - uws
   - schedview
   - rapid-analysis
+  - allsky-dbbbm
   tucson-teststand:
   - uws
   - rapid-analysis
