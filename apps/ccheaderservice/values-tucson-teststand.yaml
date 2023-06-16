@@ -7,8 +7,8 @@ image:
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_DDS_RESPONSIVENESS_TIMEOUT: 15s
-  URL_SPEC: --lfa_mode s3 --s3instance tuc
-  S3_ENDPOINT_URL: https://s4.tu.lsst.org
+  URL_SPEC: --lfa_mode s3 --s3instance duh
+  S3_ENDPOINT_URL: https://s3.tu.lsst.org
   TSTAND_HEADERSERVICE: EOCCv2_TUC
   CAMERA: cc
   OSPL_INFOFILE: /tmp/ospl-info-ccheaderservice.log
