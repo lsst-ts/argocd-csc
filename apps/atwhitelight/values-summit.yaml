@@ -1,7 +1,7 @@
 namespace: calsys
 image:
   repository: ts-dockerhub.lsst.org/atwhitelight
-  tag: c0030
+  tag: c0031
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
