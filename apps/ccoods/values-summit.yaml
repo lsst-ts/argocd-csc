@@ -5,7 +5,6 @@ image:
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
-  DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
   LSST_DDS_PARTITION_PREFIX: summit
   OSPL_INFOFILE: /tmp/ospl-info-ccoods.log
   OSPL_ERRORFILE: /tmp/ospl-error-ccoods.log
