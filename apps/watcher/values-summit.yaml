@@ -1,11 +1,10 @@
 namespace: obssys
 image:
   repository: ts-dockerhub.lsst.org/watcher
-  tag: c0030
+  tag: c0031
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
-  RUN_ARG: --state enabled
   LSST_DDS_PARTITION_PREFIX: summit
   LSST_SITE: summit
   OSPL_INFOFILE: /tmp/ospl-info-watcher.log

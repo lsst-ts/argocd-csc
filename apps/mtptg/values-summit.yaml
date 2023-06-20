@@ -1,7 +1,7 @@
 namespace: maintel
 image:
   repository: ts-dockerhub.lsst.org/ptkernel
-  tag: c0030
+  tag: c0031
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
