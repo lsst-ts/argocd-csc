@@ -268,10 +268,10 @@ securityContext:
 resources:
   requests:
     cpu: 1.0
-    memory: "1G"
+    memory: "1.5G"
   limits:
     cpu: 1.0
-    memory: "2G"
+    memory: "2.5G"
 redis:
   enabled: true
   port: 6379
