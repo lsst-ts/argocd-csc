@@ -24,13 +24,13 @@ nfsMountpoint:
 - name: auxtel-gen3-butler
   containerPath: /repo/LATISS
   readOnly: false
-  server: auxtel-archiver.ls.lsst.org
-  serverPath: /repo/LATISS
+  server: nfs-auxtel.ls.lsst.org
+  serverPath: /auxtel/repo/LATISS
 - name: auxtel-gen3-oods
   containerPath: /data/lsstdata/BTS/auxtel
   readOnly: true
-  server: auxtel-archiver.ls.lsst.org
-  serverPath: /lsstdata/BTS/auxtel
+  server: nfs-auxtel.ls.lsst.org
+  serverPath: /auxtel/lsstdata/BTS/auxtel
 - name: project-shared
   containerPath: /project
   readOnly: false
