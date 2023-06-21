@@ -21,13 +21,13 @@ nfsMountpoint:
 - name: auxtel-gen3-butler
   containerPath: /repo/LATISS
   readOnly: false
-  server: auxtel-archiver.ls.lsst.org
-  serverPath: /repo/LATISS
+  server: nfs-auxtel.ls.lsst.org
+  serverPath: /auxtel/repo/LATISS
 - name: auxtel-oods-data
   containerPath: /data
   readOnly: false
-  server: auxtel-archiver.ls.lsst.org
-  serverPath: /data
+  server: nfs-auxtel.ls.lsst.org
+  serverPath: /auxtel
 configfile:
   path: /etc
   filename: atoods.yaml
