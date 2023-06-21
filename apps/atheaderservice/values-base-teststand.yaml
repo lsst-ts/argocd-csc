@@ -1,7 +1,7 @@
 namespace: auxtel
 image:
   repository: ts-dockerhub.lsst.org/headerservice
-  tag: ts-v3.2.0_c0030
+  tag: c0031
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
