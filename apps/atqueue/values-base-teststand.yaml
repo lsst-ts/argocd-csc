@@ -12,6 +12,19 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-atqueue.log
   RUN_ARG: 2 --state enabled
   S3_ENDPOINT_URL: https://s3.ls.lsst.org
+envSecrets:
+- name: AWS_ACCESS_KEY_ID
+  secretName: lfa
+  secretKey: aws-access-key-id
+- name: AWS_SECRET_ACCESS_KEY
+  secretName: lfa
+  secretKey: aws-secret-access-key
+- name: MYS3_ACCESS_KEY
+  secretName: lfa
+  secretKey: aws-access-key-id
+- name: MYS3_SECRET_KEY
+  secretName: lfa
+  secretKey: aws-secret-access-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4
 butlerSecret:
@@ -41,16 +54,3 @@ nfsMountpoint:
   readOnly: true
   server: nfs-obsenv.ls.lsst.org
   serverPath: /obs-env
-envSecrets:
-- name: AWS_ACCESS_KEY_ID
-  secretName: lfa
-  secretKey: aws-access-key-id
-- name: AWS_SECRET_ACCESS_KEY
-  secretName: lfa
-  secretKey: aws-secret-access-key
-- name: MYS3_ACCESS_KEY
-  secretName: lfa
-  secretKey: aws-access-key-id
-- name: MYS3_SECRET_KEY
-  secretName: lfa
-  secretKey: aws-secret-access-key
