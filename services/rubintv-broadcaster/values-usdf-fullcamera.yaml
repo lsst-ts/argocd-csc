@@ -1,5 +1,4 @@
 namespace: rubintv-fullcamera
-fullnameOverride: u
 image:
   repository: lsstts/rubintv-broadcaster
   tag: c0030_usdf
