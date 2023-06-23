@@ -16,19 +16,19 @@ env:
   DEPLOY_BRANCH: deploy-slac
   S3_ENDPOINT_URL: https://s3dfrgw.slac.stanford.edu
 scripts:
-- slac/ts8/runButlerWatcher.py
-- slac/ts8/runIsrRunner_018.py
-- slac/ts8/runIsrRunner_019.py
-- slac/ts8/runIsrRunner_020.py
-- slac/ts8/runIsrRunner_021.py
-- slac/ts8/runIsrRunner_022.py
-- slac/ts8/runIsrRunner_023.py
-- slac/ts8/runIsrRunner_024.py
-- slac/ts8/runIsrRunner_025.py
-- slac/ts8/runIsrRunner_026.py
-- slac/ts8/runMetadataServer.py
-- slac/ts8/runPlotter.py
-- slac/ts8/runReplotter.py
+- name: slac/ts8/runButlerWatcher.py
+- name: slac/ts8/runIsrRunner_018.py
+- name: slac/ts8/runIsrRunner_019.py
+- name: slac/ts8/runIsrRunner_020.py
+- name: slac/ts8/runIsrRunner_021.py
+- name: slac/ts8/runIsrRunner_022.py
+- name: slac/ts8/runIsrRunner_023.py
+- name: slac/ts8/runIsrRunner_024.py
+- name: slac/ts8/runIsrRunner_025.py
+- name: slac/ts8/runIsrRunner_026.py
+- name: slac/ts8/runMetadataServer.py
+- name: slac/ts8/runPlotter.py
+- name: slac/ts8/runReplotter.py
 credentialFile: google_write_creds
 vaultPrefixPath: secret/rubin/usdf-rubintv-broadcaster-cleanroom
 pullSecretsPath: ts/software/nexus3-docker

@@ -42,14 +42,14 @@ helm.sh/chart: {{ include "rubintv-broadcaster.chart" . }}
 Script name
 */}}
 {{- define "rubintv-broadcaster.scriptName" -}}
-{{- regexSplit "/" .Values.script -1 | last | trimSuffix ".py" | kebabcase }}
+{{- regexSplit "/" .Values.script.name -1 | last | trimSuffix ".py" | kebabcase }}
 {{- end }}
 
 {{/*
 Deployment name
 */}}
 {{- define "rubintv-broadcaster.deploymentName" -}}
-{{- $name := regexSplit "/" .Values.script -1 | last | trimSuffix ".py" | kebabcase }}
+{{- $name := regexSplit "/" .Values.script.name -1 | last | trimSuffix ".py" | kebabcase }}
 {{- printf "s-%s" $name }}
 {{- end }}
 
@@ -60,7 +60,7 @@ Selector labels
 {{- define "rubintv-broadcaster.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "rubintv-broadcaster.deploymentName" . }}
 app.kubernetes.io/instance: {{ include "rubintv-broadcaster.name" . }}
-{{- $values := regexSplit "/" .Values.script -1 }}
+{{- $values := regexSplit "/" .Values.script.name -1 }}
 {{- if eq 1 (len $values) }}
 all: misc
 {{- else }}

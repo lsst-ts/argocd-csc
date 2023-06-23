@@ -44,7 +44,7 @@ spec:
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           env:
             - name: RUN_ARG
-              value: {{ $script }} {{ $.Values.siteTag }}
+              value: {{ $script.name }} {{ $.Values.siteTag }}
           {{- if or $.Values.env $.Values.envSecrets }}
           {{- range $env_var, $env_value := $.Values.env }}
             - name: {{ $env_var }}

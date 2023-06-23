@@ -7,29 +7,29 @@ env:
   DEPLOY_BRANCH: deploy-tts
 siteTag: tts
 scripts:
-- summit/auxTel/runBackgroundService.py
-- summit/auxTel/runButlerWatcher.py
-- summit/auxTel/runCalibrateCcdRunner.py
-- summit/auxTel/runImExaminer.py
-- summit/auxTel/runIsrRunner.py
-- summit/auxTel/runMetadataCreator.py
-- summit/auxTel/runMetadataServer.py
-- summit/auxTel/runMonitor.py
-- summit/auxTel/runMountTorquePlotter.py
-- summit/auxTel/runNightReporter.py
-- summit/auxTel/runSpecExaminer.py
-- summit/comCam/runButlerWatcher.py
-- summit/comCam/runIsrRunner_000.py
-- summit/comCam/runIsrRunner_001.py
-- summit/comCam/runIsrRunner_002.py
-- summit/comCam/runIsrRunner_003.py
-- summit/comCam/runIsrRunner_004.py
-- summit/comCam/runIsrRunner_005.py
-- summit/comCam/runIsrRunner_006.py
-- summit/comCam/runIsrRunner_007.py
-- summit/comCam/runIsrRunner_008.py
-- summit/comCam/runMetadataServer.py
-- summit/comCam/runPlotter.py
+- name: summit/auxTel/runBackgroundService.py
+- name: summit/auxTel/runButlerWatcher.py
+- name: summit/auxTel/runCalibrateCcdRunner.py
+- name: summit/auxTel/runImExaminer.py
+- name: summit/auxTel/runIsrRunner.py
+- name: summit/auxTel/runMetadataCreator.py
+- name: summit/auxTel/runMetadataServer.py
+- name: summit/auxTel/runMonitor.py
+- name: summit/auxTel/runMountTorquePlotter.py
+- name: summit/auxTel/runNightReporter.py
+- name: summit/auxTel/runSpecExaminer.py
+- name: summit/comCam/runButlerWatcher.py
+- name: summit/comCam/runIsrRunner_000.py
+- name: summit/comCam/runIsrRunner_001.py
+- name: summit/comCam/runIsrRunner_002.py
+- name: summit/comCam/runIsrRunner_003.py
+- name: summit/comCam/runIsrRunner_004.py
+- name: summit/comCam/runIsrRunner_005.py
+- name: summit/comCam/runIsrRunner_006.py
+- name: summit/comCam/runIsrRunner_007.py
+- name: summit/comCam/runIsrRunner_008.py
+- name: summit/comCam/runMetadataServer.py
+- name: summit/comCam/runPlotter.py
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/tucson-teststand.lsst.codes
 pullSecretsPath: pull-secret
