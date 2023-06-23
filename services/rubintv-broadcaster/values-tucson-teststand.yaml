@@ -82,6 +82,13 @@ nfsMountpoint:
   readOnly: false
   server: nfs-scratch.tu.lsst.org
   serverPath: /scratch/rubintv
+resources:
+  requests:
+    cpu: 0.5
+    memory: "1G"
+  limits:
+    cpu: 1.0
+    memory: "2.5G"
 redis:
   enabled: true
   port: 6379
