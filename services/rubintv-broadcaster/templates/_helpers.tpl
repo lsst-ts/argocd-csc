@@ -69,7 +69,7 @@ all: misc
 isr: {{ $all_label }}
 {{- end }}
 all: {{ $all_label }}
-{{- if has $all_label (list "auxtel" "comcam") }}
+{{- if has $all_label (list "auxtel" "comcam" "bot" "ts8") }}
 camera: {{ $all_label }}
 {{- else }}
 {{- if contains "StarTracker" $script }}
