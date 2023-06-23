@@ -8,7 +8,7 @@ spec:
   type: ClusterIP
   internalTrafficPolicy: Cluster
   selector:
-    app.kubernetes.io/instance: redis
+    app.kubernetes.io/instance: {{ include "rubintv-broadcaster.redis.fullname" . }}
   ports:
   - name: redis
     protocol: TCP

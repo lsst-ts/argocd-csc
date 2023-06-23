@@ -38,7 +38,7 @@ spec:
           - name: {{ $env.name }}
             valueFrom:
               secretKeyRef:
-                name: {{ include "rubintv-broadcaster.fullname" $ }}-{{ $env.secretName }}
+                name: {{ $env.secretName }}
                 key: {{ $env.secretKey }}
         {{- end }}
         livenessProbe:

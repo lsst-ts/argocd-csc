@@ -4,4 +4,4 @@ metadata:
   name: env-configmap
   namespace: {{ .Values.namespace }}
 data:
-  GOOGLE_APPLICATION_CREDENTIALS: "/etc/{{ include "rubintv-broadcaster.fullname" $ }}/creds/{{ .Values.credentialFile }}"
+  GOOGLE_APPLICATION_CREDENTIALS: "/etc/rubintv/creds/{{ .Values.credentialFile }}"

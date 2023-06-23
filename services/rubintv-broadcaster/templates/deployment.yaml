@@ -83,8 +83,8 @@ spec:
             - configMapRef:
                 name: env-configmap
           volumeMounts:
-            - name: {{ include "rubintv-broadcaster.fullname" $ }}-creds
-              mountPath: "/etc/{{ include "rubintv-broadcaster.fullname" $ }}/creds"
+            - name: rubintv-creds
+              mountPath: "/etc/rubintv/creds"
               readOnly: true
           {{- if $.Values.nfsMountpoint }}
           {{- range $values := $.Values.nfsMountpoint }}
@@ -144,7 +144,7 @@ spec:
               mountPath: /secrets
       {{- end }}
       volumes:
-        - name: {{ include "rubintv-broadcaster.fullname" $ }}-creds
+        - name: rubintv-creds
           secret:
             secretName: google-creds
       {{- if $.Values.nfsMountpoint }}

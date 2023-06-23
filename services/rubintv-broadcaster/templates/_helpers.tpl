@@ -50,7 +50,16 @@ Deployment name
 */}}
 {{- define "rubintv-broadcaster.deploymentName" -}}
 {{- $name := regexSplit "/" .Values.script.name -1 | last | trimSuffix ".py" | kebabcase }}
-{{- printf "s-%s" $name }}
+{{- $cameraName := regexSplit "/" .Values.script.name -1 | rest | first | lower }}
+{{- $camera := "" }}
+{{- if eq $cameraName "auxtel" }}
+{{- $camera = "at"}}
+{{- else if eq $cameraName "comcam" }}
+{{- $camera = "cc"}}
+{{- else }}
+{{- $camera = $cameraName}}
+{{- end }}
+{{- printf "s-%s-%s" $camera $name }}
 {{- end }}
 
 
