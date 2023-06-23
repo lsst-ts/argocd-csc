@@ -115,9 +115,15 @@ spec:
             - name: {{ $.Release.Name }}-butler-secret
               mountPath: {{ $.Values.butlerSecret.containerPath }}
           {{- end }}
-          {{- with $.Values.resources }}
+          {{- if or $.Values.resources $script.resources }}
+          {{- $resources := "" }}
+          {{- if $script.resources }}
+          {{- $resources = $script.resources }}
+          {{- else }}
+          {{- $resources = $.Values.resources }}
+          {{- end }}
           resources:
-            {{- toYaml $.Values.resources | nindent 12 }}
+            {{- toYaml $resources | nindent 12 }}
           {{- end }}
       {{- if $.Values.butlerSecret }}
       initContainers:
@@ -172,16 +178,34 @@ spec:
             secretName: butler-secret
             defaultMode: 0600
       {{- end }}
-      {{- with $.Values.nodeSelector }}
+      {{- if or $.Values.nodeSelector $script.nodeSelector }}
+      {{- $nodeSelector := "" }}
+      {{- if $script.nodeSelector }}
+      {{- $nodeSelector = $script.nodeSelector }}
+      {{- else }}
+      {{- $nodeSelector = $.Values.nodeSelector }}
+      {{- end }}
       nodeSelector:
-        {{- toYaml $.Values.nodeSelector | nindent 8 }}
+        {{- toYaml $nodeSelector | nindent 8 }}
       {{- end }}
-      {{- with $.Values.affinity }}
+      {{- if or $.Values.affinity $script.affinity }}
+      {{- $affinity := "" }}
+      {{- if $script.affinity }}
+      {{- $affinity = $script.affinity }}
+      {{- else }}
+      {{- $affinity = $.Values.affinity }}
+      {{- end }}
       affinity:
-        {{- toYaml $.Values.affinity | nindent 8 }}
+        {{- toYaml $affinity | nindent 8 }}
       {{- end }}
-      {{- with $.Values.tolerations }}
+      {{- if or $.Values.tolerations $script.tolerations }}
+      {{- $tolerations := "" }}
+      {{- if $script.tolerations }}
+      {{- $tolerations = $script.tolerations }}
+      {{- else }}
+      {{- $tolerations = $.Values.tolerations }}
+      {{- end }}
       tolerations:
-        {{- toYaml $.Values.tolerations | nindent 8 }}
+        {{- toYaml $tolerations | nindent 8 }}
       {{- end }}
 {{- end }}

@@ -19,7 +19,21 @@ scripts:
 - name: slac/bot/runButlerWatcher.py
 - name: slac/bot/runMetadataServer.py
 - name: slac/bot/runPlotter.py
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "12G"
+    limits:
+      cpu: 1.0
+      memory: "16G"
 - name: slac/bot/runReplotter.py
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "12G"
+    limits:
+      cpu: 1.0
+      memory: "16G"
 - name: slac/bot/runIsrRunner_000.py
 - name: slac/bot/runIsrRunner_001.py
 - name: slac/bot/runIsrRunner_002.py
