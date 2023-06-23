@@ -39,7 +39,7 @@ spec:
         {{- end }}
       {{- end }}
       containers:
-        - name: {{ include "rubintv-broadcaster.jobName" $ }}
+        - name: {{ include "rubintv-broadcaster.scriptName" $ }}
           image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           env:
@@ -54,7 +54,7 @@ spec:
             - name: {{ $env.name }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "rubintv-broadcaster.fullname" $ }}-{{ $env.secretName }}
+                  name: {{ $env.secretName }}
                   key: {{ $env.secretKey }}
           {{- end }}
           {{- end }}
@@ -68,20 +68,20 @@ spec:
           {{- end }}
           {{- if $.Values.redis.enabled }}
             - name: REDIS_HOST
-              value: "{{ include "rubintv-broadcaster.redis.fullname" $ }}-service"
+              value: "redis-service"
           {{- if $.Values.redis.envSecrets }}
           {{- range $env := $.Values.redis.envSecrets }}
             - name: {{ $env.name }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "rubintv-broadcaster.fullname" $ }}-{{ $env.secretName }}
+                  name: {{ $env.secretName }}
                   key: {{ $env.secretKey }}
           {{- end }}
           {{- end }}
           {{- end }}
           envFrom:
             - configMapRef:
-                name: {{ include "rubintv-broadcaster.fullname" $ }}-env-configmap
+                name: env-configmap
           volumeMounts:
             - name: {{ include "rubintv-broadcaster.fullname" $ }}-creds
               mountPath: "/etc/{{ include "rubintv-broadcaster.fullname" $ }}/creds"
@@ -140,7 +140,7 @@ spec:
       volumes:
         - name: {{ include "rubintv-broadcaster.fullname" $ }}-creds
           secret:
-            secretName: {{ include "rubintv-broadcaster.fullname" $ }}-google-creds
+            secretName: google-creds
       {{- if $.Values.nfsMountpoint }}
       {{- range $values := $.Values.nfsMountpoint }}
         - name: {{ $values.name }}
@@ -169,7 +169,7 @@ spec:
           emptyDir: {}
         - name: {{ $.Release.Name }}-raw-butler-secret
           secret:
-            secretName: {{ include "rubintv-broadcaster.fullname" $ }}-butler-secret
+            secretName: butler-secret
             defaultMode: 0600
       {{- end }}
       {{- with $.Values.nodeSelector }}

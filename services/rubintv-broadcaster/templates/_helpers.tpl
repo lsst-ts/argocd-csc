@@ -39,17 +39,18 @@ helm.sh/chart: {{ include "rubintv-broadcaster.chart" . }}
 {{- end }}
 
 {{/*
-Create script name extension
+Script name
 */}}
 {{- define "rubintv-broadcaster.scriptName" -}}
-{{ .Values.script | trimPrefix "run" | trimSuffix ".py" | kebabcase }}
+{{- regexSplit "/" .Values.script -1 | last | trimSuffix ".py" | kebabcase }}
 {{- end }}
 
 {{/*
-Job name
+Deployment name
 */}}
-{{- define "rubintv-broadcaster.jobName" -}}
-{{ "-" | regexReplaceAll "/" .Values.script | trimPrefix "run" | trimSuffix ".py" | kebabcase }}
+{{- define "rubintv-broadcaster.deploymentName" -}}
+{{- $name := regexSplit "/" .Values.script -1 | last | trimSuffix ".py" | kebabcase }}
+{{- printf "s-%s" $name }}
 {{- end }}
 
 
@@ -57,7 +58,7 @@ Job name
 Selector labels
 */}}
 {{- define "rubintv-broadcaster.selectorLabels" -}}
-app.kubernetes.io/name: {{ .Release.Name }}-{{ include "rubintv-broadcaster.jobName" . }}
+app.kubernetes.io/name: {{ include "rubintv-broadcaster.deploymentName" . }}
 app.kubernetes.io/instance: {{ include "rubintv-broadcaster.name" . }}
 {{- $values := regexSplit "/" .Values.script -1 }}
 {{- if eq 1 (len $values) }}
@@ -77,13 +78,6 @@ camera: startracker
 {{- end }}
 {{- end }}
 {{- end }}
-{{- end }}
-
-{{/*
-Deployment name
-*/}}
-{{- define "rubintv-broadcaster.deploymentName" -}}
-{{ include "rubintv-broadcaster.fullname" . }}-{{ include "rubintv-broadcaster.jobName" . }}
 {{- end }}
 
 {{/*

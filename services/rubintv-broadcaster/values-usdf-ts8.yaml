@@ -40,10 +40,10 @@ butlerSecret:
   dbUser: rubin
 envSecrets:
 - name: ASTROMETRY_NET_API_KEY
-  secretName: rubintv
+  secretName: rubintv-secrets
   secretKey: astrometry-net-api-key
 imagePullSecrets:
-- name: rubintv-broadcaster-pull-secret
+- name: pull-secret
 pvcMountpointClaim:
 - name: sdf-group-rubin
   containerPath: /sdf/group/rubin
@@ -76,7 +76,7 @@ redis:
     MASTER: true
   envSecrets:
   - name: REDIS_PASSWORD
-    secretName: rubintv
+    secretName: rubintv-secrets
     secretKey: redis-password
   storage:
     request: 10Gi

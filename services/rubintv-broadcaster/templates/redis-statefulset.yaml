@@ -2,12 +2,12 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "rubintv-broadcaster.redis.fullname" . }}
+  name: redis
   namespace: {{ .Values.namespace }}
   labels:
     {{- include "rubintv-broadcaster.redis.labels" . | nindent 4 }}
 spec:
-  serviceName: {{ include "rubintv-broadcaster.redis.fullname" . }}-service
+  serviceName: redis-service
   selector:
     matchLabels:
       {{- include "rubintv-broadcaster.redis.selectorLabels" . | nindent 6 }}

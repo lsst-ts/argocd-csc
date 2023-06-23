@@ -40,7 +40,7 @@ butlerSecret:
   containerPath: /home/saluser/.lsst
   dbUser: oods
 imagePullSecrets:
-- name: rubintv-broadcaster-pull-secret
+- name: pull-secret
 nfsMountpoint:
 - name: auxtel-gen3-data
   containerPath: /repo/LATISS
@@ -89,7 +89,7 @@ redis:
     MASTER: true
   envSecrets:
   - name: REDIS_PASSWORD
-    secretName: rubintv
+    secretName: rubintv-secrets
     secretKey: redis-password
   storage:
     classname: rook-ceph-block
