@@ -35,6 +35,7 @@ scripts:
 - name: summit/misc/runStarTrackerMetadata.py
 - name: summit/misc/runStarTrackerNightReport.py
 - name: summit/misc/runStarTrackerWide.py
+- name: summit/misc/runTmaTelemetry.py
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: pull-secret
