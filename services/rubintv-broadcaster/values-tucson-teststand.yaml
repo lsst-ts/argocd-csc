@@ -30,6 +30,7 @@ scripts:
 - summit/comCam/runIsrRunner_008.py
 - summit/comCam/runMetadataServer.py
 - summit/comCam/runPlotter.py
+- summit/misc/runTmaTelemetry.py
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/tucson-teststand.lsst.codes
 pullSecretsPath: pull-secret
