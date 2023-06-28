@@ -28,6 +28,13 @@ scripts:
 - name: summit/comCam/runIsrRunner_008.py
 - name: summit/comCam/runMetadataServer.py
 - name: summit/comCam/runPlotter.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: "4G"
+    limits:
+      cpu: 1.0
+      memory: "6G"
 - name: summit/misc/runAllSky.py
 - name: summit/misc/runStarTracker.py
 - name: summit/misc/runStarTrackerCatchup.py
@@ -93,6 +100,13 @@ nfsMountpoint:
   readOnly: false
   server: nfs1.cp.lsst.org
   serverPath: /scratch/rubintv
+resources:
+  requests:
+    cpu: 0.5
+    memory: "1G"
+  limits:
+    cpu: 1.0
+    memory: "2.5G"
 redis:
   enabled: true
   port: 6379
