@@ -52,9 +52,9 @@ services:
   summit:
   - uws
   - schedview
-  - rubintv-broadcaster
+  - rapid-analysis
   tucson-teststand:
   - uws
-  - rubintv-broadcaster
+  - rapid-analysis
   base-teststand:
   - uws

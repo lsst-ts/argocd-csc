@@ -6,7 +6,7 @@ image:
   # -- The policy to apply when pulling an image for deployment.
   pullPolicy: IfNotPresent
 # -- This is the namespace where the applications will be deployed.
-namespace: rubintv-broadcaster
+namespace: rapid-analysis
 # -- A special tag for letting the scripts know where they are running.
 siteTag: ""
 # -- (obj) List of script pbjects to run for the broadcaster.

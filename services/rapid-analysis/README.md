@@ -1,6 +1,6 @@
-# rubintv-broadcaster
+# rapid-analysis
 
-A Helm chart for deploying the RubinTV broadcaster services.
+A Helm chart for deploying the Rapid Analysis services.
 
 ## Values
 
@@ -18,7 +18,7 @@ A Helm chart for deploying the RubinTV broadcaster services.
 | image.tag | string | `"develop"` | The tag of the container image to use. |
 | imagePullSecrets | list | `[]` | The list of pull secrets needed for the images. If this section is used, each object listed can have the following attributes defined: _name_ (The label identifying the pull-secret to use) |
 | nameOverride | string | `""` | Adds an extra string to the release name. |
-| namespace | string | `"rubintv-broadcaster"` | This is the namespace where the applications will be deployed. |
+| namespace | string | `"rapid-analysis"` | This is the namespace where the applications will be deployed. |
 | nfsMountpoint | list | `[]` | This section holds the information necessary to create a NFS mount for the container. If this section is used, each object listed can have the following attributes defined: _name_ (A label identifier for the mountpoint), _containerPath_ (The path inside the container to mount), _readOnly_ (This sets if the NFS mount is read only or read/write), _server_ (The hostname of the NFS server), _serverPath_ (The path exported by the NFS server) |
 | nodeSelector | object | `{}` | This allows the specification of using specific nodes to run the pod. |
 | podAnnotations | object | `{}` | This allows the specification of pod annotations. |

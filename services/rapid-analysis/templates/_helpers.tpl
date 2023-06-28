@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "rubintv-broadcaster.name" -}}
+{{- define "rapid-analysis.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "rubintv-broadcaster.fullname" -}}
+{{- define "rapid-analysis.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,29 +26,29 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "rubintv-broadcaster.chart" -}}
+{{- define "rapid-analysis.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "rubintv-broadcaster.labels" -}}
-helm.sh/chart: {{ include "rubintv-broadcaster.chart" . }}
-{{ include "rubintv-broadcaster.selectorLabels" . }}
+{{- define "rapid-analysis.labels" -}}
+helm.sh/chart: {{ include "rapid-analysis.chart" . }}
+{{ include "rapid-analysis.selectorLabels" . }}
 {{- end }}
 
 {{/*
 Script name
 */}}
-{{- define "rubintv-broadcaster.scriptName" -}}
+{{- define "rapid-analysis.scriptName" -}}
 {{- regexSplit "/" .Values.script.name -1 | last | trimSuffix ".py" | kebabcase }}
 {{- end }}
 
 {{/*
 Deployment name
 */}}
-{{- define "rubintv-broadcaster.deploymentName" -}}
+{{- define "rapid-analysis.deploymentName" -}}
 {{- $name := regexSplit "/" .Values.script.name -1 | last | trimSuffix ".py" | kebabcase }}
 {{- $cameraName := regexSplit "/" .Values.script.name -1 | rest | first | lower }}
 {{- $camera := "" }}
@@ -66,9 +66,9 @@ Deployment name
 {{/*
 Selector labels
 */}}
-{{- define "rubintv-broadcaster.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "rubintv-broadcaster.deploymentName" . }}
-app.kubernetes.io/instance: {{ include "rubintv-broadcaster.name" . }}
+{{- define "rapid-analysis.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "rapid-analysis.deploymentName" . }}
+app.kubernetes.io/instance: {{ include "rapid-analysis.name" . }}
 {{- $values := regexSplit "/" .Values.script.name -1 }}
 {{- if eq 1 (len $values) }}
 all: misc
@@ -94,7 +94,7 @@ Create a default fully qualified app name for redis.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "rubintv-broadcaster.redis.fullname" -}}
+{{- define "rapid-analysis.redis.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -110,15 +110,15 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Common labels - redis
 */}}
-{{- define "rubintv-broadcaster.redis.labels" -}}
-helm.sh/chart: {{ include "rubintv-broadcaster.chart" . }}
-{{ include "rubintv-broadcaster.redis.selectorLabels" . }}
+{{- define "rapid-analysis.redis.labels" -}}
+helm.sh/chart: {{ include "rapid-analysis.chart" . }}
+{{ include "rapid-analysis.redis.selectorLabels" . }}
 {{- end }}
 
 {{/*
 Selector labels - redis
 */}}
-{{- define "rubintv-broadcaster.redis.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "rubintv-broadcaster.name" . }}
-app.kubernetes.io/instance: {{ include "rubintv-broadcaster.redis.fullname" . }}
+{{- define "rapid-analysis.redis.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "rapid-analysis.name" . }}
+app.kubernetes.io/instance: {{ include "rapid-analysis.redis.fullname" . }}
 {{- end }}

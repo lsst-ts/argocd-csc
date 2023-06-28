@@ -83,7 +83,7 @@ Applications
    ops/love-commander
    ops/hexapodsim
    ops/test-csc
-   ops/rubintv-broadcaster
+   ops/rapid-analysis
 
 The rest of the applications, except those listed in :ref:`CSC-Ops-with-ArgoCD-Collector-Apps`, are CSCs and are managed by an internal chart located in ``charts/csc``.
 

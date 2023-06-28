@@ -4,15 +4,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "rubintv-broadcaster.deploymentName" $ }}
+  name: {{ include "rapid-analysis.deploymentName" $ }}
   namespace: {{ $.Values.namespace }}
   labels:
-    {{- include "rubintv-broadcaster.labels" $ | nindent 4 }}
+    {{- include "rapid-analysis.labels" $ | nindent 4 }}
 spec:
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      {{- include "rubintv-broadcaster.selectorLabels" $ | nindent 6 }}
+      {{- include "rapid-analysis.selectorLabels" $ | nindent 6 }}
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
@@ -20,7 +20,7 @@ spec:
         {{- toYaml $ | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "rubintv-broadcaster.selectorLabels" $ | nindent 8 }}
+        {{- include "rapid-analysis.selectorLabels" $ | nindent 8 }}
     spec:
       {{- with $.Values.imagePullSecrets }}
       imagePullSecrets:
@@ -39,7 +39,7 @@ spec:
         {{- end }}
       {{- end }}
       containers:
-        - name: {{ include "rubintv-broadcaster.scriptName" $ }}
+        - name: {{ include "rapid-analysis.scriptName" $ }}
           image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           env:

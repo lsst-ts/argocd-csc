@@ -5,17 +5,17 @@ metadata:
   name: redis
   namespace: {{ .Values.namespace }}
   labels:
-    {{- include "rubintv-broadcaster.redis.labels" . | nindent 4 }}
+    {{- include "rapid-analysis.redis.labels" . | nindent 4 }}
 spec:
   serviceName: redis-service
   selector:
     matchLabels:
-      {{- include "rubintv-broadcaster.redis.selectorLabels" . | nindent 6 }}
+      {{- include "rapid-analysis.redis.selectorLabels" . | nindent 6 }}
   replicas: {{ .Values.redis.replicas | default 1 }}
   template:
     metadata:
       labels:
-        {{- include "rubintv-broadcaster.redis.selectorLabels" . | nindent 8 }}
+        {{- include "rapid-analysis.redis.selectorLabels" . | nindent 8 }}
     spec:
       securityContext:
         fsGroup: 999
