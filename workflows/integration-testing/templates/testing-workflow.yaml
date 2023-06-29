@@ -92,8 +92,29 @@ spec:
             value: "-A Test_Report_MainTel_Housekeeping.list"
           - name: jobname
             value: maintel-housekeeping
-      - name: auxtel-image-verification
+      - name: auxtel-latiss-daytime-checkout
         depends: auxtel-housekeeping
+        templateRef:
+          name: integration-test-job-template
+          template: inttest-template
+        arguments:
+          parameters:
+          - name: integrationtest
+            value: "-A Test_Report_AuxTel_LATISS_Checkout.list"
+          - name: jobname
+            value: auxtel-latiss-daytime-checkout
+      - name: auxtel-telescope-dome-daytime-checkout
+        templateRef:
+          name: integration-test-job-template
+          template: inttest-template
+        arguments:
+          parameters:
+          - name: integrationtest
+            value: "-A Test_Report_AuxTel_Telescope_Dome_Checkout.list"
+          - name: jobname
+            value: auxtel-telescope-dome-daytime-checkout
+      - name: auxtel-image-verification
+        depends: auxtel-telescope-dome-daytime-checkout
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -155,7 +176,7 @@ spec:
         arguments:
           parameters:
           - name: integrationtest
-            value: "-A Test_Report_AuxTel_CWFS_Align.list"
+            value: "-A Test_Report_AuxTel_WEP_Align.list"
           - name: jobname
             value: auxtel-cwfs-align
       - name: auxtel-acq-take-seq-pointing
