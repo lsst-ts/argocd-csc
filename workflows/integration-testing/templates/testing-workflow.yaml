@@ -92,8 +92,19 @@ spec:
             value: "-A Test_Report_MainTel_Housekeeping.list"
           - name: jobname
             value: maintel-housekeeping
-      - name: auxtel-latiss-daytime-checkout
+      - name: auxtel-image-verification
         depends: auxtel-housekeeping
+        templateRef:
+          name: integration-test-job-template
+          template: inttest-template
+        arguments:
+          parameters:
+          - name: integrationtest
+            value: "-A Test_Report_AuxTel_Image_Verification.list"
+          - name: jobname
+            value: auxtel-image-verification
+      - name: auxtel-latiss-daytime-checkout
+        depends: auxtel-image-verification
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -104,6 +115,7 @@ spec:
           - name: jobname
             value: auxtel-latiss-daytime-checkout
       - name: auxtel-telescope-dome-daytime-checkout
+        depends: auxtel-latiss-daytime-checkout
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -113,19 +125,8 @@ spec:
             value: "-A Test_Report_AuxTel_Telescope_Dome_Checkout.list"
           - name: jobname
             value: auxtel-telescope-dome-daytime-checkout
-      - name: auxtel-image-verification
-        depends: auxtel-telescope-dome-daytime-checkout
-        templateRef:
-          name: integration-test-job-template
-          template: inttest-template
-        arguments:
-          parameters:
-          - name: integrationtest
-            value: "-A Test_Report_AuxTel_Image_Verification.list"
-          - name: jobname
-            value: auxtel-image-verification
       - name: auxtel-prep-flat
-        depends: auxtel-image-verification
+        depends: auxtel-telescope-dome-daytime-checkout
         templateRef:
           name: integration-test-job-template
           template: inttest-template
