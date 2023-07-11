@@ -1,17 +1,18 @@
 image:
   repository: nginx
-  tag: 1.13.1
+  tag: 1.25.1
   pullPolicy: Always
 ingress:
-  hostname: love.tu.lsst.org
+  hostname: tucson-teststand.lsst.codes
+  httpPath: /love
   annotations:
-    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 imagePullSecrets:
 - name: love-nexus3-docker
 initContainers:
   frontend:
     image:
-      repository: ts-dockerhub.lsst.org/love-frontend
+      repository: ts-dockerhub.lsst.org/love-frontend-k8s
       tag: c0032
       pullPolicy: Always
   manager:
@@ -20,9 +21,9 @@ initContainers:
       tag: c0032
       pullPolicy: Always
     command:
-    - /bin/sh
+    - /bin/ash
     - -c
-    - cp -Rv /usr/src/love/manager/static /usr/src/love-manager; cp -Rv /usr/src/love/manager/media
+    - mkdir -p /usr/src/love-manager; cp -Rv /usr/src/love/manager/media /usr/src/love-manager; cp -Rv /usr/src/love/manager/static
       /usr/src/love-manager
 staticStore:
   name: love-nginx-static
@@ -33,11 +34,11 @@ nginxConfig: |
   server {
     listen 80;
     server_name localhost;
-    location / {
+    location /love {
       root   /usr/src/love-frontend;
-      try_files $uri$args $uri$args/ $uri/ /index.html;
+      try_files $uri$args $uri$args/ $uri/ /love/index.html;
     }
-    location /manager {
+    location /love/manager {
         proxy_pass http://love-manager-service:8000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
@@ -45,18 +46,18 @@ nginxConfig: |
         proxy_set_header Host $host;
         proxy_redirect off;
     }
-    location /media {
+    location /love/media {
         alias /usr/src/love-manager/media;
     }
-    location /manager/static {
+    location /love/manager/static {
         alias /usr/src/love-manager/static;
     }
-    location /manager/media {
+    location /love/manager/media {
         alias /usr/src/love-manager/media;
     }
-    location /simcam {
-        proxy_pass http://simulation-gencam-service.calsys:5013;
-        proxy_redirect off;
+    location /love/simcam {
+        proxy_pass http://simulation-gencam-service.calsys:5013/;
+        proxy_set_header Host $host/love;
     }
   }
 loveConfig: |
@@ -66,7 +67,7 @@ loveConfig: |
       "minSeverityNotification": "warning"
     },
     "camFeeds": {
-      "simcam": "/simcam"
+      "simcam": "/love/simcam"
     },
     "efd": {
       "defaultEfdInstance": "tucson_teststand_efd"
