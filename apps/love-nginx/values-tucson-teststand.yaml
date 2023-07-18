@@ -22,7 +22,7 @@ initContainers:
     command:
     - /bin/sh
     - -c
-    - cp -Rv /usr/src/love/manager/static /usr/src/love-manager; cp -Rv /usr/src/love/manager/media
+    - mkdir -p /usr/src/love-manager; cp -Rv /usr/src/love/manager/static /usr/src/love-manager; cp -Rv /usr/src/love/manager/media
       /usr/src/love-manager
 staticStore:
   name: love-nginx-static
@@ -35,7 +35,7 @@ nginxConfig: |
     server_name localhost;
     location / {
       root   /usr/src/love-frontend;
-      try_files $uri$args $uri$args/ $uri/ /index.html;
+      try_files $uri$args $uri$args/ $uri/ /love/index.html;
     }
     location /manager {
         proxy_pass http://love-manager-service:8000;
