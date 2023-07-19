@@ -6,11 +6,18 @@ image:
   # -- The policy to apply when pulling an image for deployment.
   pullPolicy: IfNotPresent
 # -- This is the namespace where the applications will be deployed.
-namespace: rubintv-broadcaster
+namespace: rapid-analysis
 # -- A special tag for letting the scripts know where they are running.
 siteTag: ""
-# -- List of the script to run for the broadcaster.
-scripts: []
+# -- (obj) List of script objects to run for the broadcaster.
+# This section MUST have the following attribute specified for each entry.
+# _name_ (The full path for the script)
+# The following attributes are optional
+# _resources_ (A resource object specification)
+# _nodeSelector_ (A node selector object specification)
+# _tolerations_ (A list of tolerations)
+# _affinity_ (An affinity object specification)
+scripts: {}
 # -- This section holds a set of key, value pairs for environmental variables (ENV_VAR: value).
 # NOTE: RUN_ARG is taken care of by the chart using _script_.
 env: {}
@@ -107,9 +114,9 @@ redis:
     request: 1Gi
   # -- This allows the specification of resources (CPU, memory) requires to run the redis container.
   resources: {}
-  # -- Node selection rules for the LOVE redis pods
+  # -- Node selection rules for the redis pods
   nodeSelector: {}
-  # -- Toleration specifications for the LOVE redis pods
+  # -- Toleration specifications for the redis pods
   tolerations: []
-  # -- Affinity rules for the LOVE redis pods
+  # -- Affinity rules for the redis pods
   affinity: {}

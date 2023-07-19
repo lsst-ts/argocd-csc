@@ -98,4 +98,4 @@ Next steps: connecting Vault to Kubernetes with VaultSecret
 Once a secret is in Vault, you need to create or update a ``VaultSecret`` resource in your application's deployment (typically in its Helm_ chart).
 If you are adding a secret for a CSC application (anything within the ``apps`` directory), an entry should be made in the appropriate site specific file in ``apps/cluster-config``.
 All services (anything within the ``services`` directory) handle their own secrets via the Helm_ chart.
-See the `RubinTV Broadcasters vault-secret.yaml <https://github.com/lsst-ts/argocd-csc/blob/main/services/rubintv-broadcaster/templates/vault-secret.yaml>`_
+See the `Rapid Analysis vault-secret.yaml <https://github.com/lsst-ts/argocd-csc/blob/main/services/rapid-analysis/templates/vault-secret.yaml>`_

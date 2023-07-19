@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "rubintv-broadcaster.redis.fullname" . }}
+  name: redis
   namespace: {{ .Values.namespace }}
   labels:
-    {{- include "rubintv-broadcaster.redis.labels" . | nindent 4 }}
+    {{- include "rapid-analysis.redis.labels" . | nindent 4 }}
 spec:
-  serviceName: {{ include "rubintv-broadcaster.redis.fullname" . }}-service
+  serviceName: redis-service
   selector:
     matchLabels:
-      {{- include "rubintv-broadcaster.redis.selectorLabels" . | nindent 6 }}
+      {{- include "rapid-analysis.redis.selectorLabels" . | nindent 6 }}
   replicas: {{ .Values.redis.replicas | default 1 }}
   template:
     metadata:
       labels:
-        {{- include "rubintv-broadcaster.redis.selectorLabels" . | nindent 8 }}
+        {{- include "rapid-analysis.redis.selectorLabels" . | nindent 8 }}
     spec:
       securityContext:
         fsGroup: 999
@@ -38,7 +38,7 @@ spec:
           - name: {{ $env.name }}
             valueFrom:
               secretKeyRef:
-                name: {{ include "rubintv-broadcaster.fullname" $ }}-{{ $env.secretName }}
+                name: {{ $env.secretName }}
                 key: {{ $env.secretKey }}
         {{- end }}
         livenessProbe:

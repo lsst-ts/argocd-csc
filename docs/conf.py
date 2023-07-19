@@ -143,4 +143,6 @@ linkcheck_ignore = [
     r"https://github.com/lsst-ts/argocd-csc/blob/main/installer/site-config.yaml",
     r"https://github.com/lsst-ts/argocd-csc/blob/main/installer/update_secrets.sh",
     r"https://github.com/lsst-ts/argocd-csc/blob/main/installer/generate_secrets.py",
+    r"https://github.com/lsst-ts/argocd-csc/tree/main/services/rapid-analysis",
+    r"https://github.com/lsst-ts/argocd-csc/blob/main/services/rapid-analysis/templates/vault-secret.yaml",
 ]

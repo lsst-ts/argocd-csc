@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "rubintv-broadcaster.redis.fullname" . }}-service
+  name: redis-service
   namespace: {{ .Values.namespace }}
 spec:
   type: ClusterIP
   internalTrafficPolicy: Cluster
   selector:
-    app.kubernetes.io/instance: {{ include "rubintv-broadcaster.redis.fullname" . }}
+    app.kubernetes.io/instance: {{ include "rapid-analysis.redis.fullname" . }}
   ports:
   - name: redis
     protocol: TCP
