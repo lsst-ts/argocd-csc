@@ -9,7 +9,7 @@ image:
 namespace: rapid-analysis
 # -- A special tag for letting the scripts know where they are running.
 siteTag: ""
-# -- (obj) List of script pbjects to run for the broadcaster.
+# -- (obj) List of script objects to run for the broadcaster.
 # This section MUST have the following attribute specified for each entry.
 # _name_ (The full path for the script)
 # The following attributes are optional

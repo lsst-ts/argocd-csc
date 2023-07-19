@@ -39,7 +39,7 @@ A Helm chart for deploying the Rapid Analysis services.
 | redis.tolerations | list | `[]` | Toleration specifications for the redis pods |
 | resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the container. |
 | rubinTvSecretsPath | string | `""` |  |
-| scripts | obj | `{}` | List of script pbjects to run for the broadcaster. This section MUST have the following attribute specified for each entry. _name_ (The full path for the script) The following attributes are optional _resources_ (A resource object specification) _nodeSelector_ (A node selector object specification) _tolerations_ (A list of tolerations) _affinity_ (An affinity object specification) |
+| scripts | obj | `{}` | List of script objects to run for the broadcaster. This section MUST have the following attribute specified for each entry. _name_ (The full path for the script) The following attributes are optional _resources_ (A resource object specification) _nodeSelector_ (A node selector object specification) _tolerations_ (A list of tolerations) _affinity_ (An affinity object specification) |
 | securityContext | object | `{}` | This section allows for specification of security context information. If the section is used, at least one of the following attributes must be specified. _uid_ (User id to run application as), _gid_ (Group id of the user that runs the application), _fid_ (File system context user id), |
 | siteTag | string | `""` | A special tag for letting the scripts know where they are running. |
 | tolerations | list | `[]` | This specifies the tolerations of the pod for any system taints. |
