@@ -1,5 +1,5 @@
 image:
-  repository: ts-dockerhub.lsst.org/rubintv-broadcaster
+  repository: ts-dockerhub.lsst.org/rapid-analysis
   tag: c0032
   pullPolicy: Always
 env:
