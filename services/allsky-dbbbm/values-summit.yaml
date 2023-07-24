@@ -44,7 +44,7 @@ configfile:
         - tmp.*
         - \.tmp
         - \.\$tmp\$
-      pause: 60
+      pause: 3600
 storage:
   classname: rook-ceph-block
   request: 20Gi
