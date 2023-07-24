@@ -6,7 +6,7 @@ Helm chart for Integration Testing Workflows.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| imageTag | string | `nil` | The image tag for the Integration Test runner container |
+| image.tag | string | `nil` | The image tag for the Integration Test runner container |
 | namespace | string | `"dds-test"` | Namespace where the Workflow related APIs will be created. |
 | persistentVolume.claimName | string | `"saved-reports"` | PVC name for saving the reports |
 | persistentVolume.storage | string | `"1Gi"` | Storage size request for the PVC |
