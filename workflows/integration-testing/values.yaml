@@ -6,8 +6,9 @@ s3Endpoint:
 s3Bucket:
 # -- Container location of the RobotFramework reports
 reportLocation: /home/saluser/robotframework_EFD/Reports
-# -- The image tag for the Integration Test runner container
-imageTag:
+image:
+  # -- The image tag for the Integration Test runner container
+  tag:
 # -- The site tag for the resource location
 siteTag:
 # -- Name for the top-level workflow

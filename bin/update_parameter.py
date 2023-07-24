@@ -6,6 +6,7 @@ from ruamel.yaml import YAML
 
 APPS_DIR = "apps"
 SERVICES_DIR = "services"
+WORKFLOWS_DIR = "workflows"
 
 IGNORE_LIST = [
     "auxtel",
@@ -63,8 +64,10 @@ def main(opts):
     )
     apps = pathlib.PosixPath(APPS_DIR)
     services = pathlib.PosixPath(SERVICES_DIR)
+    workflows = pathlib.PosixPath(WORKFLOWS_DIR)
     dirlist = list(apps.iterdir())
     dirlist.extend(list(services.iterdir()))
+    dirlist.extend(list(workflows.iterdir()))
     extra_image_tags_keys = list(EXTRA_IMAGE_TAGS.keys())
 
     for appdir in dirlist:

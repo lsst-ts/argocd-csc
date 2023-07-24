@@ -39,7 +39,7 @@ spec:
             spec:
               containers:
               - name: test-job
-                image: "ts-dockerhub.lsst.org/integrationtests:{{ .Values.imageTag }}"
+                image: "ts-dockerhub.lsst.org/integrationtests:{{ .Values.image.tag }}"
                 imagePullPolicy: Always
                 stdin: true
                 tty: true
