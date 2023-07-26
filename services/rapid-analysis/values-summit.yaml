@@ -6,6 +6,13 @@ env:
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
 scripts:
 - name: summit/auxTel/runBackgroundService.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: "4G"
+    limits:
+      cpu: 1.0
+      memory: "6G"
 - name: summit/auxTel/runButlerWatcher.py
 - name: summit/auxTel/runCalibrateCcdRunner.py
 - name: summit/auxTel/runImExaminer.py
@@ -16,6 +23,13 @@ scripts:
 - name: summit/auxTel/runMountTorquePlotter.py
 - name: summit/auxTel/runNightReporter.py
 - name: summit/auxTel/runSpecExaminer.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: "2G"
+    limits:
+      cpu: 1.0
+      memory: "4G"
 - name: summit/comCam/runButlerWatcher.py
 - name: summit/comCam/runIsrRunner_000.py
 - name: summit/comCam/runIsrRunner_001.py
@@ -28,6 +42,14 @@ scripts:
 - name: summit/comCam/runIsrRunner_008.py
 - name: summit/comCam/runMetadataServer.py
 - name: summit/comCam/runPlotter.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: "4G"
+    limits:
+      cpu: 1.0
+      memory: "6G"
+- name: summit/comCam/runReplotter.py
   resources:
     requests:
       cpu: 0.5
