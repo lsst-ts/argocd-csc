@@ -7,7 +7,7 @@ imagePullSecrets:
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_DDS_INTERFACE: net1
-  OSPL_URI: file:///opt/lsst/software/stack/miniconda/lib/python3.10/site-packages/lsst/ts/ddsconfig/data/config/ospl-shmem.xml
+  OSPL_URI: file:///opt/lsst/software/stack/miniconda/lib/python3.11/site-packages/lsst/ts/ddsconfig/data/config/ospl-shmem.xml
   OSPL_INFOFILE: /tmp/ospl-info-daemon.log
   OSPL_ERRORFILE: /tmp/ospl-error-daemon.log
   OSPL_MASTER_PRIORITY: 201
