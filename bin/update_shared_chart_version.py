@@ -36,7 +36,6 @@ def main(opts):
     apps = pathlib.PosixPath(APPS_DIR)
     dirlist = list(apps.iterdir())
     for appdir in dirlist:
-
         if not shared_chart(appdir, DIR_MAP[opts.app_type]):
             continue
 
