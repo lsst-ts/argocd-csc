@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-sst-ess106.log
+  OSPL_ERRORFILE: /tmp/ospl-error-sst-ess106.log
+  RUN_ARG: 106 --simulate
