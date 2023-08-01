@@ -161,7 +161,6 @@ def run_command(command, no_run):
 
 
 def main(opts):
-
     apps = []
     services = []
 
