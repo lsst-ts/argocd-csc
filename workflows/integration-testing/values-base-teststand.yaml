@@ -1,4 +1,4 @@
-env_efd: base_efd
+envEfd: base_efd
 image:
   tag: c0032
 siteTag: base

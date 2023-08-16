@@ -45,7 +45,7 @@ spec:
                 tty: true
                 env:
                 - name: ENV_EFD
-                  value: {{ .Values.env_efd }}
+                  value: {{ .Values.envEfd }}
                 - name: LSST_DDS_PARTITION_PREFIX
                   value: {{ .Values.siteTag | quote }}
                 - name: RUN_ARG
