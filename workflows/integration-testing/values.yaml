@@ -1,5 +1,7 @@
 # -- Namespace where the Workflow related APIs will be created.
 namespace: dds-test
+# -- The Name of the EFD instance.
+env_efd:
 # -- The URL for the S3 instance
 s3Endpoint:
 # -- The S3 bucket name to use
