@@ -1,3 +1,4 @@
+env_efd: tucson_teststand_efd
 image:
   tag: c0032
 siteTag: tucson
