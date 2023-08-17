@@ -6,6 +6,7 @@ Helm chart for Integration Testing Workflows.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| envEfd | string | `nil` | The Name of the EFD instance. |
 | image.tag | string | `nil` | The image tag for the Integration Test runner container |
 | namespace | string | `"dds-test"` | Namespace where the Workflow related APIs will be created. |
 | persistentVolume.claimName | string | `"saved-reports"` | PVC name for saving the reports |
