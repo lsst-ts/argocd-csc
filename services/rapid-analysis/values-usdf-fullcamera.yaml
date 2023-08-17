@@ -3,6 +3,7 @@ image:
   repository: lsstts/rubintv-broadcaster
   tag: c0030_usdf
   pullPolicy: Always
+location: USDF
 env:
   http_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
   https_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
