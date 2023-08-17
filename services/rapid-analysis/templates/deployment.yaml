@@ -45,6 +45,8 @@ spec:
           env:
             - name: RUN_ARG
               value: {{ $script.name }} {{ $.Values.siteTag }}
+            - name: RAPID_ANALYSIS_LOCATION
+              value: {{ $.Values.location | upper | quote }}
           {{- if or $.Values.env $.Values.envSecrets }}
           {{- range $env_var, $env_value := $.Values.env }}
             - name: {{ $env_var }}
