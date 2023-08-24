@@ -220,7 +220,7 @@ spec:
         arguments:
           parameters:
           - name: integrationtest
-            value: "-A Test_Report_ComCam_Image_Verification.list"
+            value: "-A Test_Report_BigCamera_Image_Verification.list"
           - name: jobname
             value: comcam-image-verification
       - name: comcam-calibrations
@@ -231,7 +231,7 @@ spec:
         arguments:
           parameters:
           - name: integrationtest
-            value: "-A Test_Report_ComCam_Calibrations.list"
+            value: "-A Test_Report_BigCamera_Calibrations.list"
           - name: jobname
             value: comcam-calibrations
 
