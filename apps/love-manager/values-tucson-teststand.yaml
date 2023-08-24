@@ -5,7 +5,7 @@ image:
   nexus3: nexus3-docker
 secret_path: tucson-teststand.lsst.codes
 env:
-  SERVER_URL: love.tu.lsst.org
+  SERVER_URL: tucson-teststand.lsst.codes
   OLE_API_HOSTNAME: tucson-teststand.lsst.codes
   AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
   AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
@@ -13,6 +13,7 @@ env:
   REDIS_CONFIG_EXPIRY: 5
   REDIS_CONFIG_CAPACITY: 5000
   LOVE_SITE: tucson
+  LOVE_PRODUCER_WEBSOCKET_HOST: love-nginx-service/love/manager/ws/subscription
 envSecrets:
   AUTHLIST_USER_PASS: authlist-user-pass
   AUTH_LDAP_BIND_PASSWORD: auth-ldap-bind-password
@@ -36,7 +37,7 @@ readinessProbe:
 database:
   image:
     repository: postgres
-    tag: '12.0'
+    tag: '15.0'
     pullPolicy: IfNotPresent
   storage:
     name: love-manager-database
@@ -47,8 +48,10 @@ database:
 redis:
   image:
     repository: redis
-    tag: 5.0.3
+    tag: '7'
     pullPolicy: IfNotPresent
+  config: |
+    timeout 60
 viewBackup:
   enabled: true
   image:
