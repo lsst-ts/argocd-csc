@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/rubintv-broadcaster
-  tag: c0031
+  tag: c0032
   pullPolicy: Always
 location: SUMMIT
 env:

@@ -1,7 +1,7 @@
 namespace: eas
 image:
   repository: ts-dockerhub.lsst.org/dimm
-  tag: c0031
+  tag: c0032
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
