@@ -1,0 +1,62 @@
+image:
+  repository: ts-dockerhub.lsst.org/love-manager
+  tag: c0032
+  pullPolicy: Always
+  nexus3: nexus3-docker
+secret_path: base-lsp.lsst.codes
+env:
+  SERVER_URL: base-lsp.lsst.codes
+  OLE_API_HOSTNAME: base-lsp.lsst.codes
+  AUTH_LDAP_1_SERVER_URI: ldap://ipa1.ls.lsst.org
+  AUTH_LDAP_2_SERVER_URI: ldap://ipa2.ls.lsst.org
+  AUTH_LDAP_3_SERVER_URI: ldap://ipa3.ls.lsst.org
+  REDIS_CONFIG_EXPIRY: 5
+  REDIS_CONFIG_CAPACITY: 5000
+  LOVE_SITE: base
+  LOVE_PRODUCER_WEBSOCKET_HOST: love-nginx-service/love/manager/ws/subscription
+envSecrets:
+  AUTHLIST_USER_PASS: authlist-user-pass
+  AUTH_LDAP_BIND_PASSWORD: auth-ldap-bind-password
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 25
+  targetCPUUtilizationPercentage: 50
+resources:
+  requests:
+    cpu: 250m
+    memory: 500Mi
+  limits:
+    cpu: 750m
+    memory: 1000Mi
+readinessProbe:
+  tcpSocket:
+    port: 8000
+  initialDelaySeconds: 20
+  periodSeconds: 10
+database:
+  image:
+    repository: postgres
+    tag: '15.0'
+    pullPolicy: IfNotPresent
+  storage:
+    name: love-manager-database
+    path: /var/lib/postgresql
+    storageClass: rook-ceph-block
+    accessMode: ReadWriteOnce
+    claimSize: 2Gi
+redis:
+  image:
+    repository: redis
+    tag: '7'
+    pullPolicy: IfNotPresent
+  config: |
+    timeout 60
+viewBackup:
+  enabled: true
+  image:
+    repository: ts-dockerhub.lsst.org/love-view-backup
+    tag: c0032
+    pullPolicy: Always
+    nexus3: nexus3-docker
+  schedule: 0 12 * * *

@@ -43,6 +43,7 @@ applications:
   - calsys
   - dmocps
   - eas
+  - love
   - maintel
   - obssys
   - mtm1m3-sim
