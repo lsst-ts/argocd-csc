@@ -1,0 +1,71 @@
+namespace: maintel
+image:
+  repository: ts-dockerhub.lsst.org/mtoods
+  tag: c0032
+  pullPolicy: Always
+  nexus3: nexus3-docker
+env:
+  LSST_DDS_PARTITION_PREFIX: base
+  OSPL_INFOFILE: /tmp/ospl-info-mtoods.log
+  OSPL_ERRORFILE: /tmp/ospl-error-mtoods.log
+  CTRL_OODS_CONFIG_FILE: /etc/mtoods.yaml
+shmemDir: /run/ospl
+osplVersion: V6.10.4
+butlerSecret:
+  containerPath: &bS-cP /home/saluser/.lsst
+  dbUser: oods
+secretPermFixer:
+- name: butler-secret
+  containerPath: *bS-cP
+configfile:
+  path: /etc
+  filename: mtoods.yaml
+  content: |
+    defaultInterval: &interval
+        days: 0
+        hours: 0
+        minutes: 0
+        seconds: 0
+
+    ingester:
+        imageStagingDirectory: /data/staging/maintel/oods
+        butlers:
+            - butler:
+                instrument: lsst.obs.lsst.Latiss
+                class:
+                    import : lsst.ctrl.oods.gen3ButlerIngester
+                    name : Gen3ButlerIngester
+                stagingDirectory : /data/lsstdata/BTS/maintel/oods/gen3butler/raw
+                badFileDirectory: /data/lsstdata/BTS/maintel/oods/gen3butler/badfiles
+                repoDirectory : /repo/LATISS
+                collections:
+                    - LATISS/raw/all
+                scanInterval:
+                    <<: *interval
+                    hours: 1
+                filesOlderThan:
+                    <<: *interval
+                    days: 30
+        batchSize: 20
+        scanInterval:
+            <<: *interval
+            seconds: 2
+
+    cacheCleaner:
+        # ONLY clean out empty directories here, never files
+        clearEmptyDirectories:
+            - /data/lsstdata/BTS/maintel/oods/gen3butler/raw
+        # clean out empty directories and old files from these directories
+        clearEmptyDirectoriesAndOldFiles:
+            - /data/lsstdata/BTS/maintel/oods/gen3butler/badfiles
+            - /data/staging/maintel/oods
+            - /data/staging/maintel/forwarder
+        scanInterval:
+            <<: *interval
+            hours: 1
+        filesOlderThan:
+            <<: *interval
+            days: 31
+        directoriesEmptyForMoreThan:
+            <<: *interval
+            days: 2
