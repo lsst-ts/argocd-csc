@@ -87,6 +87,8 @@ producers:
     cscs: LaserTracker
   genericcamera:
     cscs: GCHeaderService GenericCamera
+  lsstcam:
+    cscs: MTCamera MTHeaderService MTOODS
 existingSecret: kafka-producers-ts-salkafka
 startupProbe:
   use: true
