@@ -1,16 +1,15 @@
-namespace: obssys
+namespace: love
 image:
-  repository: ts-dockerhub.lsst.org/scheduler
+  repository: ts-dockerhub.lsst.org/love-commander
   tag: c0032
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: base
-  LSST_SITE: base
   S3_ENDPOINT_URL: https://s3.ls.lsst.org
-  INDEX: 2
-  OSPL_INFOFILE: /tmp/ospl-info-atscheduler.log
-  OSPL_ERRORFILE: /tmp/ospl-error-atscheduler.log
+  S3_INSTANCE: ls
+  OSPL_INFOFILE: /tmp/ospl-info-love-commander.log
+  OSPL_ERRORFILE: /tmp/ospl-error-love-commander.log
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
   secretName: lfa
@@ -26,9 +25,7 @@ envSecrets:
   secretKey: aws-secret-access-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4
-nfsMountpoint:
-- name: rubin-sim-data
-  containerPath: /home/saluser/rubin_sim_data
-  readOnly: false
-  server: nfs-project.ls.lsst.org
-  serverPath: /project/scheduler
+service:
+  use: true
+  port: 5000
+  type: ClusterIP
