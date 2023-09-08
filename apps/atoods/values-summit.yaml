@@ -51,6 +51,9 @@ configfile:
                 repoDirectory : /repo/LATISS
                 collections:
                     - LATISS/raw/all
+                cleanCollections:
+                    - LATISS/raw/all
+                    - LATISS/runs/quickLook
                 scanInterval:
                     <<: *interval
                     hours: 1
@@ -66,6 +69,7 @@ configfile:
         # ONLY clean out empty directories here, never files
         clearEmptyDirectories:
             - /data/lsstdata/base/auxtel/oods/gen3butler/raw
+            - /data/repo/LATISS/LATISS/runs/quickLook
         # clean out empty directories and old files from these directories
         clearEmptyDirectoriesAndOldFiles:
             - /data/lsstdata/base/auxtel/oods/gen3butler/badfiles
