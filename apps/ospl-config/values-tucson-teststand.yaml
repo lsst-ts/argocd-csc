@@ -4,3 +4,6 @@ ddsi2TracingEnabled: true
 ddsi2TracingLogfile: ddsi2.log
 durabilityServiceTracingEnabled: true
 durabilityServiceTracingLogfile: durability.log
+namespaces:
+- ospl-daemon
+- kafka-producers
