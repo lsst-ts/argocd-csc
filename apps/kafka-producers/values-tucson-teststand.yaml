@@ -18,80 +18,13 @@ env:
 shmemDir: /run/ospl
 osplVersion: V6.10.4
 producers:
-  auxtel:
-    cscs: >-
-      ATAOS
-      ATDome
-      ATDomeTrajectory
-      ATHexapod
-      ATPneumatics
-      ATPtg
-      ATMCS
-  maintel:
-    cscs: >-
-      MTAOS
-      MTDome
-      MTDomeTrajectory
-      MTPtg
-  mtmount:
-    cscs: >-
-      MTMount
-  comcam:
-    cscs: >-
-      CCCamera
-      CCHeaderService
-      CCOODS
-  latiss:
-    cscs: >-
-      ATCamera
-      ATHeaderService
-      ATOODS
-      ATSpectrograph
-  m1m3:
-    cscs: >-
-      --file m1m3.yaml
-  vms:
-    cscs: >-
-      MTVMS
-  m2:
-    cscs: >-
-      MTHexapod
-      MTM2
-      MTRotator
-  obssys:
-    cscs: >-
-      Scheduler
-      Script
-      ScriptQueue
-      Watcher
-  ocps:
-    cscs: >-
-      OCPS
-  test:
-    cscs: >-
-      Test
-  pmd:
-    cscs: >-
-      PMD
   calsys:
     cscs: >-
-      ATMonochromator
-      ATWhiteLight
       CBP
       Electrometer
       FiberSpectrograph
       LinearStage
       TunableLaser
-  mtaircompressor:
-    cscs: MTAirCompressor
-  eas:
-    cscs: DIMM DSM ESS WeatherForecast
-  authorize:
-    cscs: Authorize
-  lasertracker:
-    cscs: LaserTracker
-  genericcamera:
-    cscs: GCHeaderService GenericCamera
 existingSecret: kafka-producers-ts-salkafka
 startupProbe:
   use: true
