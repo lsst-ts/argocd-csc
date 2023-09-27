@@ -1,0 +1,11 @@
+image:
+  repository: ts-dockerhub.lsst.org/audio-broadcaster
+  tag: c0032
+  pullPolicy: Always
+  nexus3: nexus3-docker
+env:
+  WEBSERVER_PORT: 8888
+microphones:
+  auxtel1:
+    host: auxtel-rpi-audio01.cp.lsst.org
+    port: 4444
