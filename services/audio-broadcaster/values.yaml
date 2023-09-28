@@ -11,6 +11,24 @@ image:
   pullPolicy: IfNotPresent
   # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
   nexus3: nexus3-docker
+# -- Service type specification
+serviceType: ClusterIP
+ports:
+  # -- Container port for the ts_audio_broadcaster service
+  container: 80
+  # -- Node port for the ts_audio_broadcaster service
+  node: 8888
+ingress:
+  # -- Hostname for the ts_audio_broadcaster ingress
+  hostname: audio-broadcaster.local
+  # -- Path name associated with the ts_audio_broadcaster ingress
+  httpPath: /
+  # -- Set the Kubernetes path type for the ts_audio_broadcaster ingress
+  pathType: ""
+  # -- Assign the Ingress class name
+  className: audio-broadcaster
+  # -- Annotations for the ts_audio_broadcaster ingress
+  annotations: {}
 # -- This section holds a set of key, value pairs for environmental variables
 env:
   WEBSERVER_PORT: 8888
@@ -22,7 +40,7 @@ env:
 # Example: auxtel1:
 # host: localhost
 # port: 4444
-microphones: {}
+microphones: []
 # -- This allows the specification of pod annotations.
 podAnnotations: {}
 # -- Resource specifications for the ts_audio_broadcaster pods

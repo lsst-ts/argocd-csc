@@ -1,0 +1,16 @@
+image:
+  repository: ts-dockerhub.lsst.org/audio-broadcaster
+  tag: c0032
+  pullPolicy: Always
+  nexus3: nexus3-docker
+ingress:
+  hostname: summit-lsp.lsst.codes
+  httpPath: /audio-broadcaster
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+env:
+  WEBSERVER_PORT: 8888
+microphones:
+- name: auxtel1
+  host: auxtel-rpi-audio01.cp.lsst.org
+  port: 4444
