@@ -2,7 +2,7 @@
 Expand the name of the chart.
 */}}
 {{- define "audio-broadcaster.name" -}}
-{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
@@ -24,13 +24,6 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{/*
-Create app name from release and audio-broadcaster name.
-*/}}
-{{- define "audio-broadcaster.appName" -}}
-{{ printf "%s-%s" .Release.Name .AudioBroadcaster | trunc 63 | trimSuffix "-" }}
-{{- end }}
-
-{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "audio-broadcaster.chart" -}}
@@ -43,6 +36,10 @@ Common labels
 {{- define "audio-broadcaster.labels" -}}
 helm.sh/chart: {{ include "audio-broadcaster.chart" . }}
 {{ include "audio-broadcaster.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*

@@ -1,5 +1,5 @@
-{{- range $microphone, $mic := .Values.microphones }}
-{{ $appName := printf "%s-%s" $.Release.Name $microphone | trunc 63 | trimSuffix "-" }}
+{{- range $index, $mic := .Values.microphones }}
+{{ $appName := printf "%s-%d" $.Release.Name (add $index 1) | trunc 63 | trimSuffix "-" }}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -12,7 +12,7 @@ spec:
   selector:
     matchLabels:
       {{- include "audio-broadcaster.selectorLabels" $ | nindent 6 }}
-      app.kubernetes.io/instance: {{ $appName }}
+      app.kubernetes.io/instance: {{ include "audio-broadcaster.fullname" $ }}-{{ add $index 1 }}
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
@@ -21,12 +21,14 @@ spec:
       {{- end }}
       labels:
         {{- include "audio-broadcaster.selectorLabels" $ | nindent 8 }}
-        app.kubernetes.io/instance: {{ $appName }}
+        app.kubernetes.io/instance: {{ include "audio-broadcaster.fullname" $ }}-{{ add $index 1 }}
     spec:
       containers:
         - name: {{ $appName }}
           image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          ports:
+          - containerPort: {{ $.Values.env.WEBSERVER_PORT }}
           env:
             - name: MICROPHONE_SERVER_HOST
               value: {{ $mic.host | quote }}
@@ -44,8 +46,6 @@ spec:
       imagePullSecrets:
         - name: {{ $.Values.namespace }}-{{ $.Values.image.nexus3 }}
       {{- end }}
-      hostIPC: {{ or $.Values.useHostIpc (eq ( $.Values.useHostIpc | toString ) "<nil>" ) }}
-      hostPID: {{ or $.Values.useHostPid (eq ( $.Values.useHostPid | toString ) "<nil>" ) }}
       {{- with $.Values.nodeSelector }}
       nodeSelector:
         {{- toYaml $ | nindent 8 }}

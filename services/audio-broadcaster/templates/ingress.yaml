@@ -14,14 +14,16 @@ spec:
   ingressClassName: {{ .Values.ingress.className }}
   {{- end }}
   rules:
-    - host: {{ .Values.ingress.hostname }}
+    - host: {{ required "ingress.host must be set" .Values.ingress.hostname | quote }}
       http:
         paths:
-          - path: {{ .Values.ingress.httpPath }}
-            pathType: {{ default "Prefix" .Values.ingress.pathType }}
+        {{- range $index, $mic := .Values.microphones }}
+          - path: {{ $.Values.ingress.httpPath }}/{{ add $index 1 }}
+            pathType: {{ default "Prefix" $.Values.ingress.pathType }}
             backend:
               service:
-                name: {{ .Release.Name }}-service
+                name: {{ include "audio-broadcaster.fullname" $ }}-service-{{ add $index 1 }}
                 port:
-                  number: {{ .Values.ports.container }}
+                  number: {{ $.Values.ports.container }}
+        {{- end }}
 {{- end }}
