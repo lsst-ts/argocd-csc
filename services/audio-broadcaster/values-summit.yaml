@@ -10,6 +10,7 @@ ingress:
   className: nginx
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /audio_feed
 env:
   WEBSERVER_PORT: 8888
 microphones:
