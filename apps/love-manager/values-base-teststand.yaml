@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/love-manager
-  tag: c0032
+  tag: c0033
   pullPolicy: Always
   nexus3: nexus3-docker
 secret_path: base-lsp.lsst.codes
@@ -56,7 +56,7 @@ viewBackup:
   enabled: true
   image:
     repository: ts-dockerhub.lsst.org/love-view-backup
-    tag: c0032
+    tag: c0033
     pullPolicy: Always
     nexus3: nexus3-docker
   schedule: 0 12 * * *

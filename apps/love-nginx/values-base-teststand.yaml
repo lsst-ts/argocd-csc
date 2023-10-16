@@ -6,25 +6,25 @@ ingress:
   hostname: base-lsp.lsst.codes
   httpPath: /love
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 imagePullSecrets:
 - name: love-nexus3-docker
 initContainers:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-frontend-k8s
-      tag: c0032
+      tag: c0033
       pullPolicy: Always
   manager:
     image:
       repository: ts-dockerhub.lsst.org/love-manager-static
-      tag: c0032
+      tag: c0033
       pullPolicy: Always
     command:
     - /bin/ash
     - -c
-    - mkdir -p /usr/src/love-manager; cp -Rv /usr/src/love/manager/media /usr/src/love-manager; cp -Rv /usr/src/love/manager/static
-      /usr/src/love-manager
+    - mkdir -p /usr/src/love-manager; cp -Rv /usr/src/love/manager/media /usr/src/love-manager;
+      cp -Rv /usr/src/love/manager/static /usr/src/love-manager
 staticStore:
   name: love-nginx-static
   storageClass: rook-ceph-block
