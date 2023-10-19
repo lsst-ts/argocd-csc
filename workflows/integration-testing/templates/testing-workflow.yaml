@@ -125,7 +125,7 @@ spec:
             value: "-A Test_Report_AuxTel_Telescope_Dome_Checkout.list"
           - name: jobname
             value: auxtel-telescope-dome-daytime-checkout
-      - name: auxtel-slew-take-image-daytime-checkout
+      - name: auxtel-telescope-slew-take-image-daytime-checkout
         depends: auxtel-telescope-dome-daytime-checkout
         templateRef:
           name: integration-test-job-template
