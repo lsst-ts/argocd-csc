@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/audio_broadcaster
-  tag: c0032
+  tag: c0033
   pullPolicy: Always
   nexus3: nexus3-docker
 ingress:
@@ -9,7 +9,7 @@ ingress:
   pathType: Exact
   className: nginx
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/rewrite-target: /audio_feed
 env:
   WEBSERVER_PORT: 8888
