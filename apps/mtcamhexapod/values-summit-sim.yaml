@@ -1,4 +1,4 @@
 image:
-  tag: c0032
+  tag: c0033
 env:
   RUN_ARG: --simulate 1
