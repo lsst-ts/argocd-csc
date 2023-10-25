@@ -1,7 +1,7 @@
 namespace: rubintv-fullcamera
 image:
-  repository: lsstts/rubintv-broadcaster
-  tag: c0030_usdf
+  repository: lsstts/rapid-analysis
+  tag: c0033_usdf
   pullPolicy: Always
 location: USDF
 env:
