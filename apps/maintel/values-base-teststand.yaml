@@ -5,6 +5,7 @@ cscs:
   - mtptg
   - mtcamhexapod
   - mtm2hexapod
+  - mtheaderservice
   - mtoods
   - mtrotator
   - mtdome
