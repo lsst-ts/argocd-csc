@@ -1,0 +1,4 @@
+apiVersion: v2
+description: Collector application for OCPS UWS Jobs
+name: ocps-uws-job
+version: 0.1.0
