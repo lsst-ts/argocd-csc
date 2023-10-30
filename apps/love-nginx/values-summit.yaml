@@ -1,0 +1,75 @@
+image:
+  repository: nginx
+  tag: 1.25.1
+  pullPolicy: Always
+ingress:
+  hostname: base-lsp.lsst.codes
+  httpPath: /love
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+imagePullSecrets:
+- name: love-nexus3-docker
+initContainers:
+  frontend:
+    image:
+      repository: ts-dockerhub.lsst.org/love-frontend-k8s
+      tag: c0033
+      pullPolicy: Always
+  manager:
+    image:
+      repository: ts-dockerhub.lsst.org/love-manager-static
+      tag: c0033
+      pullPolicy: Always
+    command:
+    - /bin/ash
+    - -c
+    - mkdir -p /usr/src/love-manager; cp -Rv /usr/src/love/manager/media /usr/src/love-manager;
+      cp -Rv /usr/src/love/manager/static /usr/src/love-manager
+staticStore:
+  name: love-nginx-static
+  storageClass: rook-ceph-block
+  accessMode: ReadWriteOnce
+  claimSize: 2Gi
+nginxConfig: |
+  server {
+    listen 80;
+    server_name localhost;
+    location /love {
+      root   /usr/src/love-frontend;
+      try_files $uri$args $uri$args/ $uri/ /love/index.html;
+    }
+    location /love/manager {
+        proxy_pass http://love-manager-service:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_redirect off;
+    }
+    location /love/media {
+        alias /usr/src/love-manager/media;
+    }
+    location /love/manager/static {
+        alias /usr/src/love-manager/static;
+    }
+    location /love/manager/media {
+        alias /usr/src/love-manager/media;
+    }
+    location /love/simcam {
+        proxy_pass http://simulation-gencam-service.calsys:5013/;
+        proxy_set_header Host $host/love;
+    }
+  }
+loveConfig: |
+  {
+    "alarms": {
+      "minSeveritySound": "serious",
+      "minSeverityNotification": "warning"
+    },
+    "camFeeds": {
+      "simcam": "/love/simcam"
+    },
+    "efd": {
+      "defaultEfdInstance": "summit_efd"
+    }
+  }
