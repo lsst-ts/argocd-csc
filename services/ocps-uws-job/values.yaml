@@ -6,4 +6,4 @@ spec:
     # -- The repository URL that contains the configuration
     repoURL: https://github.com/lsst-ts/argocd-csc
     # -- The target revision (repository branch) to use for the configuration
-    targetRevision: u/mareuter/make_uws_job_app
+    targetRevision: HEAD
