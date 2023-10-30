@@ -4,7 +4,7 @@ image:
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
-  LSST_DDS_PARTITION_PREFIX: base
+  LSST_DDS_PARTITION_PREFIX: summit
   WEBSOCKET_HOST: love-nginx-service/love/manager/ws/subscription
 shmemDir: /run/ospl
 producers:
@@ -15,26 +15,40 @@ producers:
   atheaderservice: ATHeaderService:0
   athexapod: ATHexapod:0
   atmcs: ATMCS:0
-  atpneumatics: ATPneumatics:0
+  atmonochromator: ATMonochromator:0
   atocps: OCPS:1
   atoods: ATOODS:0
+  atpneumatics: ATPneumatics:0
   atptg: ATPtg:0
   atscheduler: Scheduler:2
   atscriptqueue: ScriptQueue:2
   atspectrograph: ATSpectrograph:0
-  authorize: Authorize:0
+  atwhitelight: ATWhiteLight:0
   auxteless01: ESS:201
   auxteless02: ESS:202
   auxteless03: ESS:203
   auxteless04: ESS:204
   calibhilless01: ESS:301
   camerahexapod: MTHexapod:1
+  cccamera: CCCamera:0
+  ccheaderservice: CCHeaderService:0
+  ccocps: OCPS:2
+  ccoods: CCOODS:0
   dimm1: DIMM:1
   dimm2: DIMM:2
   dsm1: DSM:1
   dsm2: DSM:2
-  gcheaderservice1: GCHeaderService:1
-  genericcamera1: GenericCamera:1
+  electrometer1: Electrometer:1
+  electrometer201: Electrometer:201
+  fiberspectrograph3: FiberSpectrograph:3
+  gcheaderservice101: GCHeaderService:101
+  gcheaderservice102: GCHeaderService:102
+  gcheaderservice103: GCHeaderService:103
+  genericcamera101: GenericCamera:101
+  genericcamera102: GenericCamera:102
+  genericcamera103: GenericCamera:103
+  gis: GIS:0
+  hvac: HVAC:0
   lasertracker1: LaserTracker:1
   love: LOVE:0
   m2ess106: ESS:106
@@ -48,16 +62,15 @@ producers:
   mtdomeess02: ESS:102
   mtdomeess03: ESS:103
   mtdometrajectory: MTDomeTrajectory:0
-  mtheaderservice: MTHeaderService:0
   mtm1m3: MTM1M3:0
+  mtm1m3ts: MTM1M3TS:0
   mtm2: MTM2:0
   mtmount: MTMount:0
-  mtocps: OCPS:3
-  mtoods: MTOODS:0
   mtptg: MTPtg:0
   mtrotator: MTRotator:0
   mtscheduler: Scheduler:1
   mtscriptqueue: ScriptQueue:1
+  pmd1: PMD:1
   tmaess01: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105

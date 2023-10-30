@@ -5,7 +5,7 @@ image:
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
-  LSST_DDS_PARTITION_PREFIX: base
+  LSST_DDS_PARTITION_PREFIX: summit
   S3_ENDPOINT_URL: https://s3.cp.lsst.org
   S3_INSTANCE: cp
   OSPL_INFOFILE: /tmp/ospl-info-love-commander.log
