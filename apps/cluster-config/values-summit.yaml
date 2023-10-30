@@ -11,6 +11,7 @@ secrets:
     namespaces:
       - auxtel
       - calsys
+      - love
       - maintel
       - obssys
   - name: ts-salkafka
