@@ -5,6 +5,7 @@ image:
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
+  USER_USERNAME: user
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
   LSST_DDS_PARTITION_PREFIX: base
   LSST_SITE: base
@@ -13,6 +14,9 @@ env:
   RUN_ARG: 1 --state enabled
   S3_ENDPOINT_URL: https://s3.ls.lsst.org
 envSecrets:
+- name: USER_USER_PASS
+  secretName: love
+  secretKey: user-user-pass
 - name: AWS_ACCESS_KEY_ID
   secretName: lfa
   secretKey: aws-access-key-id
