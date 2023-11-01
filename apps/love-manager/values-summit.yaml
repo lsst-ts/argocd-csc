@@ -22,7 +22,16 @@ autoscaling:
   enabled: true
   minReplicas: 2
   maxReplicas: 50
-  targetCPUUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 50
+  scaleDownPolicy:
+    policies:
+    - type: Pods
+      value: 2
+      periodSeconds: 120
+    - type: Percent
+      value: 10
+      periodSeconds: 120
+    selectPolicy: Min
 resources:
   requests:
     cpu: 250m
