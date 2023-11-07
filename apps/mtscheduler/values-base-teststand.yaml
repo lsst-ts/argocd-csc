@@ -32,3 +32,8 @@ nfsMountpoint:
   readOnly: false
   server: nfs-project.ls.lsst.org
   serverPath: /project/scheduler
+- name: obs-env
+  containerPath: /net/obs-env
+  readOnly: true
+  server: nfs-obsenv.ls.lsst.org
+  serverPath: /obs-env
