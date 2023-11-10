@@ -1,51 +1,4 @@
-image:
-  repository: ts-dockerhub.lsst.org/love-manager
-  tag: c0033
-  pullPolicy: Always
-  nexus3: nexus3-docker
 secret_path: summit-lsp.lsst.codes
-<<<<<<< HEAD
-env:
-  SERVER_URL: summit-lsp.lsst.codes
-  OLE_API_HOSTNAME: summit-lsp.lsst.codes
-  AUTH_LDAP_1_SERVER_URI: ldap://ipa1.cp.lsst.org
-  AUTH_LDAP_2_SERVER_URI: ldap://ipa2.cp.lsst.org
-  AUTH_LDAP_3_SERVER_URI: ldap://ipa3.cp.lsst.org
-  DB_HOST: postgresdb01.cp.lsst.org
-  REDIS_CONFIG_EXPIRY: 5
-  REDIS_CONFIG_CAPACITY: 5000
-  LOVE_SITE: summit
-  LOVE_PRODUCER_WEBSOCKET_HOST: love-nginx-service/love/manager/ws/subscription
-envSecrets:
-  AUTHLIST_USER_PASS: authlist-user-pass
-  AUTH_LDAP_BIND_PASSWORD: auth-ldap-bind-password
-autoscaling:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 50
-  targetCPUUtilizationPercentage: 50
-  scaleDownPolicy:
-    policies:
-    - type: Pods
-      value: 2
-      periodSeconds: 120
-    - type: Percent
-      value: 10
-      periodSeconds: 120
-    selectPolicy: Min
-resources:
-  requests:
-    cpu: 250m
-    memory: 500Mi
-  limits:
-    cpu: 1000m
-    memory: 3500Mi
-readinessProbe:
-  tcpSocket:
-    port: 8000
-  initialDelaySeconds: 20
-  periodSeconds: 10
-=======
 manager:
   frontend:
     image:
@@ -127,7 +80,6 @@ manager:
         port: 8000
       initialDelaySeconds: 20
       periodSeconds: 10
->>>>>>> b47640a (FIx.)
 redis:
   image:
     repository: redis

@@ -39,7 +39,15 @@ nginxConfig: |
       try_files $uri$args $uri$args/ $uri/ /love/index.html;
     }
     location /love/manager {
-        proxy_pass http://love-manager-service:8000;
+        proxy_pass http://love-manager-frontend-service:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_redirect off;
+    }
+    location /love/manager/producers {
+        proxy_pass http://love-manager-producers-service:8000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";

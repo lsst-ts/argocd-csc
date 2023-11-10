@@ -29,15 +29,15 @@ spec:
               imagePullPolicy: {{ .Values.viewBackup.image.pullPolicy }}
               env:
                 - name: PGHOST
-                  value: {{ .Values.env.DB_HOST | quote }}
+                  value: {{ .Values.manager.frontend.env.DB_HOST | quote }}
                 - name: PGPORT
-                  value: {{ .Values.env.DB_PORT | quote }}
+                  value: {{ .Values.manager.frontend.env.DB_PORT | quote }}
                 - name: PGDATABASE
-                  value: {{ .Values.env.DB_NAME | quote }}
+                  value: {{ .Values.manager.frontend.env.DB_NAME | quote }}
                 - name: PGUSER
-                  value: {{ .Values.env.DB_USER | quote }}
+                  value: {{ .Values.manager.frontend.env.DB_USER | quote }}
                 - name: LOVE_SITE
-                  value: {{ .Values.env.LOVE_SITE | quote }}
+                  value: {{ .Values.manager.frontend.env.LOVE_SITE | quote }}
                 {{- range $env_var, $env_value := .Values.viewBackup.env }}
                 - name: {{ $env_var }}
                   value: {{ $env_value | quote }}
@@ -46,7 +46,7 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       name: {{ .Values.namespace }}-secrets
-                      key: {{ .Values.envSecrets.DB_PASS }}
+                      key: {{ .Values.manager.frontend.envSecrets.DB_PASS }}
                 - name: AWS_ACCESS_KEY_ID
                   valueFrom:
                     secretKeyRef:
