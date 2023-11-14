@@ -31,7 +31,7 @@ nfsMountpoint:
   containerPath: /home/saluser/rubin_sim_data
   readOnly: false
   server: nfs1.cp.lsst.org
-  serverPath: /scratch/scheduler
+  serverPath: /export/scratch/scheduler
 - name: obs-env
   containerPath: /net/obs-env
   readOnly: true
