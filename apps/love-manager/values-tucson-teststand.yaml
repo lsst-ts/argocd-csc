@@ -1,40 +1,85 @@
-image:
-  repository: ts-dockerhub.lsst.org/love-manager
-  tag: c0032
-  pullPolicy: Always
-  nexus3: nexus3-docker
 secret_path: tucson-teststand.lsst.codes
-env:
-  SERVER_URL: tucson-teststand.lsst.codes
-  OLE_API_HOSTNAME: tucson-teststand.lsst.codes
-  AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
-  AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
-  AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
-  DB_HOST: postgresdb01.tu.lsst.org
-  REDIS_CONFIG_EXPIRY: 5
-  REDIS_CONFIG_CAPACITY: 5000
-  LOVE_SITE: tucson
-  LOVE_PRODUCER_WEBSOCKET_HOST: love-nginx-service/love/manager/ws/subscription
-envSecrets:
-  AUTHLIST_USER_PASS: authlist-user-pass
-  AUTH_LDAP_BIND_PASSWORD: auth-ldap-bind-password
-autoscaling:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 25
-  targetCPUUtilizationPercentage: 50
-resources:
-  requests:
-    cpu: 250m
-    memory: 500Mi
-  limits:
-    cpu: 750m
-    memory: 1000Mi
-readinessProbe:
-  tcpSocket:
-    port: 8000
-  initialDelaySeconds: 20
-  periodSeconds: 10
+manager:
+  frontend:
+    image:
+      repository: ts-dockerhub.lsst.org/love-manager
+      tag: c0032
+      pullPolicy: Always
+      nexus3: nexus3-docker
+    env:
+      SERVER_URL: tucson-teststand.lsst.codes
+      OLE_API_HOSTNAME: tucson-teststand.lsst.codes
+      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
+      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
+      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
+      DB_HOST: postgresdb01.tu.lsst.org
+      LOVE_SITE: tucson
+    autoscaling:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 25
+      targetCPUUtilizationPercentage: 50
+      scaleDownPolicy:
+        policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 120
+        - type: Percent
+          value: 10
+          periodSeconds: 120
+        selectPolicy: Min
+    resources:
+      requests:
+        cpu: 150m
+        memory: 200Mi
+      limits:
+        cpu: 1000m
+        memory: 1500Mi
+    readinessProbe:
+      tcpSocket:
+        port: 8000
+      initialDelaySeconds: 20
+      periodSeconds: 10
+  producers:
+    image:
+    repository: ts-dockerhub.lsst.org/love-manager
+    tag: c0032
+    pullPolicy: Always
+    nexus3: nexus3-docker
+    env:
+      SERVER_URL: tucson-teststand.lsst.codes
+      OLE_API_HOSTNAME: tucson-teststand.lsst.codes
+      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
+      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
+      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
+      DB_HOST: postgresdb01.tu.lsst.org
+      LOVE_SITE: tucson
+    autoscaling:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 25
+      targetCPUUtilizationPercentage: 50
+      scaleDownPolicy:
+        policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 120
+        - type: Percent
+          value: 10
+          periodSeconds: 120
+        selectPolicy: Min
+    resources:
+      requests:
+        cpu: 150m
+        memory: 200Mi
+      limits:
+        cpu: 1000m
+        memory: 1500Mi
+    readinessProbe:
+      tcpSocket:
+        port: 8000
+      initialDelaySeconds: 20
+      periodSeconds: 10
 redis:
   image:
     repository: redis
