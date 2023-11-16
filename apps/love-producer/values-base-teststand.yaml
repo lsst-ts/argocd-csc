@@ -5,7 +5,7 @@ image:
   nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: base
-  WEBSOCKET_HOST: love-nginx-service/love/manager/ws/subscription
+  WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
 shmemDir: /run/ospl
 producers:
   ataos: ATAOS:0
