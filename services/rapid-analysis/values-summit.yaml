@@ -13,7 +13,7 @@ scripts:
       memory: 4G
     limits:
       cpu: 1.0
-      memory: 6G
+      memory: 30G
 - name: summit/auxTel/runButlerWatcher.py
 - name: summit/auxTel/runCalibrateCcdRunner.py
 - name: summit/auxTel/runImExaminer.py
