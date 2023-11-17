@@ -85,6 +85,11 @@ loveConfig: |
       "starTrackerC": "/love/startrackerc"
     },
     "efd": {
-      "defaultEfdInstance": "summit_efd"
-    }
+      "defaultEfdInstance": "summit_efd",
+      "urlStatus": "https://summit-lsp.lsst.codes/influxdb/health"
+    },
+    "sal": {
+        "urlStatus": "https://summit-lsp.lsst.codes/sasquatch-rest-proxy/brokers",
+        "expectedBrokerList": [0, 1, 2]
+    },
   }
