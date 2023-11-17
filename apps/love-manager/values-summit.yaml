@@ -1,23 +1,23 @@
-secret_path: tucson-teststand.lsst.codes
+secret_path: summit-lsp.lsst.codes
 manager:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0032
+      tag: c0033
       pullPolicy: Always
       nexus3: nexus3-docker
     env:
-      SERVER_URL: tucson-teststand.lsst.codes
-      OLE_API_HOSTNAME: tucson-teststand.lsst.codes
-      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
-      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
-      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
-      DB_HOST: postgresdb01.tu.lsst.org
-      LOVE_SITE: tucson
+      SERVER_URL: summit-lsp.lsst.codes
+      OLE_API_HOSTNAME: summit-lsp.lsst.codes
+      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.cp.lsst.org
+      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.cp.lsst.org
+      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.cp.lsst.org
+      DB_HOST: postgresdb01.cp.lsst.org
+      LOVE_SITE: summit
     autoscaling:
       enabled: true
       minReplicas: 2
-      maxReplicas: 25
+      maxReplicas: 50
       targetCPUUtilizationPercentage: 50
       scaleDownPolicy:
         policies:
@@ -42,22 +42,22 @@ manager:
       periodSeconds: 10
   producers:
     image:
-    repository: ts-dockerhub.lsst.org/love-manager
-    tag: c0032
-    pullPolicy: Always
-    nexus3: nexus3-docker
+      repository: ts-dockerhub.lsst.org/love-manager
+      tag: c0033
+      pullPolicy: Always
+      nexus3: nexus3-docker
     env:
-      SERVER_URL: tucson-teststand.lsst.codes
-      OLE_API_HOSTNAME: tucson-teststand.lsst.codes
-      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
-      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
-      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
-      DB_HOST: postgresdb01.tu.lsst.org
-      LOVE_SITE: tucson
+      SERVER_URL: summit-lsp.lsst.codes
+      OLE_API_HOSTNAME: summit-lsp.lsst.codes
+      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.cp.lsst.org
+      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.cp.lsst.org
+      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.cp.lsst.org
+      DB_HOST: postgresdb01.cp.lsst.org
+      LOVE_SITE: summit
     autoscaling:
       enabled: true
       minReplicas: 2
-      maxReplicas: 25
+      maxReplicas: 50
       targetCPUUtilizationPercentage: 50
       scaleDownPolicy:
         policies:
@@ -91,7 +91,7 @@ viewBackup:
   enabled: true
   image:
     repository: ts-dockerhub.lsst.org/love-view-backup
-    tag: c0032
+    tag: c0033
     pullPolicy: Always
     nexus3: nexus3-docker
   schedule: 0 12 * * *
