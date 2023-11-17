@@ -78,6 +78,11 @@ loveConfig: |
       "simcam": "/love/simcam"
     },
     "efd": {
-      "defaultEfdInstance": "base_efd"
-    }
+      "defaultEfdInstance": "base_efd",
+      "urlStatus": "https://base-lsp.lsst.codes/influxdb/health"
+    },
+    "sal": {
+        "urlStatus": "https://base-lsp.lsst.codes/sasquatch-rest-proxy/brokers",
+        "expectedBrokerList": [0, 1, 2]
+    },
   }
