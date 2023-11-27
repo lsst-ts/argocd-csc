@@ -1,6 +1,6 @@
 envEfd: base_efd
 image:
-  tag: c0033
+  tag: c0034
 siteTag: base
 s3Endpoint: s3.ls.lsst.org
 s3Bucket: rubinobs-lfa-ls
