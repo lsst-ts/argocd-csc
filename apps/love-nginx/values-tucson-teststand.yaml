@@ -84,5 +84,5 @@ loveConfig: |
     "sal": {
         "urlStatus": "https://tucson-teststand.lsst.codes/sasquatch-rest-proxy/brokers",
         "expectedBrokerList": [0, 1, 2]
-    },
+    }
   }

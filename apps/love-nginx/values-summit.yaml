@@ -91,5 +91,5 @@ loveConfig: |
     "sal": {
         "urlStatus": "https://summit-lsp.lsst.codes/sasquatch-rest-proxy/brokers",
         "expectedBrokerList": [0, 1, 2]
-    },
+    }
   }
