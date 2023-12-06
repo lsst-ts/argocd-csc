@@ -1,6 +1,6 @@
 namespace: auxtel
 image:
-  repository: ts-dockerhub.lsst.org/atoods
+  repository: ts-dockerhub.lsst.org/test-oods
   tag: c0034
   pullPolicy: Always
   nexus3: nexus3-docker
@@ -28,6 +28,10 @@ nfsMountpoint:
   readOnly: false
   server: nfs-auxtel.ls.lsst.org
   serverPath: /auxtel
+entrypoint: |
+  #!/usr/bin/env bash
+
+  sleep 10000
 configfile:
   path: /etc
   filename: atoods.yaml
