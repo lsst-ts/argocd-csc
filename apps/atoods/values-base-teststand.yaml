@@ -1,6 +1,6 @@
 namespace: auxtel
 image:
-  repository: ts-dockerhub.lsst.org/atoods
+  repository: ts-dockerhub.lsst.org/develop-env
   tag: c0034
   pullPolicy: Always
   nexus3: nexus3-docker
