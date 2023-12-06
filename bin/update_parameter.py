@@ -23,7 +23,7 @@ IGNORE_LIST = [
 
 EXTRA_IMAGE_TAGS = {
     "love-nginx": ["initContainers.frontend", "initContainers.manager"],
-    "love-manager": [None, "viewBackup"],
+    "love-manager": ["manager.frontend", "manager.producers", "viewBackup"],
 }
 
 
