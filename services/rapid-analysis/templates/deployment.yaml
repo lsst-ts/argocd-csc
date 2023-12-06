@@ -136,6 +136,11 @@ spec:
             - "-c"
             - |
               cp -RL /secrets-raw/* /secrets
+              cat /secrets/aws-credentials.ini > new-aws-credentials.ini
+              printf "\n" >> new-aws-credentials.ini
+              cat /secrets-rubintv/aws-credentials.ini >> new-aws-credentials.ini
+              printf "\n" >> new-aws-credentials.ini
+              mv new-aws-credentials.ini /secrets/aws-credentials.ini
               chown 73006:73006 /secrets/*
               chmod 0600 /secrets/*
           volumeMounts:
@@ -144,11 +149,17 @@ spec:
               readOnly: true
             - name: {{ $.Release.Name }}-butler-secret
               mountPath: /secrets
+            - name: rubintv-aws-creds
+              mountPath: /secrets-rubintv
+              readOnly: true
       {{- end }}
       volumes:
         - name: rubintv-creds
           secret:
             secretName: google-creds
+        - name: rubintv-aws-creds
+          secret:
+            secretName: rubintv-secrets
       {{- if $.Values.nfsMountpoint }}
       {{- range $values := $.Values.nfsMountpoint }}
         - name: {{ $values.name }}
