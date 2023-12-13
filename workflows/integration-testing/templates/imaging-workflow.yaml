@@ -27,6 +27,10 @@ spec:
   - name: run-tests
     dag:
       tasks:
+      - - name: cleanup-reports
+        templateRef:
+          name: cleanup-reports
+          template: cleanup-reports-workflow
       - name: auxtel-housekeeping
         templateRef:
           name: integration-test-job-template
