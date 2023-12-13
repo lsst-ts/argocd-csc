@@ -130,17 +130,7 @@ spec:
           - name: jobname
             value: love-stress-test
 
-  - name: save-reports
-    container:
-      image: alpine:latest
-      volumeMounts:
-        - name: testreports
-          mountPath: {{ .Values.reportLocation }}
-    outputs:
-      artifacts:
-      - name: integration-test-reports
-        archive:
-          none: {}
-        path: {{ .Values.reportLocation }}/
-        s3:
-          key: IntegrationTests/{{ printf "{{workflow.parameters.date-key}}" }}
+  - - name: save-reports-workflow
+      templateRef:
+        name: save-reports
+        template: save-reports
