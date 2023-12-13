@@ -1,7 +1,7 @@
 namespace: obssys
 image:
   repository: ts-dockerhub.lsst.org/scriptqueue
-  tag: c0033
+  tag: c0034
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
