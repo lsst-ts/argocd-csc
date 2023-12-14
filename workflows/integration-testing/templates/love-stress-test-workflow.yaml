@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: shutdown-workflow
+  name: love-stress-test-workflow
   labels:
     workflows.argoproj.io/type: "integration-test"
     argocd.argoproj.io/instance: integration-testing
@@ -20,7 +20,7 @@ spec:
   arguments:
     parameters:
     - name: date-key
-      value: "20230327"
+      value: "20231208"
   entrypoint: run-tests
   onExit: save-reports
   templates:
@@ -31,16 +31,17 @@ spec:
         templateRef:
           name: cleanup-reports
           template: cleanup-reports-workflow
-      - name: shutdown
+      - name: love-stress-test
+        depends: cleanup-reports
         templateRef:
           name: integration-test-job-template
           template: inttest-template
         arguments:
           parameters:
           - name: integrationtest
-            value: "-A Test_Report_Shutdown.list"
+            value: "-A Test_Report_LOVE_Stress_Test.list"
           - name: jobname
-            value: shutdown
+            value: love-stress-test
 
   - - name: save-reports-workflow
       templateRef:

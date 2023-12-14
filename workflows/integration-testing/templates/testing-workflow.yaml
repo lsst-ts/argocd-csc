@@ -27,6 +27,10 @@ spec:
   - name: run-tests
     dag:
       tasks:
+      - - name: cleanup-reports
+        templateRef:
+          name: cleanup-reports
+          template: cleanup-reports-workflow
       - name: cameras-offline
         templateRef:
           name: integration-test-job-template
@@ -313,17 +317,7 @@ spec:
           - name: jobname
             value: shutdown
 
-  - name: save-reports
-    container:
-      image: alpine:latest
-      volumeMounts:
-        - name: testreports
-          mountPath: {{ .Values.reportLocation }}
-    outputs:
-      artifacts:
-      - name: integration-test-reports
-        archive:
-          none: {}
-        path: {{ .Values.reportLocation }}/
-        s3:
-          key: IntegrationTests/{{ printf "{{workflow.parameters.date-key}}" }}
+  - - name: save-reports-workflow
+      templateRef:
+        name: save-reports
+        template: save-reports
