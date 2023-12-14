@@ -1,4 +1,5 @@
 name: integrationtests
 apiVersion: v2
-version: 0.12.0
-description: A Helm chart for deploying test applications using the IntegrationTests package.
+version: 0.12.1
+description: A Helm chart for deploying test applications using the IntegrationTests
+  package.

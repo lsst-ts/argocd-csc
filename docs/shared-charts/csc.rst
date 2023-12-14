@@ -2,6 +2,11 @@
 CSC Helm Chart
 ##############
 
+0.12.1
+------
+
+  Fixed templating issue with ``affinity``, ``nodeSelector``, ``tolerations`` and ``resources`` attributes.
+
 0.12.0
 ------
 
