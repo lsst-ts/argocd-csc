@@ -250,7 +250,7 @@ spec:
           - name: jobname
             value: comcam-calibrations
 
-  - - name: save-reports-workflow
-      templateRef:
-        name: save-reports
-        template: save-reports
+  - name: save-reports-workflow
+    templateRef:
+      name: save-reports
+      template: save-reports
