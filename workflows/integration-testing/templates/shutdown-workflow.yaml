@@ -21,12 +21,12 @@ spec:
     parameters:
     - name: date-key
       value: "20230327"
-  entrypoint: run-tests
-  onExit: save-reports
+  entrypoint: call-cleanup-reports
+  onExit: call-save-reports
   templates:
-  - name: cleanup-reports
+  - name: call-cleanup-reports
     templateRef:
-      name: cleanup-reports
+      name: cleanup-reports-workflow
       template: cleanup-reports
 
   - name: run-tests
@@ -43,7 +43,7 @@ spec:
           - name: jobname
             value: shutdown
 
-  - name: save-reports-workflow
+  - name: call-save-reports
     templateRef:
-      name: save-reports
+      name: save-reports-workflow
       template: save-reports
