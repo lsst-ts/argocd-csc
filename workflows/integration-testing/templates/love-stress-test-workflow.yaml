@@ -43,7 +43,7 @@ spec:
           - name: jobname
             value: love-stress-test
 
-  - - name: save-reports-workflow
-      templateRef:
-        name: save-reports
-        template: save-reports
+  - name: save-reports-workflow
+    templateRef:
+      name: save-reports
+      template: save-reports
