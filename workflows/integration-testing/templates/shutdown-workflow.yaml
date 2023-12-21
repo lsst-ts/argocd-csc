@@ -24,13 +24,14 @@ spec:
   entrypoint: run-tests
   onExit: save-reports
   templates:
+  - name: cleanup-reports
+    templateRef:
+      name: cleanup-reports
+      template: cleanup-reports
+
   - name: run-tests
     dag:
       tasks:
-      - name: cleanup-reports
-        templateRef:
-          name: cleanup-reports
-          template: cleanup-reports
       - name: shutdown
         templateRef:
           name: integration-test-job-template
