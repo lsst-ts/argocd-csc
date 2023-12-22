@@ -21,17 +21,15 @@ spec:
     parameters:
     - name: date-key
       value: "20230601"
-  entrypoint: call-run-tests
-  onExit: call-save-reports
+  entrypoint: run-tests
   templates:
-  - name: call-cleanup-reports
-    templateRef:
-      name: cleanup-reports-workflow
-      template: cleanup-reports
-
   - name: run-tests
     dag:
       tasks:
+      - name: call-cleanup-reports
+        templateRef:
+          name: cleanup-reports-workflow
+          template: cleanup-reports
       - name: auxtel-housekeeping
         templateRef:
           name: integration-test-job-template
@@ -250,8 +248,7 @@ spec:
             value: "-A Test_Report_BigCamera_Calibrations.list"
           - name: jobname
             value: comcam-calibrations
-
-  - name: call-save-reports
-    templateRef:
-      name: save-reports-workflow
-      template: save-reports
+      - name: call-save-reports
+        templateRef:
+          name: save-reports-workflow
+          template: save-reports
