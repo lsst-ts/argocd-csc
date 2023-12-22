@@ -107,7 +107,7 @@ spec:
             value: "-A Test_Report_AuxTel_Image_Verification.list"
           - name: jobname
             value: auxtel-image-verification
-      - name: comcam-image-verification
+      - name: bigcam-image-verification
         depends: maintel-housekeeping
         templateRef:
           name: integration-test-job-template
@@ -117,9 +117,9 @@ spec:
           - name: integrationtest
             value: "-A Test_Report_BigCamera_Image_Verification.list"
           - name: jobname
-            value: comcam-image-verification
+            value: bigcam-image-verification
       - name: love-stress-test
-        depends: auxtel-image-verification && comcam-image-verification
+        depends: auxtel-image-verification && bigcam-image-verification
         templateRef:
           name: integration-test-job-template
           template: inttest-template

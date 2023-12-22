@@ -227,7 +227,7 @@ spec:
             value: "-A Test_Report_Enable_ATCS.list"
           - name: jobname
             value: enable-atcs
-      - name: comcam-image-verification
+      - name: bigcam-image-verification
         depends: maintel-housekeeping
         templateRef:
           name: integration-test-job-template
@@ -237,9 +237,9 @@ spec:
           - name: integrationtest
             value: "-A Test_Report_BigCamera_Image_Verification.list"
           - name: jobname
-            value: comcam-image-verification
-      - name: comcam-calibrations
-        depends: comcam-image-verification
+            value: bigcam-image-verification
+      - name: bigcam-calibrations
+        depends: bigcam-image-verification
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -248,9 +248,9 @@ spec:
           - name: integrationtest
             value: "-A Test_Report_BigCamera_Calibrations.list"
           - name: jobname
-            value: comcam-calibrations
+            value: bigcam-calibrations
       - name: call-save-reports
-        depends: comcam-calibrations
+        depends: bigcam-calibrations
         templateRef:
           name: save-reports-workflow
           template: save-reports
