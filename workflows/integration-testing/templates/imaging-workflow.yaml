@@ -31,6 +31,7 @@ spec:
           name: cleanup-reports-workflow
           template: cleanup-reports
       - name: auxtel-housekeeping
+        depends: call-cleanup-reports
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -249,6 +250,7 @@ spec:
           - name: jobname
             value: comcam-calibrations
       - name: call-save-reports
+        depends: comcam-calibrations
         templateRef:
           name: save-reports-workflow
           template: save-reports

@@ -31,6 +31,7 @@ spec:
           name: cleanup-reports-workflow
           template: cleanup-reports
       - name: cameras-offline
+        depends: call-cleanup-reports
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -316,6 +317,7 @@ spec:
           - name: jobname
             value: shutdown
       - name: call-save-reports
+        depends: shutdown
         templateRef:
           name: save-reports-workflow
           template: save-reports

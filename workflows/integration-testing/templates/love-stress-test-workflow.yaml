@@ -31,6 +31,7 @@ spec:
           name: cleanup-reports-workflow
           template: cleanup-reports
       - name: love-stress-test
+        depends: call-cleanup-reports
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -41,6 +42,7 @@ spec:
           - name: jobname
             value: love-stress-test
       - name: call-save-reports
+        depends: love-stress-test
         templateRef:
           name: save-reports-workflow
           template: save-reports
