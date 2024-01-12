@@ -74,3 +74,14 @@ envSecrets:
 - name: MYS3_SECRET_KEY
   secretName: lfa
   secretKey: aws-secret-access-key
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: "csc"
+          operator: In
+          values:
+          - atqueue
+          - mtqueue
+      topologyKey: "kubernetes.io/hostname"
