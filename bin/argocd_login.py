@@ -29,6 +29,7 @@ def main(opts):
     cmd = [
         "argocd",
         "login",
+        "--core",
         "--plaintext",
         "--port-forward",
         "--port-forward-namespace",
