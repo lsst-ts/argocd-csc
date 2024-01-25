@@ -42,9 +42,9 @@ affinity:
     requiredDuringSchedulingIgnoredDuringExecution:
     - labelSelector:
         matchExpressions:
-        - key: "csc"
+        - key: csc
           operator: In
           values:
           - atscheduler
           - mtscheduler
-      topologyKey: "kubernetes.io/hostname"
+      topologyKey: kubernetes.io/hostname
