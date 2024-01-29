@@ -1,7 +1,7 @@
 namespace: obssys
 image:
   repository: ts-dockerhub.lsst.org/scriptqueue
-  tag: c0034
+  tag: c0035
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
@@ -63,9 +63,9 @@ affinity:
     requiredDuringSchedulingIgnoredDuringExecution:
     - labelSelector:
         matchExpressions:
-        - key: "csc"
+        - key: csc
           operator: In
           values:
           - atqueue
           - mtqueue
-      topologyKey: "kubernetes.io/hostname"
+      topologyKey: kubernetes.io/hostname
