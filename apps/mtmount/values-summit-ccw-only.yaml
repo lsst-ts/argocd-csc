@@ -1,0 +1,4 @@
+image:
+  tag: c0034
+env:
+  CCW_ONLY: yes
