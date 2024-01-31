@@ -1,0 +1,54 @@
+# -- This section holds the configuration of the container image
+image:
+  # -- The Docker registry name of the container image
+  repository: lsstts/dbbbm
+  # -- The tag of the container image
+  tag: latest
+  # -- The policy to apply when pulling an image for deployment
+  pullPolicy: Always
+# -- This is the namespace in which the All-Sky DBBM will be placed
+namespace: allsky-dbbbm
+# -- The Vault prefix path
+vaultPrefixPath: ""
+sshSecrets:
+  # -- Temporary storage location within the container
+  containerPath: /tmp/.ssh
+mgr:
+  # -- User id for the mgr account
+  uid: 1000
+  # -- Group id for the mgr account
+  gid: 983
+# -- This key allows specification of a YAML configuration file
+# If this section is used, it must contain the following attributes defined:
+# _path_ (The container path for the configuration file),
+# _filename_ (The configuration file name),
+# _content_ (The YAML content for the configuration file)
+configfile: {}
+# -- This section holds the information necessary to create a NFS mount for the container.
+# If this section is used, each object listed can have the following attributes defined:
+# _name_ (A label identifier for the mountpoint),
+# _path_ (The path inside the container to mount),
+# _readOnly_ (This sets if the NFS mount is read only or read/write),
+# _server_ (The hostname of the NFS server),
+# _serverPath_ (The path exported by the NFS server)
+nfsMountpoint: []
+storage:
+  # -- Container path for the storage claim
+  path: /var/dbbbm
+  # str -- The storage class name for the data store request.
+  classname:
+  # -- The size of the storage request.
+  request: 1Gi
+service:
+  # -- (int) The port number to use for the Service.
+  port:
+# -- This allows the specification of pod annotations
+annotations: {}
+# -- This allows the specification of resources (CPU, memory) requires to run the container
+resources: {}
+# -- This allows the specification of using specific nodes to run the pod
+nodeSelector: {}
+# -- This specifies the tolerations of the pod for any system taints
+tolerations: []
+# -- This specifies the scheduling constraints of the pod
+affinity: {}
