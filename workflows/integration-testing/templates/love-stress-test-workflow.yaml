@@ -21,18 +21,17 @@ spec:
     parameters:
     - name: date-key
       value: "20231208"
-  entrypoint: call-cleanup-reports
-  onExit: call-save-reports
+  entrypoint: run-tests
   templates:
-  - name: call-cleanup-reports
-    templateRef:
-      name: cleanup-reports-workflow
-      template: cleanup-reports
-
   - name: run-tests
     dag:
       tasks:
+      - name: call-cleanup-reports
+        templateRef:
+          name: cleanup-reports-workflow
+          template: cleanup-reports
       - name: love-stress-test
+        depends: call-cleanup-reports
         templateRef:
           name: integration-test-job-template
           template: inttest-template
@@ -42,8 +41,8 @@ spec:
             value: "-A Test_Report_LOVE_Stress_Test.list"
           - name: jobname
             value: love-stress-test
-
-  - name: call-save-reports
-    templateRef:
-      name: save-reports-workflow
-      template: save-reports
+      - name: call-save-reports
+        depends: love-stress-test
+        templateRef:
+          name: save-reports-workflow
+          template: save-reports
