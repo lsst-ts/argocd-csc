@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/audio_broadcaster
-  tag: c0034
+  tag: c0035
   pullPolicy: Always
   nexus3: nexus3-docker
 ingress:
