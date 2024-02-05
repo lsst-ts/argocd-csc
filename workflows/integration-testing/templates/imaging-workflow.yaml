@@ -140,7 +140,7 @@ spec:
             value: "-A Test_Report_AuxTel_Prep_Onsky.list"
           - name: jobname
             value: auxtel-prep-onsky
-      - name: auxtel-cwfs-align
+      - name: auxtel-wep-align
         depends: auxtel-prep-onsky
         templateRef:
           name: integration-test-job-template
@@ -150,9 +150,9 @@ spec:
           - name: integrationtest
             value: "-A Test_Report_AuxTel_WEP_Align.list"
           - name: jobname
-            value: auxtel-cwfs-align
+            value: auxtel-wep-align
       - name: auxtel-acq-take-seq-pointing
-        depends: auxtel-cwfs-align
+        depends: auxtel-wep-align
         templateRef:
           name: integration-test-job-template
           template: inttest-template
