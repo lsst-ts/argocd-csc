@@ -1,7 +1,7 @@
 namespace: eas
 image:
   repository: ts-dockerhub.lsst.org/ess
-  tag: c0034
+  tag: c0035
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
