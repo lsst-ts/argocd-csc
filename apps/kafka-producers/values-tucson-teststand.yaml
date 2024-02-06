@@ -23,6 +23,7 @@ producers:
       CBP
       Electrometer
       FiberSpectrograph
+      LEDProjector
       LinearStage
       TunableLaser
 existingSecret: kafka-producers-ts-salkafka
