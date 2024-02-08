@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/rapid-analysis
-  tag: c0034
+  tag: c0035
   pullPolicy: Always
 location: SUMMIT
 env:
