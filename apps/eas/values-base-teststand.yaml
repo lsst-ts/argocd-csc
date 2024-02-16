@@ -16,6 +16,7 @@ cscs:
   - ess202
   - ess203
   - ess204
+  - ess205
   - ess301
   - weatherforecast
 isSim:
@@ -34,6 +35,7 @@ isSim:
   - ess202
   - ess203
   - ess204
+  - ess205
   - ess301
 renameMap:
   ess1: tma-ess01
@@ -47,4 +49,5 @@ renameMap:
   ess202: auxtel-ess02
   ess203: auxtel-ess03
   ess204: auxtel-ess04
+  ess205: auxtel-ess05
   ess301: calibhill-ess01
