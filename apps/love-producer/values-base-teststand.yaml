@@ -27,6 +27,7 @@ producers:
   auxteless02: ESS:202
   auxteless03: ESS:203
   auxteless04: ESS:204
+  auxteless05: ESS:205
   calibhilless01: ESS:301
   camerahexapod: MTHexapod:1
   dimm1: DIMM:1
