@@ -21,7 +21,7 @@ spec:
       - name: {{ include "love-manager.redis.fullname" . }}
         image: "{{ .Values.redis.image.repository }}:{{ .Values.redis.image.tag }}"
         imagePullPolicy: {{ .Values.redis.image.pullPolicy }}
-        command: [ "redis-server", "/etc/redis/redis.conf", "--appendonly", "yes", "--requirepass", "$(REDIS_PASS)" ]
+        command: [ "redis-server", "/etc/redis/redis.conf", "--requirepass", "$(REDIS_PASS)" ]
         ports:
           - containerPort: {{ .Values.redis.port }}
         env:
