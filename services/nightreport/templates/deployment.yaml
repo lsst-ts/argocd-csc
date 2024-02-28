@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "nightreport.fullname" . }}
+  labels:
+    {{- include "nightreport.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicas | default 1 }}
+  selector:
+    matchLabels:
+      {{- include "nightreport.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with $.Values.podAnnotations }}
+      annotations:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "nightreport.selectorLabels" $ | nindent 8 }}
+        app.kubernetes.io/instance: {{ include "nightreport.fullname" $ }}
+    spec:
+      containers:
+        - name: {{ include "nightreport.fullname" . }}
+          image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          ports:
+          - containerPort: {{ $.Values.ports.service }}
+          env:
+            - name: NIGHTREPORT_DB_USER
+              value: {{ .Values.db.user | quote }}
+            - name: NIGHTREPORT_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: nightreport
+                  key: nightreport_password
+            - name: NIGHTREPORT_DB_HOST
+              value: {{ .Values.db.host | quote }}
+            - name: NIGHTREPORT_DB_PORT
+              value: {{ .Values.db.port | quote }}
+            - name: NIGHTREPORT_DB_DATABASE
+              value: {{ .Values.db.database | quote }}
+            - name: SITE_ID
+              value: {{ .Values.config.site_id | quote }}
+          {{- with $.Values.resources }}
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+          {{- end }}
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
