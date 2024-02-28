@@ -98,6 +98,8 @@ producers:
     cscs: MTVMS
   lasertracker:
     cscs: LaserTracker
+  lsstcam:
+    cscs: MTCamera MTHeaderService MTOODS
 existingSecret: kafka-producers-ts-salkafka
 startupProbe:
   use: true
