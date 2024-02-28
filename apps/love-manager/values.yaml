@@ -86,6 +86,8 @@ manager:
       # -- The redis password secret key name.
       # Must match `redis.envSecrets.REDIS_PASS`
       REDIS_PASS: redis-pass
+      # -- The LOVE manager jira API token secret key name
+      JIRA_API_TOKEN: jira-api-token
     # -- Set the default number of LOVE manager frontend pod replicas
     replicas: 1
     autoscaling:

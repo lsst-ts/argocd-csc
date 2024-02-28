@@ -41,6 +41,7 @@ Helm chart for the LOVE manager service.
 | manager.frontend.envSecrets.AUTH_LDAP_BIND_PASSWORD | string | `"auth-ldap-bind-password"` | The LOVE manager frontend LDAP binding password secret key name |
 | manager.frontend.envSecrets.CMD_USER_PASS | string | `"cmd-user-pass"` | The LOVE manager frontend cmd_user user password secret key name |
 | manager.frontend.envSecrets.DB_PASS | string | `"db-pass"` | The database password secret key name. Must match `database.envSecrets.POSTGRES_PASSWORD` |
+| manager.frontend.envSecrets.JIRA_API_TOKEN | string | `"jira-api-token"` | The LOVE manager jira API token secret key name |
 | manager.frontend.envSecrets.PROCESS_CONNECTION_PASS | string | `"process-connection-pass"` | The LOVE manager frontend process connection password secret key name |
 | manager.frontend.envSecrets.REDIS_PASS | string | `"redis-pass"` | The redis password secret key name. Must match `redis.envSecrets.REDIS_PASS` |
 | manager.frontend.envSecrets.SECRET_KEY | string | `"manager-secret-key"` | The LOVE manager frontend secret secret key name |
