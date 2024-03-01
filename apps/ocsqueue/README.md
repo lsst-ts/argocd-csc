@@ -1,6 +1,6 @@
-# mtqueue
+# ocsqueue
 
-A Helm chart for deploying the MTScriptQueue CSC.
+A Helm chart for deploying the ScriptQueue CSC with index 3.
 
 ## Values
 

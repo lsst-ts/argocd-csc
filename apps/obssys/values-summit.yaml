@@ -3,6 +3,7 @@ namespace: obssys
 cscs:
   - atqueue
   - mtqueue
+  - ocsqueue
   - watcher
   - atscheduler
   - mtscheduler
