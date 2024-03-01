@@ -84,4 +84,5 @@ affinity:
           values:
           - atqueue
           - mtqueue
+          - ocsqueue
       topologyKey: kubernetes.io/hostname
