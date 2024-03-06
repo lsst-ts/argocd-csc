@@ -1,4 +1,4 @@
-name: mtscheduler
+name: ocsscheduler
 apiVersion: v2
 version: 0.12.1
-description: A Helm chart for deploying the MTScheduler CSC.
+description: A Helm chart for deploying the Scheduler CSC with index 3.

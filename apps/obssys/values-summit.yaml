@@ -7,4 +7,5 @@ cscs:
   - watcher
   - atscheduler
   - mtscheduler
+  - ocsscheduler
   - gis

@@ -1,6 +1,6 @@
-# mtscheduler
+# ocsscheduler
 
-A Helm chart for deploying the MTScheduler CSC.
+A Helm chart for deploying the Scheduler CSC with index 3.
 
 ## Values
 
