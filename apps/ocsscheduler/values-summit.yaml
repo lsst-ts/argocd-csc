@@ -1,0 +1,51 @@
+namespace: obssys
+image:
+  repository: ts-dockerhub.lsst.org/scheduler
+  tag: c0035
+  pullPolicy: Always
+  nexus3: nexus3-docker
+env:
+  LSST_DDS_PARTITION_PREFIX: summit
+  LSST_SITE: summit
+  S3_ENDPOINT_URL: https://s3.cp.lsst.org
+  INDEX: 3
+  OSPL_INFOFILE: /tmp/ospl-info-mtscheduler.log
+  OSPL_ERRORFILE: /tmp/ospl-error-mtscheduler.log
+envSecrets:
+- name: AWS_ACCESS_KEY_ID
+  secretName: lfa
+  secretKey: aws-access-key-id
+- name: AWS_SECRET_ACCESS_KEY
+  secretName: lfa
+  secretKey: aws-secret-access-key
+- name: MYS3_ACCESS_KEY
+  secretName: lfa
+  secretKey: aws-access-key-id
+- name: MYS3_SECRET_KEY
+  secretName: lfa
+  secretKey: aws-secret-access-key
+shmemDir: /run/ospl
+osplVersion: V6.10.4
+nfsMountpoint:
+- name: rubin-sim-data
+  containerPath: /home/saluser/rubin_sim_data
+  readOnly: false
+  server: nfs1.cp.lsst.org
+  serverPath: /scratch/scheduler
+- name: obs-env
+  containerPath: /net/obs-env
+  readOnly: true
+  server: nfs-obsenv.cp.lsst.org
+  serverPath: /obs-env
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: csc
+          operator: In
+          values:
+          - atscheduler
+          - mtscheduler
+          - ocsscheduler
+      topologyKey: kubernetes.io/hostname
