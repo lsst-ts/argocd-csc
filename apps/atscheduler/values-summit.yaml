@@ -47,4 +47,5 @@ affinity:
           values:
           - atscheduler
           - mtscheduler
+          - ocsscheduler
       topologyKey: kubernetes.io/hostname
