@@ -1,14 +1,14 @@
 namespace: obssys
 image:
   repository: ts-dockerhub.lsst.org/scheduler
-  tag: c0035
+  tag: c0032
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
-  LSST_DDS_PARTITION_PREFIX: summit
-  LSST_SITE: summit
-  S3_ENDPOINT_URL: https://s3.cp.lsst.org
-  INDEX: 1
+  LSST_DDS_PARTITION_PREFIX: tucson
+  LSST_SITE: tucson
+  S3_ENDPOINT_URL: https://s3.tu.lsst.org
+  INDEX: 3
   OSPL_INFOFILE: /tmp/ospl-info-mtscheduler.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtscheduler.log
 envSecrets:
@@ -30,22 +30,10 @@ nfsMountpoint:
 - name: rubin-sim-data
   containerPath: /home/saluser/rubin_sim_data
   readOnly: false
-  server: nfs1.cp.lsst.org
+  server: nfs-scratch.tu.lsst.org
   serverPath: /scratch/scheduler
 - name: obs-env
   containerPath: /net/obs-env
   readOnly: true
-  server: nfs-obsenv.cp.lsst.org
+  server: nfs-obsenv.tu.lsst.org
   serverPath: /obs-env
-affinity:
-  podAntiAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-    - labelSelector:
-        matchExpressions:
-        - key: csc
-          operator: In
-          values:
-          - atscheduler
-          - mtscheduler
-          - ocsscheduler
-      topologyKey: kubernetes.io/hostname

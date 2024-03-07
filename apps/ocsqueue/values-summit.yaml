@@ -10,7 +10,7 @@ env:
   LSST_SITE: summit
   OSPL_INFOFILE: /tmp/ospl-info-mtqueue.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtqueue.log
-  RUN_ARG: 1 --state enabled
+  RUN_ARG: 3 --state enabled
   S3_ENDPOINT_URL: https://s3.cp.lsst.org
 shmemDir: /run/ospl
 osplVersion: V6.10.4

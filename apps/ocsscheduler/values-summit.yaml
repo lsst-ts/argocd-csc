@@ -8,7 +8,7 @@ env:
   LSST_DDS_PARTITION_PREFIX: summit
   LSST_SITE: summit
   S3_ENDPOINT_URL: https://s3.cp.lsst.org
-  INDEX: 1
+  INDEX: 3
   OSPL_INFOFILE: /tmp/ospl-info-mtscheduler.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtscheduler.log
 envSecrets:

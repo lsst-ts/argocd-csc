@@ -1,0 +1,72 @@
+namespace: obssys
+image:
+  repository: ts-dockerhub.lsst.org/scriptqueue
+  tag: c0035
+  pullPolicy: Always
+  nexus3: nexus3-docker
+env:
+  USER_USERNAME: user
+  DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
+  LSST_DDS_PARTITION_PREFIX: base
+  LSST_SITE: base
+  OSPL_INFOFILE: /tmp/ospl-info-mtqueue.log
+  OSPL_ERRORFILE: /tmp/ospl-error-mtqueue.log
+  RUN_ARG: 3 --state enabled
+  S3_ENDPOINT_URL: https://s3.ls.lsst.org
+envSecrets:
+- name: USER_USER_PASS
+  secretName: love
+  secretKey: user-user-pass
+- name: AWS_ACCESS_KEY_ID
+  secretName: lfa
+  secretKey: aws-access-key-id
+- name: AWS_SECRET_ACCESS_KEY
+  secretName: lfa
+  secretKey: aws-secret-access-key
+- name: MYS3_ACCESS_KEY
+  secretName: lfa
+  secretKey: aws-access-key-id
+- name: MYS3_SECRET_KEY
+  secretName: lfa
+  secretKey: aws-secret-access-key
+shmemDir: /run/ospl
+osplVersion: V6.10.4
+butlerSecret:
+  containerPath: &bS-cP /home/saluser/.lsst
+  dbUser: oods
+secretPermFixer:
+- name: butler-secret
+  containerPath: *bS-cP
+nfsMountpoint:
+- name: auxtel-gen3-butler
+  containerPath: /repo/LATISS
+  readOnly: false
+  server: nfs-auxtel.ls.lsst.org
+  serverPath: /auxtel/repo/LATISS
+- name: auxtel-gen3-oods
+  containerPath: /data/lsstdata/BTS/auxtel
+  readOnly: true
+  server: nfs-auxtel.ls.lsst.org
+  serverPath: /auxtel/lsstdata/BTS/auxtel
+- name: project-shared
+  containerPath: /project
+  readOnly: false
+  server: nfs-project.ls.lsst.org
+  serverPath: /project
+- name: obs-env
+  containerPath: /net/obs-env
+  readOnly: true
+  server: nfs-obsenv.ls.lsst.org
+  serverPath: /obs-env
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: csc
+          operator: In
+          values:
+          - atqueue
+          - mtqueue
+          - ocsqueue
+      topologyKey: kubernetes.io/hostname
