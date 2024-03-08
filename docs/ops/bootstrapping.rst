@@ -7,7 +7,7 @@ What is written here is how to bring up a CSC deployment on Kubernetes_ from scr
 As mentioned before, the CSC deployment relies heavily on services provided by SQuaRE, so close coordination with them will be necessary.
 
 #. Choose an environment name for the deployment if one is not already established for that site.
-#. Check with SQuaRE to see if a `vault <https://vault.lsst.codes>`_ is available.
+#. Check with SQuaRE to see if a `vault <https://vault.lsst.cloud>`_ is available.
     a. Get the Vault tokens from SQuaRE and add them to the notes field of the ``Vault Tokens`` secret in the ``Build and Deploy`` vault of the `LSST IT 1Password`_ system.
     #. Follow the instructions in :doc:`add-a-onepassword-secret` to populate the necessary secrets for the site.
 #. Once the Kubernetes_ system has been prepared by SQuaRE, get the following:
