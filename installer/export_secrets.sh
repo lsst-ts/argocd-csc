@@ -6,7 +6,7 @@ ENVIRONMENT=$1
 SECRET_KEYS=$2
 
 export VAULT_DOC_UUID=$(yq -r .onepassword_uuid site-config.yaml)
-export VAULT_ADDR=https://vault.lsst.codes
+export VAULT_ADDR=https://vault.lsst.cloud
 # Look up vault path to get SQuaRE environment as our environment naming is
 # slightly different from SQuaRE's
 VAULT_PATH_PREFIX=$(yq -r .vaultPathPrefix ../apps/cluster-config/values-$ENVIRONMENT.yaml)
