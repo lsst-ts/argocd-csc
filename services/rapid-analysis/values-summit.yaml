@@ -65,6 +65,33 @@ scripts:
     limits:
       cpu: 1.0
       memory: 6G
+- name: summit/comCamSim/runButlerWatcher.py
+- name: summit/comCamSim/runIsrRunner_000.py
+- name: summit/comCamSim/runIsrRunner_001.py
+- name: summit/comCamSim/runIsrRunner_002.py
+- name: summit/comCamSim/runIsrRunner_003.py
+- name: summit/comCamSim/runIsrRunner_004.py
+- name: summit/comCamSim/runIsrRunner_005.py
+- name: summit/comCamSim/runIsrRunner_006.py
+- name: summit/comCamSim/runIsrRunner_007.py
+- name: summit/comCamSim/runIsrRunner_008.py
+- name: summit/comCamSim/runMetadataServer.py
+- name: summit/comCamSim/runPlotter.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: 4G
+    limits:
+      cpu: 1.0
+      memory: 6G
+- name: summit/comCamSim/runReplotter.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: 4G
+    limits:
+      cpu: 1.0
+      memory: 6G
 - name: summit/misc/runAllSky.py
   resources:
     requests:
