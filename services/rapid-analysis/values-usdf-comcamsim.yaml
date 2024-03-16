@@ -1,0 +1,101 @@
+namespace: rubintv-comcamsim
+image:
+  repository: lsstts/rapid-analysis
+  tag: c0033_usdf
+  pullPolicy: Always
+location: USDF
+env:
+  http_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
+  https_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
+  squid_proxy: http://sdfproxy.sdf.slac.stanford.edu:3128
+  no_proxy: .slac.stanford.edu
+  HTTP_PROXY: http://sdfproxy.sdf.slac.stanford.edu:3128
+  HTTPS_PROXY: http://sdfproxy.sdf.slac.stanford.edu:3128
+  SQUID_PROXY: http://sdfproxy.sdf.slac.stanford.edu:3128
+  NO_PROXY: .slac.stanford.edu
+  DEPLOY_BRANCH: deploy-slac
+  S3_ENDPOINT_URL: https://s3dfrgw.slac.stanford.edu
+scripts:
+- name: slac/bot/runButlerWatcher.py
+- name: slac/bot/runMetadataServer.py
+- name: slac/bot/runPlotter.py
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "12G"
+    limits:
+      cpu: 1.0
+      memory: "16G"
+- name: slac/bot/runReplotter.py
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "12G"
+    limits:
+      cpu: 1.0
+      memory: "16G"
+credentialFile: google_write_creds
+vaultPrefixPath: secret/rubin/usdf-rapid-analysis-dev
+pullSecretsPath: pull-secret
+rubinTvSecretsPath: rubintv-secrets
+credentialSecretsPath: rubintv-broadcaster
+butlerSecret:
+  key: butler-secret
+  containerPath: /secrets
+  dbUser: rubin
+envSecrets:
+- name: ASTROMETRY_NET_API_KEY
+  secretName: rubintv-secrets
+  secretKey: astrometry-net-api-key
+imagePullSecrets:
+- name: pull-secret
+pvcMountpointClaim:
+- name: sdf-group-rubin
+  containerPath: /sdf/group/rubin
+  claimSize: 1Gi
+  accessMode: ReadWriteMany
+- name: sdf-data-rubin
+  containerPath: /sdf/data/rubin
+  claimSize: 1Gi
+  accessMode: ReadWriteMany
+- name: sdf-scratch
+  containerPath: /scratch
+  claimSize: 1Gi
+  accessMode: ReadWriteMany
+- name: fs-ddn-sdf-group-rubin
+  containerPath: /fs/ddn/sdf/group/rubin
+  claimSize: 1Gi
+  accessMode: ReadWriteMany
+- name: fs-ddn-sdf-group-lsst
+  containerPath: /fs/ddn/sdf/group/lsst
+  claimSize: 1Gi
+  accessMode: ReadWriteMany
+securityContext:
+  uid: 15517
+  gid: 4085
+  fid: 4085
+resources:
+  requests:
+    cpu: 1.0
+    memory: "1.5G"
+  limits:
+    cpu: 1.0
+    memory: "2.5G"
+redis:
+  enabled: true
+  port: 6379
+  env:
+    MASTER: true
+  envSecrets:
+  - name: REDIS_PASSWORD
+    secretName: rubintv-secrets
+    secretKey: redis-password
+  storage:
+    request: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 50Gi
