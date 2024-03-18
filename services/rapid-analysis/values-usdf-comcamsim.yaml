@@ -86,6 +86,8 @@ redis:
   port: 6379
   env:
     MASTER: true
+  serviceAnnotations:
+    metallb.universe.tf/address-pool: sdf-services
   envSecrets:
   - name: REDIS_PASSWORD
     secretName: rubintv-secrets
