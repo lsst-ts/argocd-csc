@@ -13,7 +13,7 @@ env:
   HTTPS_PROXY: http://sdfproxy.sdf.slac.stanford.edu:3128
   SQUID_PROXY: http://sdfproxy.sdf.slac.stanford.edu:3128
   NO_PROXY: .slac.stanford.edu
-  DEPLOY_BRANCH: deploy-slac
+  DEPLOY_BRANCH: deploy-slac-comcam
   S3_ENDPOINT_URL: https://s3dfrgw.slac.stanford.edu
 scripts:
 - name: slac/bot/runButlerWatcher.py
