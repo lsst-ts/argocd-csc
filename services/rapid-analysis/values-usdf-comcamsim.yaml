@@ -34,6 +34,9 @@ scripts:
     limits:
       cpu: 1.0
       memory: "16G"
+workerScript:
+  name: slac/LSSTComCamSim/runIsrRunner.py
+  workers: 2
 credentialFile: google_write_creds
 vaultPrefixPath: secret/rubin/usdf-rapid-analysis-dev
 pullSecretsPath: pull-secret
