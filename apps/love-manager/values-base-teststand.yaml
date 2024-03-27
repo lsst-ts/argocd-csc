@@ -2,10 +2,9 @@ secret_path: base-lsp.lsst.codes
 manager:
   frontend:
     image:
-      repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0035
+      repository: lsstts/love-manager
+      tag: DM-43410
       pullPolicy: Always
-      nexus3: nexus3-docker
     env:
       SERVER_URL: base-lsp.lsst.codes
       OLE_API_HOSTNAME: base-lsp.lsst.codes

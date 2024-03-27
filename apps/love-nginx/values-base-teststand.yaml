@@ -12,8 +12,8 @@ imagePullSecrets:
 initContainers:
   frontend:
     image:
-      repository: ts-dockerhub.lsst.org/love-frontend-k8s
-      tag: c0035
+      repository: lsstts/love-frontend
+      tag: DM-43410
       pullPolicy: Always
   manager:
     image:

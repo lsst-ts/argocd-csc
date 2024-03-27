@@ -35,6 +35,9 @@ Helm chart for the LOVE manager service.
 | manager.frontend.env.REDIS_HOST | string | `"love-manager-redis-service"` | The name of the redis service |
 | manager.frontend.env.REMOTE_STORAGE | bool | `true` | Set the manager to use LFA storage |
 | manager.frontend.env.SERVER_URL | string | `"love.lsst.local"` | The external URL from the NGINX server for LOVE |
+| manager.frontend.env.SMTP_HOST | string | `"mail.lsst.org"` | The SMTP host for the LOVE manager frontend |
+| manager.frontend.env.SMTP_PORT | int | `587` | The SMTP port for the LOVE manager frontend |
+| manager.frontend.env.SMTP_USER | string | `"loveapplication"` | The SMTP user for the LOVE manager frontend |
 | manager.frontend.env.URL_SUBPATH | string | `"/love"` | The Kubernetes sub-path for LOVE |
 | manager.frontend.envSecrets.ADMIN_USER_PASS | string | `"admin-user-pass"` | The LOVE manager frontend admin user password secret key name |
 | manager.frontend.envSecrets.AUTHLIST_USER_PASS | string | `"authlist-user-pass"` | The LOVE manager frontend authlist_user password secret key name |
@@ -45,6 +48,7 @@ Helm chart for the LOVE manager service.
 | manager.frontend.envSecrets.PROCESS_CONNECTION_PASS | string | `"process-connection-pass"` | The LOVE manager frontend process connection password secret key name |
 | manager.frontend.envSecrets.REDIS_PASS | string | `"redis-pass"` | The redis password secret key name. Must match `redis.envSecrets.REDIS_PASS` |
 | manager.frontend.envSecrets.SECRET_KEY | string | `"manager-secret-key"` | The LOVE manager frontend secret secret key name |
+| manager.frontend.envSecrets.SMTP_PASSWORD | string | `"smtp-email-password"` | The LOVE manager smtp email password secret key name |
 | manager.frontend.envSecrets.USER_USER_PASS | string | `"user-user-pass"` | The LOVE manager frontend user user password secret key name |
 | manager.frontend.image.nexus3 | string | `""` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | manager.frontend.image.pullPolicy | string | `"IfNotPresent"` | The pull policy on the LOVE manager frontend image |
