@@ -18,9 +18,9 @@ env:
 scripts:
 - name: slac/LSSTComCamSim/runButlerWatcher.py
 - name: slac/LSSTComCamSim/runHeadNode.py
-workerScript:
+workerSet:
   name: slac/LSSTComCamSim/runSfmRunner.py
-  workers: 1
+  replicas: 9
   resources:
     requests:
       cpu: 1.0
@@ -28,9 +28,19 @@ workerScript:
     limits:
       cpu: 1.0
       memory: "8G"
-workerSet:
-  name: slac/LSSTComCamSim/runSfmRunner.py
-  replicas: 2
+gather2aSet:
+  name: slac/LSSTComCamSim/runStep2aWorker.py
+  replicas: 0
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "4G"
+    limits:
+      cpu: 1.0
+      memory: "8G"
+gatherRollupSet:
+  name: slac/LSSTComCamSim/runNightlyWorker.py
+  replicas: 0
   resources:
     requests:
       cpu: 1.0

@@ -1,11 +1,10 @@
-{{ range $i := untilStep 0 (sub $.Values.workerScript.workers 1 | int ) 1  }}
-{{ $_ := set $.Values "script" $.Values.workerScript }}
-{{ $script := $.Values.workerScript }}
+{{ $_ := set $.Values "script" $.Values.gatherRollupSet }}
+{{ $script := $.Values.gatherRollupSet }}
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: {{ include "rapid-analysis.deploymentName" $ }}-{{$i}}
+  name: {{ include "rapid-analysis.deploymentName" $ }}-gatherrollupset
   namespace: {{ $.Values.namespace }}
   labels:
     {{- include "rapid-analysis.labels" $ | nindent 4 }}
@@ -14,6 +13,7 @@ spec:
   selector:
     matchLabels:
       {{- include "rapid-analysis.selectorLabels" $ | nindent 6 }}
+  replicas: 9
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
@@ -45,7 +45,11 @@ spec:
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           env:
             - name: RUN_ARG
-              value: {{ $script.name }} {{ $i }}
+              value: {{ $script.name }}
+            - name: WORKER_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['statefulset.kubernetes.io/pod-name']
             - name: RAPID_ANALYSIS_LOCATION
               value: {{ $.Values.location | upper | quote }}
           {{- if or $.Values.env $.Values.envSecrets }}
@@ -222,4 +226,3 @@ spec:
       tolerations:
         {{- toYaml $tolerations | nindent 8 }}
       {{- end }}
-{{end }}
