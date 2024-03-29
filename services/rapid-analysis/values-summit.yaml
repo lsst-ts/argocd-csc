@@ -99,7 +99,7 @@ scripts:
 - name: summit/misc/runStarTrackerWide.py
 - name: summit/misc/runTmaTelemetry.py
 workerSet:
-  name: slac/LSSTComCamSim/runSfmRunner.py
+  name: summit/LSSTComCamSim/runSfmRunner.py
   replicas: 9
   resources:
     requests:
@@ -109,7 +109,7 @@ workerSet:
       cpu: 1.0
       memory: "8G"
 gather2aSet:
-  name: slac/LSSTComCamSim/runStep2aWorker.py
+  name: summit/LSSTComCamSim/runStep2aWorker.py
   replicas: 0
   resources:
     requests:
@@ -119,7 +119,7 @@ gather2aSet:
       cpu: 1.0
       memory: "8G"
 gatherRollupSet:
-  name: slac/LSSTComCamSim/runNightlyWorker.py
+  name: summit/LSSTComCamSim/runNightlyWorker.py
   replicas: 0
   resources:
     requests:
