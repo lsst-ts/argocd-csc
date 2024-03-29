@@ -1,4 +1,4 @@
-{{ range $i := untilStep 1 3 1  }}
+{{ range $i := untilStep 1 ($.Values.workerScript.workers | int) 1  }}
 {{ $_ := set $.Values "script" $.Values.workerScript }}
 {{ $script := $.Values.workerScript }}
 ---
