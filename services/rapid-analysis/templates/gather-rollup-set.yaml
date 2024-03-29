@@ -14,6 +14,7 @@ spec:
     matchLabels:
       {{- include "rapid-analysis.selectorLabels" $ | nindent 6 }}
   replicas: {{ ($script.replicas | int) }}
+  podManagementPolicy: Parallel
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
