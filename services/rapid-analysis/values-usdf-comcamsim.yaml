@@ -20,7 +20,7 @@ scripts:
 - name: slac/LSSTComCamSim/runHeadNode.py
 workerSet:
   name: slac/LSSTComCamSim/runSfmRunner.py
-  replicas: 9
+  replicas: 18
   resources:
     requests:
       cpu: 1.0
