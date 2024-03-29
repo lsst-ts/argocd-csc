@@ -13,7 +13,7 @@ spec:
   selector:
     matchLabels:
       {{- include "rapid-analysis.selectorLabels" $ | nindent 6 }}
-  replicas: 9
+  replicas: {{ ($script.replicas | int) }}
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
