@@ -4,7 +4,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "rapid-analysis.deploymentName" $ }}-workerSet
+  name: {{ include "rapid-analysis.deploymentName" $ }}-workerset
   namespace: {{ $.Values.namespace }}
   labels:
     {{- include "rapid-analysis.labels" $ | nindent 4 }}
@@ -13,7 +13,7 @@ spec:
   selector:
     matchLabels:
       {{- include "rapid-analysis.selectorLabels" $ | nindent 6 }}
-  replicas: $script.replicas
+  replicas: 3
   template:
     metadata:
       {{- with $.Values.podAnnotations }}
@@ -49,7 +49,7 @@ spec:
             - name: WORKER_NAME
               valueFrom:
                 fieldRef:
-                  fieldPath: metadata.labels['apps.kubernetes.io/pod-name']
+                  fieldPath: metadata.labels['statefulset.kubernetes.io/pod-name']
             - name: RAPID_ANALYSIS_LOCATION
               value: {{ $.Values.location | upper | quote }}
           {{- if or $.Values.env $.Values.envSecrets }}
