@@ -66,6 +66,7 @@ scripts:
       cpu: 1.0
       memory: 6G
 - name: summit/LSSTComCamSim/runButlerWatcher.py
+- name: summit/LSSTComCamSim/runHeadNode.py
 - name: summit/LSSTComCamSim/runMetadataServer.py
 - name: summit/LSSTComCamSim/runPlotter.py
   resources:
