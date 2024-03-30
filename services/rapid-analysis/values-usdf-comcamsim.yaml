@@ -18,6 +18,15 @@ env:
 scripts:
 - name: slac/LSSTComCamSim/runButlerWatcher.py
 - name: slac/LSSTComCamSim/runHeadNode.py
+- name: slac/LSSTComCamSim/runMetadataServer.py
+- name: slac/LSSTComCamSim/runPlotter.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: 4G
+    limits:
+      cpu: 1.0
+      memory: 6G
 workerSet:
   name: slac/LSSTComCamSim/runSfmRunner.py
   replicas: 18
