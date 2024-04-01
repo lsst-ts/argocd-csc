@@ -93,7 +93,7 @@ scripts:
 - name: summit/misc/runTmaTelemetry.py
 workerSet:
   name: summit/LSSTComCamSim/runSfmRunner.py
-  replicas: 9
+  replicas: 45
   resources:
     requests:
       cpu: 1.0
@@ -103,7 +103,7 @@ workerSet:
       memory: "8G"
 gather2aSet:
   name: summit/LSSTComCamSim/runStep2aWorker.py
-  replicas: 0
+  replicas: 5
   resources:
     requests:
       cpu: 1.0
@@ -113,14 +113,14 @@ gather2aSet:
       memory: "8G"
 gatherRollupSet:
   name: summit/LSSTComCamSim/runNightlyWorker.py
-  replicas: 0
+  replicas: 5
   resources:
     requests:
       cpu: 1.0
-      memory: "4G"
+      memory: "12G"
     limits:
       cpu: 1.0
-      memory: "8G"
+      memory: "24G"
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: pull-secret
