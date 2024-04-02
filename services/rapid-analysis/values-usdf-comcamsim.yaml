@@ -30,7 +30,7 @@ scripts:
       memory: 6G
 workerSet:
   name: slac/LSSTComCamSim/runSfmRunner.py
-  replicas: 45
+  replicas: 90
   resources:
     requests:
       cpu: 1.0
@@ -40,7 +40,7 @@ workerSet:
       memory: "8G"
 gather2aSet:
   name: slac/LSSTComCamSim/runStep2aWorker.py
-  replicas: 5
+  replicas: 10
   resources:
     requests:
       cpu: 1.0
