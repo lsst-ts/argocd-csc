@@ -21,7 +21,7 @@ spec:
     parameters:
     - name: date-key
       value: "20230327"
-  entrypoint: call-cleanup-reports
+  entrypoint: run-tests
   onExit: call-save-reports
   templates:
   - name: run-tests
