@@ -22,7 +22,6 @@ spec:
     - name: date-key
       value: "20230327"
   entrypoint: run-tests
-  onExit: call-save-reports
   templates:
   - name: run-tests
     dag:
