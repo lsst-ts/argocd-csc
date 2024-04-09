@@ -1,7 +1,7 @@
 namespace: calsys
 image:
   repository: ts-dockerhub.lsst.org/atmonochromator
-  tag: c0035
+  tag: c0036
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
