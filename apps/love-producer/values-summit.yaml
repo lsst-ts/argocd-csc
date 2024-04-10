@@ -77,6 +77,7 @@ producers:
   tmaess01: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105
+  tunablelaser: TunableLaser:0
   watcher: Watcher:0
   weatherforecast: WeatherForecast:0
 osplVersion: V6.10.4
