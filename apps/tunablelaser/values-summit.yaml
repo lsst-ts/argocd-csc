@@ -1,0 +1,13 @@
+namespace: calsys
+image:
+  repository: ts-dockerhub.lsst.org/tunablelaser
+  tag: c0036
+  pullPolicy: Always
+  nexus3: nexus3-docker
+env:
+  LSST_DDS_PARTITION_PREFIX: summit
+  LSST_SITE: summit
+  OSPL_INFOFILE: /tmp/ospl-info-tunablelaser.log
+  OSPL_ERRORFILE: /tmp/ospl-error-tunablelaser.log
+shmemDir: /run/opsl
+osplVersion: V6.10.4

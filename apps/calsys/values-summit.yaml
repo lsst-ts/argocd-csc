@@ -6,6 +6,7 @@ cscs:
   - atwhitelight
   - atmonochromator
   - gcheaderservice1
+  - tunablelaser
 renameMap:
   electrometer1: comcam-electrometer
   electrometer201: auxtel-electrometer-201
