@@ -59,6 +59,8 @@ producers:
   mtrotator: MTRotator:0
   mtscheduler: Scheduler:1
   mtscriptqueue: ScriptQueue:1
+  ocsscheduler: Scheduler:3
+  ocsscriptqueue: ScriptQueue:3
   tmaess01: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105
