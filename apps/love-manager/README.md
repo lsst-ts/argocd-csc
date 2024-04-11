@@ -29,12 +29,14 @@ Helm chart for the LOVE manager service.
 | manager.frontend.env.JIRA_PROJECT_ID | int | `10063` | Set the Jira project ID |
 | manager.frontend.env.LOVE_PRODUCER_WEBSOCKET_HOST | string | `"love-service/manager/ws/subscription"` | The URL path for the LOVE producer websocket host |
 | manager.frontend.env.LOVE_SITE | string | `"local"` | The site tag where LOVE is being run |
+| manager.frontend.env.NIGHTREPORT_MAIL_ADDRESS | string | `"rubin-night-log@lists.lsst.org"` | The mail address to forward the nightly report to |
 | manager.frontend.env.OLE_API_HOSTNAME | string | `"site.lsst.local"` | Set the URL for the OLE instance |
 | manager.frontend.env.REDIS_CONFIG_CAPACITY | int | `5000` | The connection capacity for the redis service |
 | manager.frontend.env.REDIS_CONFIG_EXPIRY | int | `5` | The expiration time for the redis service |
 | manager.frontend.env.REDIS_HOST | string | `"love-manager-redis-service"` | The name of the redis service |
 | manager.frontend.env.REMOTE_STORAGE | bool | `true` | Set the manager to use LFA storage |
 | manager.frontend.env.SERVER_URL | string | `"love.lsst.local"` | The external URL from the NGINX server for LOVE |
+| manager.frontend.env.SMTP_USER | string | `"loveapplication"` | The SMTP user for the LOVE manager frontend |
 | manager.frontend.env.URL_SUBPATH | string | `"/love"` | The Kubernetes sub-path for LOVE |
 | manager.frontend.envSecrets.ADMIN_USER_PASS | string | `"admin-user-pass"` | The LOVE manager frontend admin user password secret key name |
 | manager.frontend.envSecrets.AUTHLIST_USER_PASS | string | `"authlist-user-pass"` | The LOVE manager frontend authlist_user password secret key name |
@@ -45,6 +47,7 @@ Helm chart for the LOVE manager service.
 | manager.frontend.envSecrets.PROCESS_CONNECTION_PASS | string | `"process-connection-pass"` | The LOVE manager frontend process connection password secret key name |
 | manager.frontend.envSecrets.REDIS_PASS | string | `"redis-pass"` | The redis password secret key name. Must match `redis.envSecrets.REDIS_PASS` |
 | manager.frontend.envSecrets.SECRET_KEY | string | `"manager-secret-key"` | The LOVE manager frontend secret secret key name |
+| manager.frontend.envSecrets.SMTP_PASSWORD | string | `"smtp-email-password"` | The LOVE manager smtp email password secret key name |
 | manager.frontend.envSecrets.USER_USER_PASS | string | `"user-user-pass"` | The LOVE manager frontend user user password secret key name |
 | manager.frontend.image.nexus3 | string | `""` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | manager.frontend.image.pullPolicy | string | `"IfNotPresent"` | The pull policy on the LOVE manager frontend image |

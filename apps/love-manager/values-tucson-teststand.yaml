@@ -14,6 +14,7 @@ manager:
       AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
       DB_HOST: postgresdb01.tu.lsst.org
       LOVE_SITE: tucson
+      NIGHTREPORT_MAIL_ADDRESS: saranda@lsst.org
     autoscaling:
       enabled: true
       minReplicas: 2
