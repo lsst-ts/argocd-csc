@@ -9,5 +9,5 @@ env:
   LSST_SITE: summit
   OSPL_INFOFILE: /tmp/ospl-info-tunablelaser.log
   OSPL_ERRORFILE: /tmp/ospl-error-tunablelaser.log
-shmemDir: /run/opsl
+shmemDir: /run/ospl
 osplVersion: V6.10.4
