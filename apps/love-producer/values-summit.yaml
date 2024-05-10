@@ -62,6 +62,8 @@ producers:
   mtdomeess01: ESS:101
   mtdomeess02: ESS:102
   mtdomeess03: ESS:103
+  mtdomeess07: ESS:107
+  mtdomeess08: ESS:108
   mtdometrajectory: MTDomeTrajectory:0
   mtm1m3: MTM1M3:0
   mtm1m3ts: MTM1M3TS:0

@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-sst-ess107.log
+  OSPL_ERRORFILE: /tmp/ospl-error-sst-ess107.log
+  RUN_ARG: 107
