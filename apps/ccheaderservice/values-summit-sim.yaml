@@ -12,6 +12,7 @@ env:
   CAMERA: cc
   OSPL_INFOFILE: /tmp/ospl-info-ccheaderservice.log
   OSPL_ERRORFILE: /tmp/ospl-error-ccheaderservice.log
+  HEADERSERVICE_PLAYLIST_DIR: /net/self/ccs-data/cchs-sim
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
   secretName: lfa
@@ -25,5 +26,11 @@ envSecrets:
 - name: MYS3_SECRET_KEY
   secretName: lfa
   secretKey: aws-secret-access-key
+nfsMountpoint:
+- name: ccs-data
+  containerPath: /net/self/ccs-data
+  readOnly: true
+  server: comcam-fp01.cp.lsst.org
+  serverPath: /ccs-data
 shmemDir: /run/ospl
 osplVersion: V6.10.4
