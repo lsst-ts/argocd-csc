@@ -3,7 +3,7 @@ manager:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0036
+      tag: c0036.003
       pullPolicy: Always
       nexus3: nexus3-docker
     env:
@@ -43,7 +43,7 @@ manager:
   producers:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0036
+      tag: c0036.003
       pullPolicy: Always
       nexus3: nexus3-docker
     env:
@@ -91,7 +91,7 @@ viewBackup:
   enabled: true
   image:
     repository: ts-dockerhub.lsst.org/love-view-backup
-    tag: c0036
+    tag: c0036.000
     pullPolicy: Always
     nexus3: nexus3-docker
   schedule: 0 12 * * *
