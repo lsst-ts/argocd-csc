@@ -1,0 +1,4 @@
+apiVersion: v2
+description: Parent application to bootstrap Calibration Sytems CSC deployment
+name: calsys-lab
+version: 0.3.0

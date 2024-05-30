@@ -2,6 +2,7 @@ vaultPathPrefix: secret/k8s_operator/tucson-teststand.lsst.codes
 namespaces:
   - ospl-daemon
   - kafka-producers
+  - calsys-lab
 secrets:
   - name: nexus3-docker
     key: pull-secret
