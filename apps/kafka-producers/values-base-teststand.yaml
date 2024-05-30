@@ -80,7 +80,7 @@ producers:
   mtaircompressor:
     cscs: MTAirCompressor
   eas:
-    cscs: DIMM DSM ESS WeatherForecast
+    cscs: DIMM DSM EPM ESS WeatherForecast
   lasertracker:
     cscs: LaserTracker
   genericcamera:

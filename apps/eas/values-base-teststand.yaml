@@ -21,6 +21,7 @@ cscs:
   - ess205
   - ess301
   - weatherforecast
+  - epm1
 isSim:
   - dimm1
   - dimm2
@@ -41,6 +42,7 @@ isSim:
   - ess204
   - ess205
   - ess301
+  - epm001
 renameMap:
   ess1: tma-ess01
   ess101: mtdome-ess01

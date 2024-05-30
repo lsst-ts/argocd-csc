@@ -33,6 +33,7 @@ producers:
   dimm2: DIMM:2
   dsm1: DSM:1
   dsm2: DSM:2
+  epm001: EPM:1
   gcheaderservice1: GCHeaderService:1
   genericcamera1: GenericCamera:1
   lasertracker1: LaserTracker:1
