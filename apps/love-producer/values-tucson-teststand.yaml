@@ -22,7 +22,6 @@ producers:
   atscheduler: Scheduler:2
   atscriptqueue: ScriptQueue:2
   atspectrograph: ATSpectrograph:0
-  authorize: Authorize:0
   auxteless01: ESS:201
   auxteless02: ESS:202
   auxteless03: ESS:203
