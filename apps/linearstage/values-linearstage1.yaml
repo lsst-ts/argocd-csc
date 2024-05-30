@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-linearstage1.log
+  OSPL_ERRORFILE: /tmp/ospl-error-linearstage1.log
+  RUN_ARG: 1
