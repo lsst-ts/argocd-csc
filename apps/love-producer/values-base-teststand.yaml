@@ -22,12 +22,12 @@ producers:
   atscheduler: Scheduler:2
   atscriptqueue: ScriptQueue:2
   atspectrograph: ATSpectrograph:0
-  auxteless01: ESS:201
-  auxteless02: ESS:202
-  auxteless03: ESS:203
-  auxteless04: ESS:204
-  auxteless05: ESS:205
-  calibhilless01: ESS:301
+  auxteless201: ESS:201
+  auxteless202: ESS:202
+  auxteless203: ESS:203
+  auxteless204: ESS:204
+  auxteless205: ESS:205
+  calibhilless301: ESS:301
   camerahexapod: MTHexapod:1
   dimm1: DIMM:1
   dimm2: DIMM:2
@@ -45,11 +45,11 @@ producers:
   mtaos: MTAOS:0
   mtcamera: MTCamera:0
   mtdome: MTDome:0
-  mtdomeess01: ESS:101
-  mtdomeess02: ESS:102
-  mtdomeess03: ESS:103
-  mtdomeess07: ESS:107
-  mtdomeess08: ESS:108
+  mtdomeess101: ESS:101
+  mtdomeess102: ESS:102
+  mtdomeess103: ESS:103
+  mtdomeess107: ESS:107
+  mtdomeess108: ESS:108
   mtdometrajectory: MTDomeTrajectory:0
   mtheaderservice: MTHeaderService:0
   mtm1m3: MTM1M3:0
@@ -63,7 +63,7 @@ producers:
   mtscriptqueue: ScriptQueue:1
   ocsscheduler: Scheduler:3
   ocsscriptqueue: ScriptQueue:3
-  tmaess01: ESS:1
+  tmaess001: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105
   watcher: Watcher:0
