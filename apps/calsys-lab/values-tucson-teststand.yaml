@@ -1,4 +1,7 @@
 env: tucson-teststand
+spec:
+  source:
+    targetRevision: calibration_lab_support
 namespace: calsys-lab
 cscs:
   - linearstage1
