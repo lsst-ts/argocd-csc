@@ -31,6 +31,7 @@ producers:
   auxteless05: ESS:205
   calibhilless01: ESS:301
   camerahexapod: MTHexapod:1
+  cbp: CBP:0
   cccamera: CCCamera:0
   ccheaderservice: CCHeaderService:0
   ccocps: OCPS:2
