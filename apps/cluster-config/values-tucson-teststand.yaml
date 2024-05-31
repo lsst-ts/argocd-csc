@@ -1,4 +1,4 @@
-vaultPathPrefix: secret/k8s_operator/tucson-teststand.lsst.codes
+vaultPathPrefix: secret/phalanx/tucson-teststand
 namespaces:
   - ospl-daemon
   - kafka-producers
