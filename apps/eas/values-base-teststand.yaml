@@ -42,7 +42,7 @@ isSim:
   - ess204
   - ess205
   - ess301
-  - epm001
+  - epm1
 renameMap:
   ess1: tma-ess001
   ess101: mtdome-ess101
