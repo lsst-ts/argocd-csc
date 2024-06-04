@@ -1,4 +1,4 @@
-namespace: calsys
+namespace: calsys-lab
 image:
   repository: ts-dockerhub.lsst.org/linearstage
   tag: c0036
