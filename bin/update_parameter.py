@@ -100,12 +100,17 @@ def main(opts):
                                 values,
                                 extra,
                                 opts.update_key,
-                                opts.update_value,
+                                f"{opts.update_value}.000",
                             )
                     else:
-                        update_tag(
-                            values, top_tag, opts.update_key, opts.update_value
-                        )
+                        if (
+                            "love-commander" in appdir.name
+                            or "love-producer" in appdir.name
+                        ):
+                            tag = f"{opts.update_value}.000"
+                        else:
+                            tag = opts.update_value
+                        update_tag(values, top_tag, opts.update_key, tag)
                 else:
                     update_tag(
                         values, top_tag, opts.update_key, opts.update_value
