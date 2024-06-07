@@ -1,7 +1,7 @@
 namespace: love
 image:
   repository: ts-dockerhub.lsst.org/love-commander
-  tag: c0036.000
+  tag: c0037.000
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
