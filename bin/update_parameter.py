@@ -94,19 +94,23 @@ def main(opts):
 
                 if opts.update_key == "image.tag":
                     if appdir.name in extra_image_tags_keys:
+                        if "summit" in opts.env:
+                            tag = f"{opts.update_value}.000"
+                        else:
+                            tag = opts.update_value
                         extras = EXTRA_IMAGE_TAGS[appdir.name]
                         for extra in extras:
                             update_tag(
                                 values,
                                 extra,
                                 opts.update_key,
-                                f"{opts.update_value}.000",
+                                tag,
                             )
                     else:
                         if (
                             "love-commander" in appdir.name
                             or "love-producer" in appdir.name
-                        ):
+                        ) and "summit" in opts.env:
                             tag = f"{opts.update_value}.000"
                         else:
                             tag = opts.update_value
