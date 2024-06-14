@@ -36,3 +36,7 @@ secrets:
     key: ts/software/squadcast
     namespaces:
       - obssys
+  - name: rubintv
+    key: ts/software/rubintv
+    namespaces:
+      - uws
