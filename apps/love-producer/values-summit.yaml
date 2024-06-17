@@ -77,6 +77,7 @@ producers:
   ocsscheduler: Scheduler:3
   ocsscriptqueue: ScriptQueue:3
   pmd1: PMD:1
+  raocps: OCPS:101
   tmaess001: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105
