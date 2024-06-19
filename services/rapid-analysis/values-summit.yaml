@@ -49,6 +49,14 @@ scripts:
     limits:
       cpu: 1.0
       memory: 6G
+- name: summit/LSSTComCamSim/runAosDonutPipeline.py
+  resources:
+    requests:
+      cpu: 32
+      memory: 96G
+    limits:
+      cpu: 32
+      memory: 96G
 - name: summit/misc/runAllSky.py
   resources:
     requests:
