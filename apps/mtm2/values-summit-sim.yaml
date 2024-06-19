@@ -1,3 +1,4 @@
+namespace: maintel
 image:
   repository: ts-dockerhub.lsst.org/m2
   tag: c0037
