@@ -51,6 +51,11 @@ configfile:
                 repoDirectory : /repo/LSSTComCam
                 collections:
                     - LSSTComCam/raw/all
+                    - LSSTComCamSim/raw/all
+                cleanCollections:
+                    - LSSTComCam/raw/all
+                    - LSSTComCamSim/raw/all
+                    - LSSTComCamSim/quickLook
                 scanInterval:
                     <<: *interval
                     hours: 1
@@ -66,6 +71,7 @@ configfile:
         # ONLY clean out empty directories here, never files
         clearEmptyDirectories:
             -  /data/lsstdata/base/comcam/oods/gen3butler/raw
+            -  /data/repo/LSSTComCam/LSSTComCamSim/quickLook
         # clean out empty directories and old files from these directories
         clearEmptyDirectoriesAndOldFiles:
             - /data/lsstdata/base/comcam/oods/gen3butler/badfiles
