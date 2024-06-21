@@ -33,3 +33,7 @@ secrets:
     key: ts/software/meteoblue
     namespaces:
       - eas
+  - name: butler
+    key: ts/software/butler
+    namespaces:
+      - maintel
