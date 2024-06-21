@@ -57,6 +57,14 @@ scripts:
     limits:
       cpu: 32
       memory: 96G
+- name: summit/LSSTComCamSim/runPsfPlotting.py
+  resources:
+    requests:
+      cpu: .5
+      memory: 4G
+    limits:
+      cpu: 1
+      memory: 6G
 - name: summit/misc/runAllSky.py
   resources:
     requests:
