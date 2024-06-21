@@ -16,6 +16,7 @@ env:
   DEPLOY_BRANCH: deploy-slac-comcam
   S3_ENDPOINT_URL: https://s3dfrgw.slac.stanford.edu
   SASQUATCH_EXTRAS: dataset_tag=LSSTComCamSim/rapid_analysis
+  LSST_RESOURCES_S3_PROFILE_embargo: https://sdfembs3.sdf.slac.stanford.edu
 scripts:
 - name: slac/LSSTComCamSim/runButlerWatcher.py
 - name: slac/LSSTComCamSim/runHeadNode.py
