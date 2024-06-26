@@ -16,9 +16,9 @@ manager:
       LOVE_SITE: summit
     autoscaling:
       enabled: true
-      minReplicas: 2
+      minReplicas: 10
       maxReplicas: 50
-      targetCPUUtilizationPercentage: 50
+      targetCPUUtilizationPercentage: 80
       scaleDownPolicy:
         policies:
         - type: Pods
@@ -56,9 +56,9 @@ manager:
       LOVE_SITE: summit
     autoscaling:
       enabled: true
-      minReplicas: 2
+      minReplicas: 10
       maxReplicas: 50
-      targetCPUUtilizationPercentage: 50
+      targetCPUUtilizationPercentage: 80
       scaleDownPolicy:
         policies:
         - type: Pods
