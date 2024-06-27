@@ -42,6 +42,7 @@ producers:
   dsm2: DSM:2
   electrometer1: Electrometer:1
   electrometer201: Electrometer:201
+  epm301: EPM:301
   fiberspectrograph3: FiberSpectrograph:3
   gcheaderservice101: GCHeaderService:101
   gcheaderservice102: GCHeaderService:102

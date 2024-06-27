@@ -1,0 +1,11 @@
+namespace: eas
+image:
+  repository: ts-dockerhub.lsst.org/epm
+  tag: c0037
+  pullPolicy: Always
+  nexus3: nexus3-docker
+env:
+  LSST_DDS_PARTITION_PREFIX: summit
+  LSST_SITE: summit
+shmemDir: /run/ospl
+osplVersion: V6.10.4
