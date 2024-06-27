@@ -45,6 +45,7 @@ producers:
     cscs: >-
       DIMM
       DSM
+      EPM
       ESS
       HVAC
       WeatherForecast

@@ -3,7 +3,7 @@ manager:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0037.001
+      tag: c0037.002
       pullPolicy: Always
       nexus3: nexus3-docker
     env:
