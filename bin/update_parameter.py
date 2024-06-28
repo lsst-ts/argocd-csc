@@ -11,6 +11,7 @@ WORKFLOWS_DIR = "workflows"
 IGNORE_LIST = [
     "auxtel",
     "calsys",
+    "calsys-lab",
     "cluster-config",
     "dmocps",
     "eas",
