@@ -1,4 +1,4 @@
-# calsys
+# calsys-lab
 
 Parent application to bootstrap Calibration Sytems CSC deployment
 
