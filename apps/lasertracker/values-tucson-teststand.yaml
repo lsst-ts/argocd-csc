@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/lasertracker
-  tag: c0035
+  tag: c0037
   pullPolicy: Always
   nexus3: nexus3-docker
 env:
