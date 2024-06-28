@@ -29,6 +29,7 @@ applications:
   - test42
   - auxtel
   - calsys
+  - calsys-lab
   - dmocps
   - eas
   - love
