@@ -1,0 +1,47 @@
+{{- if .Values.manager.frontendWS.autoscaling.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "love-manager-frontend-ws.fullname" . }}
+  labels:
+    {{- include "love-manager-frontend-ws.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "love-manager-frontend-ws.fullname" . }}
+  minReplicas: {{ .Values.manager.frontendWS.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.manager.frontendWS.autoscaling.maxReplicas }}
+  metrics:
+    {{- if .Values.manager.frontendWS.autoscaling.targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.manager.frontendWS.autoscaling.targetCPUUtilizationPercentage }}
+    {{- end }}
+    {{- if .Values.manager.frontendWS.autoscaling.targetMemoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.manager.frontendWS.autoscaling.targetMemoryUtilizationPercentage }}
+    {{- end }}
+  {{- if or .Values.manager.frontendWS.autoscaling.scaleUpPolicy .Values.manager.frontendWS.autoscaling.scaleDownPolicy }}
+  behavior:
+  {{- if .Values.manager.frontendWS.autoscaling.scaleUpPolicy }}
+    scaleUp:
+    {{- with .Values.manager.frontendWS.autoscaling.scaleUpPolicy }}
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+  {{- end }}
+  {{- if .Values.manager.frontendWS.autoscaling.scaleDownPolicy }}
+    scaleDown:
+    {{- with .Values.manager.frontendWS.autoscaling.scaleDownPolicy }}
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+  {{- end }}
+  {{- end }}
+{{- end }}

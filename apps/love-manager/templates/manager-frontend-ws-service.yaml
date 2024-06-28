@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "love-manager-frontend-ws.fullname" . }}-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app.kubernetes.io/instance: {{ include "love-manager-frontend-ws.fullname" . }}
+  ports:
+  - port: {{ .Values.manager.frontendWS.ports.container }}
+

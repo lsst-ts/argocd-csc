@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "love-manager-frontend-ws.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "love-manager-frontend-ws.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "love-manager-frontend-ws.selectorLabels" . | nindent 6 }}
+  {{- if not .Values.manager.frontendWS.autoscaling.enabled }}
+  replicas: {{ .Values.manager.frontendWS.replicas }}
+  {{- end }}
+  template:
+    metadata:
+      labels:
+        {{- include "love-manager-frontend-ws.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ include "love-manager-frontend-ws.fullname" . }}
+        image: "{{ .Values.manager.frontendWS.image.repository }}:{{ .Values.manager.frontendWS.image.tag }}"
+        imagePullPolicy: {{ .Values.manager.frontendWS.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.manager.frontendWS.ports.container }}
+        env:
+        {{- $data := dict "env" .Values.manager.frontendWS.env "secretName" "" }}
+        {{- include "helpers.envFromList" $data | indent 10 }}
+        {{- if .Values.manager.frontendWS.envSecrets }}
+        {{- $data := dict "secretName" .Values.envSecretKeyName "env" .Values.manager.frontendWS.envSecrets }}
+        {{- include "helpers.envFromList" $data | indent 10 }}
+        {{- end }}
+        {{- with $.Values.manager.frontendWS.resources }}
+        resources:
+          {{- toYaml $.Values.manager.frontendWS.resources | nindent 10 }}
+        {{- end }}
+        {{- with $.Values.manager.frontendWS.readinessProbe }}
+        readinessProbe:
+          {{- toYaml $.Values.manager.frontendWS.readinessProbe | nindent 10 }}
+        {{- end }}
+      {{- if $.Values.manager.frontendWS.image.nexus3 }}
+      imagePullSecrets:
+        - name: {{ $.Values.namespace }}-{{ $.Values.manager.frontendWS.image.nexus3 }}
+      {{- end }}
+      {{- with $.Values.manager.frontendWS.nodeSelector }}
+      nodeSelector:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.manager.frontendWS.affinity }}
+      affinity:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.manager.frontendWS.tolerations }}
+      tolerations:
+        {{- toYaml $ | nindent 8 }}
+      {{- end }}

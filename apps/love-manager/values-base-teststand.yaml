@@ -41,6 +41,47 @@ manager:
         port: 8000
       initialDelaySeconds: 20
       periodSeconds: 10
+  frontendWS:
+    image:
+      repository: ts-dockerhub.lsst.org/love-manager
+      tag: c0037
+      pullPolicy: Always
+      nexus3: nexus3-docker
+    env:
+      SERVER_URL: base-lsp.lsst.codes
+      OLE_API_HOSTNAME: base-lsp.lsst.codes
+      AUTH_LDAP_1_SERVER_URI: ldap://ipa1.ls.lsst.org
+      AUTH_LDAP_2_SERVER_URI: ldap://ipa2.ls.lsst.org
+      AUTH_LDAP_3_SERVER_URI: ldap://ipa3.ls.lsst.org
+      DB_HOST: postgresdb01.ls.lsst.org
+      LOVE_SITE: base
+      NIGHTREPORT_MAIL_ADDRESS: saranda@lsst.org
+    autoscaling:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 25
+      targetCPUUtilizationPercentage: 50
+      scaleDownPolicy:
+        policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 120
+        - type: Percent
+          value: 10
+          periodSeconds: 120
+        selectPolicy: Min
+    resources:
+      requests:
+        cpu: 150m
+        memory: 200Mi
+      limits:
+        cpu: 1000m
+        memory: 1500Mi
+    readinessProbe:
+      tcpSocket:
+        port: 8000
+      initialDelaySeconds: 20
+      periodSeconds: 10
   producers:
     image:
       repository: ts-dockerhub.lsst.org/love-manager

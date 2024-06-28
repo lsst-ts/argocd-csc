@@ -31,6 +31,13 @@ Manager frontend fullname
 {{- end }}
 
 {{/*
+Manager frontend-ws fullname
+*/}}
+{{- define "love-manager-frontend-ws.fullname" -}}
+{{ include "love-manager.fullname" . }}-frontend-ws
+{{- end }}
+
+{{/*
 Manager producers fullname
 */}}
 {{- define "love-manager-producers.fullname" -}}
@@ -61,6 +68,14 @@ helm.sh/chart: {{ include "love-manager.chart" . }}
 {{- end }}
 
 {{/*
+Manager Frontend-ws Common labels
+*/}}
+{{- define "love-manager-frontend-ws.labels" -}}
+helm.sh/chart: {{ include "love-manager.chart" . }}
+{{ include "love-manager-frontend-ws.selectorLabels" . }}
+{{- end }}
+
+{{/*
 Manager Producers Common labels
 */}}
 {{- define "love-manager-producers.labels" -}}
@@ -82,6 +97,14 @@ Manager Frontend Selector labels
 {{- define "love-manager-frontend.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "love-manager.name" . }}
 app.kubernetes.io/instance: {{ include "love-manager.name" . }}-frontend
+{{- end }}
+
+{{/*
+Manager Frontend-ws Selector labels
+*/}}
+{{- define "love-manager-frontend-ws.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "love-manager.name" . }}
+app.kubernetes.io/instance: {{ include "love-manager.name" . }}-frontend-ws
 {{- end }}
 
 {{/*
