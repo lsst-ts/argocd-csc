@@ -3,7 +3,7 @@ image:
   tag: c0037
   pullPolicy: Always
 imagePullSecrets:
-- name: ospl-daemon-nexus3-docker
+- name: pull-secret
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_DDS_INTERFACE: net1
