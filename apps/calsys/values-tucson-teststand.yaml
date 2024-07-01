@@ -1,5 +1,8 @@
 env: tucson-teststand
 namespace: calsys
+spec:
+  source:
+    targetRevision: tickets/DM-45060
 cscs:
   - genericcamera1
   - gcheaderservice1
