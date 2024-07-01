@@ -2,7 +2,7 @@ image:
   repository: ts-dockerhub.lsst.org/salkafka
   tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
+  nexus3: pull-secret
 env:
   lsstDdsPartitionPrefix: tucson
   brokerIp: sasquatch-kafka-brokers.sasquatch
@@ -18,6 +18,52 @@ env:
 shmemDir: /run/ospl
 osplVersion: V6.10.4
 producers:
+  auxtel:
+    cscs: >-
+      ATAOS
+      ATDome
+      ATDomeTrajectory
+      ATHexapod
+      ATPneumatics
+      ATPtg
+      ATMCS
+  comcam:
+    cscs: CCCamera CCHeaderService CCOODS
+  maintel:
+    cscs: >-
+      MTAOS
+      MTDome
+      MTDomeTrajectory
+      MTPtg
+  mtmount:
+    cscs: >-
+      MTMount
+  latiss:
+    cscs: >-
+      ATCamera
+      ATHeaderService
+      ATOODS
+      ATSpectrograph
+  m1m3:
+    cscs: >-
+      --file m1m3.yaml
+  m2:
+    cscs: >-
+      MTHexapod
+      MTM2
+      MTRotator
+  obssys:
+    cscs: >-
+      Scheduler
+      Script
+      ScriptQueue
+      Watcher
+  ocps:
+    cscs: >-
+      OCPS
+  test:
+    cscs: >-
+      Test
   calsys:
     cscs: >-
       CBP
@@ -26,7 +72,15 @@ producers:
       LEDProjector
       LinearStage
       TunableLaser
-existingSecret: kafka-producers-ts-salkafka
+  mtaircompressor:
+    cscs: MTAirCompressor
+  eas:
+    cscs: DIMM DSM EPM ESS WeatherForecast
+  lasertracker:
+    cscs: LaserTracker
+  genericcamera:
+    cscs: GCHeaderService GenericCamera
+existingSecret: kafka-producers
 startupProbe:
   use: true
   failureThreshold: 15
