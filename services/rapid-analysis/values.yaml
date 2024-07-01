@@ -11,7 +11,7 @@ namespace: rapid-analysis
 siteTag: ""
 # -- Provide the location where the system is running.
 location: ""
-# -- (obj) List of script objects to run for the broadcaster.
+# -- List of script objects to run for the broadcaster.
 # This section MUST have the following attribute specified for each entry.
 # _name_ (The full path for the script)
 # The following attributes are optional
@@ -90,6 +90,12 @@ affinity: {}
 # _gid_ (Group id of the user that runs the application),
 # _fid_ (File system context user id),
 securityContext: {}
+# -- This configures a StatefulSet used for single frame workers.
+workerSet: {}
+# -- This configures a StatefulSet used for visit-level gather processing.
+gather2aSet: {}
+# -- This configures a StatefulSet used for night-summary rollup.
+gatherRollupSet: {}
 redis:
   # -- This specifies whether to use redis or not.
   enabled: false

@@ -13,6 +13,8 @@ A Helm chart for deploying the Rapid Analysis services.
 | env | object | `{}` | This section holds a set of key, value pairs for environmental variables (ENV_VAR: value). NOTE: RUN_ARG is taken care of by the chart using _script_. |
 | envSecrets | list | `[]` | This section holds specifications for secret injection. If this section is used, each object listed must have the following attributes defined: _name_ (The label for the secret), _secretName_ (The name of the vault store reference. Uses the _namespace_ attribute to construct the full name), _secretKey_ (The key in the vault store containing the necessary secret) |
 | fullnameOverride | string | `""` | Specify the deployed application name specifically. Overrides all other names. |
+| gather2aSet | object | `{}` | This configures a StatefulSet used for visit-level gather processing. |
+| gatherRollupSet | object | `{}` | This configures a StatefulSet used for night-summary rollup. |
 | image.pullPolicy | string | `"IfNotPresent"` | The policy to apply when pulling an image for deployment. |
 | image.repository | string | `"ts-dockerhub.lsst.org/rubintv-broadcaster"` | The Docker registry name for the container image. |
 | image.tag | string | `"develop"` | The tag of the container image to use. |
@@ -40,8 +42,9 @@ A Helm chart for deploying the Rapid Analysis services.
 | redis.tolerations | list | `[]` | Toleration specifications for the redis pods |
 | resources | object | `{}` | This allows the specification of resources (CPU, memory) requires to run the container. |
 | rubinTvSecretsPath | string | `""` |  |
-| scripts | obj | `{}` | List of script objects to run for the broadcaster. This section MUST have the following attribute specified for each entry. _name_ (The full path for the script) The following attributes are optional _resources_ (A resource object specification) _nodeSelector_ (A node selector object specification) _tolerations_ (A list of tolerations) _affinity_ (An affinity object specification) |
+| scripts | object | `{}` | List of script objects to run for the broadcaster. This section MUST have the following attribute specified for each entry. _name_ (The full path for the script) The following attributes are optional _resources_ (A resource object specification) _nodeSelector_ (A node selector object specification) _tolerations_ (A list of tolerations) _affinity_ (An affinity object specification) |
 | securityContext | object | `{}` | This section allows for specification of security context information. If the section is used, at least one of the following attributes must be specified. _uid_ (User id to run application as), _gid_ (Group id of the user that runs the application), _fid_ (File system context user id), |
 | siteTag | string | `""` | A special tag for letting the scripts know where they are running. |
 | tolerations | list | `[]` | This specifies the tolerations of the pod for any system taints. |
 | vaultPrefixPath | string | `""` | The Vault prefix path |
+| workerSet | object | `{}` | This configures a StatefulSet used for single frame workers. |

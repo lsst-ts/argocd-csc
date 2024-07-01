@@ -1,5 +1,6 @@
 {{ $_ := set $.Values "script" $.Values.workerSet }}
 {{ $script := $.Values.workerSet }}
+{{- if .Values.name }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -227,3 +228,4 @@ spec:
       tolerations:
         {{- toYaml $tolerations | nindent 8 }}
       {{- end }}
+{{- end }}
