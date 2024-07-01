@@ -47,18 +47,18 @@ isSim:
   - ess205
   - ess301
 renameMap:
-  ess1: tma-ess01
-  ess101: mtdome-ess01
-  ess102: mtdome-ess02
-  ess103: mtdome-ess03
+  ess1: tma-ess001
+  ess101: mtdome-ess101
+  ess102: mtdome-ess102
+  ess103: mtdome-ess103
   ess104: tma-ess104
   ess105: tma-ess105
   ess106: m2-ess106
   ess107: mtdome-ess107
   ess108: mtdome-ess108
-  ess201: auxtel-ess01
-  ess202: auxtel-ess02
-  ess203: auxtel-ess03
-  ess204: auxtel-ess04
+  ess201: auxtel-ess201
+  ess202: auxtel-ess202
+  ess203: auxtel-ess203
+  ess204: auxtel-ess204
   ess205: auxtel-ess205
-  ess301: calibhill-ess01
+  ess301: calibhill-ess301
