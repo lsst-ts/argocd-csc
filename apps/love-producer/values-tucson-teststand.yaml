@@ -21,7 +21,6 @@ producers:
   atscheduler: Scheduler:2
   atscriptqueue: ScriptQueue:2
   atspectrograph: ATSpectrograph:0
-  authorize: Authorize:0
   auxteless01: ESS:201
   auxteless02: ESS:202
   auxteless03: ESS:203
@@ -36,6 +35,7 @@ producers:
   dimm2: DIMM:2
   dsm1: DSM:1
   dsm2: DSM:2
+  epm1: EPM:1
   gcheaderservice1: GCHeaderService:1
   genericcamera1: GenericCamera:1
   lasertracker1: LaserTracker:1
@@ -49,6 +49,8 @@ producers:
   mtdomeess01: ESS:101
   mtdomeess02: ESS:102
   mtdomeess03: ESS:103
+  mtdomeess107: ESS:107
+  mtdomeess108: ESS:108
   mtdometrajectory: MTDomeTrajectory:0
   mtm1m3: MTM1M3:0
   mtm2: MTM2:0
@@ -57,6 +59,8 @@ producers:
   mtrotator: MTRotator:0
   mtscheduler: Scheduler:1
   mtscriptqueue: ScriptQueue:1
+  ocsscheduler: Scheduler:3
+  ocsscriptqueue: ScriptQueue:3
   tmaess01: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105
