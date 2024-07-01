@@ -5,6 +5,14 @@ ddsi2TracingLogfile: ddsi2.log
 durabilityServiceTracingEnabled: true
 durabilityServiceTracingLogfile: durability.log
 namespaces:
-- ospl-daemon
+- auxtel
+- calsys
+- eas
+- love
+- maintel
+- obssys
 - kafka-producers
+- ospl-daemon
+- uws
+- dds-test
 - calsys-lab
