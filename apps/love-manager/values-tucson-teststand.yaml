@@ -1,11 +1,10 @@
-secret_path: tucson-teststand.lsst.codes
+vaultSecretPath: secret/phalanx/tucson-teststand
 manager:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
       tag: c0037
       pullPolicy: Always
-      nexus3: nexus3-docker
     env:
       SERVER_URL: tucson-teststand.lsst.codes
       OLE_API_HOSTNAME: tucson-teststand.lsst.codes
@@ -46,7 +45,6 @@ manager:
       repository: ts-dockerhub.lsst.org/love-manager
       tag: c0037
       pullPolicy: Always
-      nexus3: nexus3-docker
     env:
       SERVER_URL: tucson-teststand.lsst.codes
       OLE_API_HOSTNAME: tucson-teststand.lsst.codes
@@ -94,5 +92,4 @@ viewBackup:
     repository: ts-dockerhub.lsst.org/love-view-backup
     tag: c0037
     pullPolicy: Always
-    nexus3: nexus3-docker
   schedule: 0 12 * * *

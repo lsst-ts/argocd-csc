@@ -1,11 +1,10 @@
 namespace: eas
 image:
-  repository: ts-dockerhub.lsst.org/dsm
+  repository: ts-dockerhub.lsst.org/epm
   tag: c0037
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
-  OSPL_INFOFILE: /tmp/ospl-info-dsm.log
-  OSPL_ERRORFILE: /tmp/ospl-error-dsm.log
+  LSST_SITE: tucson
 shmemDir: /run/ospl
 osplVersion: V6.10.4

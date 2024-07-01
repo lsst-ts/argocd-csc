@@ -18,7 +18,7 @@ secrets:
   calsys: "calsys"
   dds-test: "control-system-test"
   eas: "eas"
-  love: "love"
+  love: ""
   maintel: "simonyitel"
   obssys: "obssys"
   uws: "uws"

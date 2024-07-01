@@ -49,7 +49,7 @@ Helm chart for the LOVE manager service.
 | manager.frontend.envSecrets.SECRET_KEY | string | `"manager-secret-key"` | The LOVE manager frontend secret secret key name |
 | manager.frontend.envSecrets.SMTP_PASSWORD | string | `"smtp-email-password"` | The LOVE manager smtp email password secret key name |
 | manager.frontend.envSecrets.USER_USER_PASS | string | `"user-user-pass"` | The LOVE manager frontend user user password secret key name |
-| manager.frontend.image.nexus3 | string | `""` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
+| manager.frontend.image.nexus3 | string | `"pull-secret"` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | manager.frontend.image.pullPolicy | string | `"IfNotPresent"` | The pull policy on the LOVE manager frontend image |
 | manager.frontend.image.repository | string | `"lsstts/love-manager"` | The LOVE manager frontend image to use |
 | manager.frontend.image.tag | string | `"develop"` | The tag to use for the LOVE manager frontend image |
@@ -98,7 +98,7 @@ Helm chart for the LOVE manager service.
 | manager.producers.envSecrets.REDIS_PASS | string | `"redis-pass"` | The redis password secret key name. Must match `redis.envSecrets.REDIS_PASS` |
 | manager.producers.envSecrets.SECRET_KEY | string | `"manager-secret-key"` | The LOVE manager producers secret secret key name |
 | manager.producers.envSecrets.USER_USER_PASS | string | `"user-user-pass"` | The LOVE manager producers user user password secret key name |
-| manager.producers.image.nexus3 | string | `""` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
+| manager.producers.image.nexus3 | string | `"pull-secret"` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | manager.producers.image.pullPolicy | string | `"IfNotPresent"` | The pull policy on the LOVE manager producers image |
 | manager.producers.image.repository | string | `"lsstts/love-manager"` | The LOVE manager producers image to use |
 | manager.producers.image.tag | string | `"develop"` | The tag to use for the LOVE manager producers image |
@@ -120,11 +120,11 @@ Helm chart for the LOVE manager service.
 | redis.port | int | `6379` | The redis port number |
 | redis.resources | object | `{}` | Resource specifications for the LOVE redis pods |
 | redis.tolerations | list | `[]` | Toleration specifications for the LOVE redis pods |
-| secret_path | string | `"lsst.local"` | The site-specific path to find Vault secrets |
+| vaultSecretPath | string | `"lsst.local"` | The site-specific path to find Vault secrets |
 | viewBackup.affinity | object | `{}` | Affinity rules for the LOVE view backup pods |
 | viewBackup.enabled | bool | `false` | Whether view backup is active |
 | viewBackup.env | object | `{}` | Place to specify additional environment variables for the view backup job |
-| viewBackup.image.nexus3 | string | `""` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
+| viewBackup.image.nexus3 | string | `"pull-secret"` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | viewBackup.image.pullPolicy | string | `"IfNotPresent"` | The pull policy to use for the view backup image |
 | viewBackup.image.repository | string | `"lsstts/love-view-backup"` | The view backup image to use |
 | viewBackup.image.tag | string | `"develop"` | The tag to use for the view backup image |

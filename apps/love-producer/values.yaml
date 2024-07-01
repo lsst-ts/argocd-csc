@@ -10,7 +10,7 @@ image:
   # -- The pull policy on the LOVE producer image
   pullPolicy: IfNotPresent
   # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
-  nexus3: nexus3-docker
+  nexus3: pull-secret
 # -- This section holds a set of key, value pairs for environmental variables
 env:
   LSST_DDS_PARTITION_PREFIX: test

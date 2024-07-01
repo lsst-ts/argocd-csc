@@ -12,8 +12,8 @@ data:
       bucket: {{ .Values.s3Bucket }}
       insecure: false
       accessKeySecret:
-        name: {{ .Values.namespace }}-lfa
+        name: {{ .Values.namespace }}
         key: aws-access-key-id
       secretKeySecret:
-        name: {{ .Values.namespace }}-lfa
+        name: {{ .Values.namespace }}
         key: aws-secret-access-key
