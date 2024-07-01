@@ -1,7 +1,7 @@
 # -- The overall namespace for the application
 namespace: love
 # -- The site-specific path to find Vault secrets
-secret_path: lsst.local
+vaultSecretPath: lsst.local
 # -- The top-level secret key name that houses the rest of the secrets
 envSecretKeyName: love
 manager:
@@ -14,7 +14,7 @@ manager:
       # -- The pull policy on the LOVE manager frontend image
       pullPolicy: IfNotPresent
       # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
-      nexus3: ""
+      nexus3: pull-secret
     ports:
       # -- The port on the container for normal communications
       container: 8000
@@ -130,7 +130,7 @@ manager:
       # -- The pull policy on the LOVE manager producers image
       pullPolicy: IfNotPresent
       # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
-      nexus3: ""
+      nexus3: pull-secret
     ports:
       # -- The port on the container for normal communications
       container: 8000
@@ -264,7 +264,7 @@ viewBackup:
     # -- The pull policy to use for the view backup image
     pullPolicy: IfNotPresent
     # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
-    nexus3: ""
+    nexus3: pull-secret
   # -- Place to specify additional environment variables for the view backup job
   env: {}
   # -- The view backup job schedule in cron format

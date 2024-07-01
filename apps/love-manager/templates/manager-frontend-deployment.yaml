@@ -40,7 +40,7 @@ spec:
         {{- end }}
       {{- if $.Values.manager.frontend.image.nexus3 }}
       imagePullSecrets:
-        - name: {{ $.Values.namespace }}-{{ $.Values.manager.frontend.image.nexus3 }}
+        - name: {{ $.Values.manager.frontend.image.nexus3 }}
       {{- end }}
       {{- with $.Values.manager.frontend.nodeSelector }}
       nodeSelector:

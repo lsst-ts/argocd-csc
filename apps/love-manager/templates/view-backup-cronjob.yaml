@@ -45,17 +45,17 @@ spec:
                 - name: PGPASSWORD
                   valueFrom:
                     secretKeyRef:
-                      name: {{ .Values.namespace }}-secrets
+                      name: {{ .Values.namespace }}
                       key: {{ .Values.manager.frontend.envSecrets.DB_PASS }}
                 - name: AWS_ACCESS_KEY_ID
                   valueFrom:
                     secretKeyRef:
-                      name: {{ .Values.namespace }}-lfa
+                      name: {{ .Values.namespace }}
                       key: aws-access-key-id
                 - name: AWS_SECRET_ACCESS_KEY
                   valueFrom:
                     secretKeyRef:
-                      name: {{ .Values.namespace }}-lfa
+                      name: {{ .Values.namespace }}
                       key: aws-secret-access-key
               {{- with $.Values.viewBackup.resources }}
               resources:
@@ -64,7 +64,7 @@ spec:
           restartPolicy: {{ .Values.viewBackup.restartPolicy }}
           {{- if $.Values.viewBackup.image.nexus3 }}
           imagePullSecrets:
-            - name: {{ $.Values.namespace }}-{{ $.Values.viewBackup.image.nexus3 }}
+            - name: {{ $.Values.viewBackup.image.nexus3 }}
           {{- end }}
           {{- with $.Values.nodeSelector }}
           nodeSelector:

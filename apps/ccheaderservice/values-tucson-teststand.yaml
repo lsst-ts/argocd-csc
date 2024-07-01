@@ -3,7 +3,6 @@ image:
   repository: ts-dockerhub.lsst.org/headerservice
   tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_DDS_RESPONSIVENESS_TIMEOUT: 15s
@@ -15,16 +14,12 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-ccheaderservice.log
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
-  secretName: lfa
   secretKey: aws-access-key-id
 - name: AWS_SECRET_ACCESS_KEY
-  secretName: lfa
   secretKey: aws-secret-access-key
 - name: MYS3_ACCESS_KEY
-  secretName: lfa
   secretKey: aws-access-key-id
 - name: MYS3_SECRET_KEY
-  secretName: lfa
   secretKey: aws-secret-access-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4

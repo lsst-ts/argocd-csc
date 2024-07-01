@@ -3,7 +3,6 @@ image:
   repository: ts-dockerhub.lsst.org/dimm
   tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_SITE: tucson

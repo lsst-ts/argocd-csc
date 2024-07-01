@@ -36,7 +36,7 @@ spec:
             - name: {{ $env.name }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ $.Values.namespace }}-{{ $env.secretName }}
+                  name: {{ $.Values.namespace }}
                   key: {{ $env.secretKey }}
           {{- end }}
           {{- end }}
@@ -166,7 +166,7 @@ spec:
           emptyDir: {}
         - name: {{ $.Release.Name }}-raw-{{ $values.name }}
           secret:
-            secretName: {{ $.Values.namespace }}-{{ or $values.secretName $values.name }}
+            secretName: {{ $.Values.namespace }}
             defaultMode: 0600
       {{- end }}
       {{- end }}
@@ -189,7 +189,7 @@ spec:
       restartPolicy: Never
       {{- if .Values.image.nexus3 }}
       imagePullSecrets:
-        - name: {{ $.Values.namespace }}-{{ $.Values.image.nexus3 }}
+        - name: {{ $.Values.image.nexus3 }}
       {{- end }}
       hostIPC: {{ or $.Values.useHostIpc (eq ( $.Values.useHostIpc | toString ) "<nil>" ) }}
       hostPID: {{ or $.Values.useHostPid (eq ( $.Values.useHostPid | toString ) "<nil>" ) }}

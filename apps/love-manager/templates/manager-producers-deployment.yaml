@@ -40,7 +40,7 @@ spec:
         {{- end }}
       {{- if $.Values.manager.producers.image.nexus3 }}
       imagePullSecrets:
-        - name: {{ $.Values.namespace }}-{{ $.Values.manager.producers.image.nexus3 }}
+        - name: {{ $.Values.manager.producers.image.nexus3 }}
       {{- end }}
       {{- with $.Values.manager.producers.nodeSelector }}
       nodeSelector:

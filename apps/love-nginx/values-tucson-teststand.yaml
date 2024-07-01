@@ -8,7 +8,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 imagePullSecrets:
-- name: love-nexus3-docker
+- name: pull-secret
 initContainers:
   frontend:
     image:
