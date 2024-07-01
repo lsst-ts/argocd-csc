@@ -1,5 +1,8 @@
 env: tucson-teststand
 namespace: eas
+spec:
+  source:
+    targetRevision: tickets/DM-45060
 cscs:
   - dsm1
   - dsm2
