@@ -49,6 +49,38 @@ scripts:
     limits:
       cpu: 1.0
       memory: 6G
+- name: summit/LSSTComCamSim/runAosDonutPipeline.py
+  resources:
+    requests:
+      cpu: 32
+      memory: 96G
+    limits:
+      cpu: 32
+      memory: 96G
+- name: summit/LSSTComCamSim/runFocusSweepAnalysis.py
+  resources:
+    requests:
+      cpu: 0.5
+      memory: 1G
+    limits:
+      cpu: 1
+      memory: 2G
+- name: summit/LSSTComCamSim/runMetadataServerAos.py
+  resources:
+    requests:
+      cpu: 0.25
+      memory: 500M
+    limits:
+      cpu: .5
+      memory: 1G
+- name: summit/LSSTComCamSim/runPsfPlotting.py
+  resources:
+    requests:
+      cpu: .5
+      memory: 4G
+    limits:
+      cpu: 1
+      memory: 6G
 - name: summit/misc/runAllSky.py
   resources:
     requests:
