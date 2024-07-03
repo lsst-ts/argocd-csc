@@ -48,6 +48,7 @@ applications:
   - love
   - maintel
   - obssys
+  - lsstcam
   - mtm1m3-sim
   - mtm2-sim
   - mtmount-sim
