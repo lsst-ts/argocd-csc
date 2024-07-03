@@ -1,42 +1,12 @@
-vaultPathPrefix: secret/k8s_operator/summit-lsp.lsst.codes
+vaultPathPrefix: secret/phalanx/summit-lsp
 secrets:
-  - name: nexus3-docker
-    key: pull-secret
-    type: kubernetes.io/dockerconfigjson
-    namespaces:
-      - namespaces
-      - uws
-  - name: lfa
-    key: ts/software/lfa
-    namespaces:
-      - auxtel
-      - calsys
-      - love
-      - maintel
-      - obssys
-  - name: ts-salkafka
-    key: ts/software/ts-salkafka
-    namespaces:
-      - kafka-producers
-  - name: butler-secret
-    key: butler-secret
-    namespaces:
-      - auxtel
-      - maintel
-      - obssys
-  - name: meteoblue
-    key: ts/software/meteoblue
-    namespaces:
-      - eas
-  - name: gis
-    key: ts/software/gis
-    namespaces:
-      - obssys
-  - name: squadcast
-    key: ts/software/squadcast
-    namespaces:
-      - obssys
-  - name: rubintv
-    key: ts/software/rubintv
-    namespaces:
-      - uws
+  ospl-daemon: ""
+  kafka-producers: "calsys"
+  calsys-lab: ""
+  auxtel: "auxtel"
+  calsys: "calsys"
+  dds-test: ""
+  eas: "eas"
+  love: ""
+  maintel: "simonyitel"
+  obssys: "obssys"
