@@ -3,7 +3,6 @@ image:
   repository: ts-dockerhub.lsst.org/watcher
   tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: summit
   LSST_SITE: summit
@@ -11,7 +10,6 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-watcher.log
 envSecrets:
 - name: ESCALATION_KEY
-  secretName: squadcast
-  secretKey: escalation-key
+  secretKey: squadcast-escalation-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4

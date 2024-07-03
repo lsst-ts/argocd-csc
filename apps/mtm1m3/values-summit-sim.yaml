@@ -3,7 +3,6 @@ image:
   repository: ts-dockerhub.lsst.org/mtm1m3_sim
   tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: summit
   LSST_SITE: summit
