@@ -38,7 +38,7 @@ spec:
             - name: {{ $env_var }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ $.Values.namespace }}-secrets
+                  name: {{ $.Values.namespace }}
                   key: {{ $env_value }}
           {{- end }}
           volumeMounts:
