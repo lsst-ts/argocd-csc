@@ -1,4 +1,4 @@
-vaultPathPrefix: secret/phalanx/base-lsp
+vaultPathPrefix: secret/phalanx/base
 namespaces:
   - ospl-daemon
   - kafka-producers
