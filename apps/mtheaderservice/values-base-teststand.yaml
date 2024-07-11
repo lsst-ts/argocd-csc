@@ -1,4 +1,4 @@
-namespace: maintel
+namespace: lsstcam
 image:
   repository: ts-dockerhub.lsst.org/headerservice
   tag: c0037
