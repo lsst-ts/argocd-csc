@@ -17,3 +17,12 @@ microphones:
 - name: auxtel1
   host: auxtel-rpi-audio01.cp.lsst.org
   port: 4444
+- name: dynalene1
+  host: dynalene-rpi-audio01.cp.lsst.org
+  port: 4444
+- name: mtdome1
+  host: mtdome-rpi-audio01.cp.lsst.org
+  port: 4444
+- name: tma1
+  host: tma-rpi-audio01.cp.lsst.org
+  port: 4444
