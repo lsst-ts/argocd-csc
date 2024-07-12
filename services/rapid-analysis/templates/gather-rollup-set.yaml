@@ -1,6 +1,6 @@
 {{ $_ := set $.Values "script" $.Values.gatherRollupSet }}
 {{ $script := $.Values.gatherRollupSet }}
-{{- if .Values.name }}
+{{- if $script.name }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
