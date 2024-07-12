@@ -38,49 +38,49 @@ scripts:
     limits:
       cpu: 1.0
       memory: 4G
-- name: summit/LSSTComCamSim/runButlerWatcher.py
-- name: summit/LSSTComCamSim/runHeadNode.py
-- name: summit/LSSTComCamSim/runMetadataServer.py
-- name: summit/LSSTComCamSim/runPlotter.py
-  resources:
-    requests:
-      cpu: 0.5
-      memory: 4G
-    limits:
-      cpu: 1.0
-      memory: 6G
-- name: summit/LSSTComCamSim/runAosDonutPipeline.py
-  resources:
-    requests:
-      cpu: 32
-      memory: 96G
-    limits:
-      cpu: 32
-      memory: 96G
-- name: summit/LSSTComCamSim/runFocusSweepAnalysis.py
-  resources:
-    requests:
-      cpu: 0.5
-      memory: 1G
-    limits:
-      cpu: 1
-      memory: 2G
-- name: summit/LSSTComCamSim/runMetadataServerAos.py
-  resources:
-    requests:
-      cpu: 0.25
-      memory: 500M
-    limits:
-      cpu: .5
-      memory: 1G
-- name: summit/LSSTComCamSim/runPsfPlotting.py
-  resources:
-    requests:
-      cpu: .5
-      memory: 4G
-    limits:
-      cpu: 1
-      memory: 6G
+# - name: summit/LSSTComCamSim/runButlerWatcher.py
+# - name: summit/LSSTComCamSim/runHeadNode.py
+# - name: summit/LSSTComCamSim/runMetadataServer.py
+# - name: summit/LSSTComCamSim/runPlotter.py
+#   resources:
+#     requests:
+#       cpu: 0.5
+#       memory: 4G
+#     limits:
+#       cpu: 1.0
+#       memory: 6G
+# - name: summit/LSSTComCamSim/runAosDonutPipeline.py
+#   resources:
+#     requests:
+#       cpu: 32
+#       memory: 96G
+#     limits:
+#       cpu: 32
+#       memory: 96G
+# - name: summit/LSSTComCamSim/runFocusSweepAnalysis.py
+#   resources:
+#     requests:
+#       cpu: 0.5
+#       memory: 1G
+#     limits:
+#       cpu: 1
+#       memory: 2G
+# - name: summit/LSSTComCamSim/runMetadataServerAos.py
+#   resources:
+#     requests:
+#       cpu: 0.25
+#       memory: 500M
+#     limits:
+#       cpu: .5
+#       memory: 1G
+# - name: summit/LSSTComCamSim/runPsfPlotting.py
+#   resources:
+#     requests:
+#       cpu: .5
+#       memory: 4G
+#     limits:
+#       cpu: 1
+#       memory: 6G
 - name: summit/misc/runAllSky.py
   resources:
     requests:
@@ -96,36 +96,36 @@ scripts:
 - name: summit/misc/runStarTrackerNightReport.py
 - name: summit/misc/runStarTrackerWide.py
 - name: summit/misc/runTmaTelemetry.py
-workerSet:
-  name: summit/LSSTComCamSim/runSfmRunner.py
-  replicas: 90
-  resources:
-    requests:
-      cpu: 1.0
-      memory: 4G
-    limits:
-      cpu: 1.0
-      memory: 8G
-gather2aSet:
-  name: summit/LSSTComCamSim/runStep2aWorker.py
-  replicas: 10
-  resources:
-    requests:
-      cpu: 1.0
-      memory: 4G
-    limits:
-      cpu: 1.0
-      memory: 8G
-gatherRollupSet:
-  name: summit/LSSTComCamSim/runNightlyWorker.py
-  replicas: 5
-  resources:
-    requests:
-      cpu: 1.0
-      memory: 12G
-    limits:
-      cpu: 1.0
-      memory: 24G
+# workerSet:
+#   name: summit/LSSTComCamSim/runSfmRunner.py
+#   replicas: 90
+#   resources:
+#     requests:
+#       cpu: 1.0
+#       memory: 4G
+#     limits:
+#       cpu: 1.0
+#       memory: 8G
+# gather2aSet:
+#   name: summit/LSSTComCamSim/runStep2aWorker.py
+#   replicas: 10
+#   resources:
+#     requests:
+#       cpu: 1.0
+#       memory: 4G
+#     limits:
+#       cpu: 1.0
+#       memory: 8G
+# gatherRollupSet:
+#   name: summit/LSSTComCamSim/runNightlyWorker.py
+#   replicas: 5
+#   resources:
+#     requests:
+#       cpu: 1.0
+#       memory: 12G
+#     limits:
+#       cpu: 1.0
+#       memory: 24G
 - name: summit/LSSTComCam/runButlerWatcher.py
 - name: summit/LSSTComCam/runHeadNode.py
 - name: summit/LSSTComCam/runMetadataServer.py
