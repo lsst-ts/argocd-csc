@@ -2,7 +2,6 @@ image:
   repository: ts-dockerhub.lsst.org/audio_broadcaster
   tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 ingress:
   hostname: summit-lsp.lsst.codes
   httpPath: /audio-broadcaster

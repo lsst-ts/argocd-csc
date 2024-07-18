@@ -10,7 +10,7 @@ image:
   # -- The pull policy on the ts_audio_broadcaster image
   pullPolicy: IfNotPresent
   # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
-  nexus3: nexus3-docker
+  nexus3: pull-secret
 # -- Service type specification
 serviceType: ClusterIP
 ports:
