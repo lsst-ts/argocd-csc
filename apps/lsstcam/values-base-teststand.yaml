@@ -1,0 +1,5 @@
+env: base-teststand
+namespace: lsstcam
+cscs:
+  - mtheaderservice
+  - mtoods

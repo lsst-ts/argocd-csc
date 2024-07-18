@@ -5,7 +5,6 @@ manager:
       repository: ts-dockerhub.lsst.org/love-manager
       tag: c0037.002
       pullPolicy: Always
-      nexus3: nexus3-docker
     env:
       SERVER_URL: summit-lsp.lsst.codes
       OLE_API_HOSTNAME: summit-lsp.lsst.codes
@@ -45,7 +44,6 @@ manager:
       repository: ts-dockerhub.lsst.org/love-manager
       tag: c0037.002
       pullPolicy: Always
-      nexus3: nexus3-docker
     env:
       SERVER_URL: summit-lsp.lsst.codes
       OLE_API_HOSTNAME: summit-lsp.lsst.codes
@@ -93,5 +91,4 @@ viewBackup:
     repository: ts-dockerhub.lsst.org/love-view-backup
     tag: c0037.000
     pullPolicy: Always
-    nexus3: nexus3-docker
   schedule: 0 12 * * *

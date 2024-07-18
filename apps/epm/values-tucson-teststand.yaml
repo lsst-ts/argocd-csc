@@ -1,0 +1,10 @@
+namespace: eas
+image:
+  repository: ts-dockerhub.lsst.org/epm
+  tag: c0037
+  pullPolicy: Always
+env:
+  LSST_DDS_PARTITION_PREFIX: tucson
+  LSST_SITE: tucson
+shmemDir: /run/ospl
+osplVersion: V6.10.4

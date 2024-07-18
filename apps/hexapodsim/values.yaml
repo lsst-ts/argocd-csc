@@ -7,6 +7,6 @@ image:
   # -- The policy to apply when pulling an image for deployment
   pullPolicy: Always
   # -- The tag name for the Nexus3 Docker repository secrets
-  nexus3: nexus3-docker
+  nexus3: pull-secret
 # -- This is the namespace in which the hexapod controller simulator will be placed
 namespace: auxtel

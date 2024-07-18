@@ -8,17 +8,17 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 imagePullSecrets:
-- name: love-nexus3-docker
+- name: pull-secret
 initContainers:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-frontend-k8s
-      tag: c0035
+      tag: c0037
       pullPolicy: Always
   manager:
     image:
       repository: ts-dockerhub.lsst.org/love-manager-static
-      tag: c0035
+      tag: c0037
       pullPolicy: Always
     command:
     - /bin/ash

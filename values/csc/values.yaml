@@ -6,7 +6,7 @@ image:
   # -- The policy to apply when pulling an image for deployment
   pullPolicy: IfNotPresent
   # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
-  nexus3:
+  nexus3: pull-secret
 # -- This section holds a set of key, value pairs for environmental variables (ENV_VAR: value)
 env: {}
 # -- This section holds specifications for secret injection.

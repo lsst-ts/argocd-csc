@@ -38,7 +38,7 @@ spec:
             - name: {{ $env_var }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ $.Values.namespace }}-secrets
+                  name: {{ $.Values.namespace }}
                   key: {{ $env_value }}
           {{- end }}
           volumeMounts:
@@ -63,7 +63,7 @@ spec:
             path: {{ $.Values.shmemDir | default "/tmp/openshmem" }}
       {{- if $.Values.image.nexus3 }}
       imagePullSecrets:
-        - name: {{ $.Values.namespace }}-{{ $.Values.image.nexus3 }}
+        - name: {{ $.Values.image.nexus3 }}
       {{- end }}
       hostIPC: {{ or $.Values.useHostIpc (eq ( $.Values.useHostIpc | toString ) "<nil>" ) }}
       hostPID: {{ or $.Values.useHostPid (eq ( $.Values.useHostPid | toString ) "<nil>" ) }}

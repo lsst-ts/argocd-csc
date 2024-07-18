@@ -111,7 +111,7 @@ Determine type of environment
 {{- if ne .secretName "" }}
   valueFrom:
     secretKeyRef:
-      name: {{ .secretName }}-secrets
+      name: {{ .secretName }}
       key: {{ .value }}
 {{- else }}
   value: {{ .value | quote }}

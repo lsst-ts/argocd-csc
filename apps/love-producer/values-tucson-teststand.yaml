@@ -1,8 +1,7 @@
 image:
   repository: ts-dockerhub.lsst.org/love-producer
-  tag: c0035
+  tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
@@ -22,12 +21,12 @@ producers:
   atscheduler: Scheduler:2
   atscriptqueue: ScriptQueue:2
   atspectrograph: ATSpectrograph:0
-  authorize: Authorize:0
-  auxteless01: ESS:201
-  auxteless02: ESS:202
-  auxteless03: ESS:203
-  auxteless04: ESS:204
-  calibhilless01: ESS:301
+  auxteless201: ESS:201
+  auxteless202: ESS:202
+  auxteless203: ESS:203
+  auxteless204: ESS:204
+  auxteless205: ESS:205
+  calibhilless301: ESS:301
   camerahexapod: MTHexapod:1
   cccamera: CCCamera:0
   ccheaderservice: CCHeaderService:0
@@ -37,6 +36,7 @@ producers:
   dimm2: DIMM:2
   dsm1: DSM:1
   dsm2: DSM:2
+  epm1: EPM:1
   gcheaderservice1: GCHeaderService:1
   genericcamera1: GenericCamera:1
   lasertracker1: LaserTracker:1
@@ -47,9 +47,11 @@ producers:
   mtaircompressor2: MTAirCompressor:2
   mtaos: MTAOS:0
   mtdome: MTDome:0
-  mtdomeess01: ESS:101
-  mtdomeess02: ESS:102
-  mtdomeess03: ESS:103
+  mtdomeess101: ESS:101
+  mtdomeess102: ESS:102
+  mtdomeess103: ESS:103
+  mtdomeess107: ESS:107
+  mtdomeess108: ESS:108
   mtdometrajectory: MTDomeTrajectory:0
   mtm1m3: MTM1M3:0
   mtm2: MTM2:0
@@ -58,7 +60,9 @@ producers:
   mtrotator: MTRotator:0
   mtscheduler: Scheduler:1
   mtscriptqueue: ScriptQueue:1
-  tmaess01: ESS:1
+  ocsscheduler: Scheduler:3
+  ocsscriptqueue: ScriptQueue:3
+  tmaess001: ESS:1
   tmaess104: ESS:104
   tmaess105: ESS:105
   watcher: Watcher:0

@@ -1,35 +1,9 @@
-vaultPathPrefix: secret/k8s_operator/base-lsp.lsst.codes
+vaultPathPrefix: secret/phalanx/base
+namespaces:
+  - ospl-daemon
+  - kafka-producers
+  - lsstcam
 secrets:
-  - name: nexus3-docker
-    key: pull-secret
-    type: kubernetes.io/dockerconfigjson
-    namespaces:
-      - namespaces
-      - uws
-  - name: lfa
-    key: ts/software/lfa
-    namespaces:
-      - auxtel
-      - calsys
-      - love
-      - maintel
-      - obssys
-      - dds-test
-  - name: ts-salkafka
-    key: ts/software/ts-salkafka
-    namespaces:
-      - kafka-producers
-  - name: butler-secret
-    key: butler-secret
-    namespaces:
-      - auxtel
-      - maintel
-      - obssys
-  - name: love
-    key: ts/software/love
-    namespaces:
-      - obssys
-  - name: meteoblue
-    key: ts/software/meteoblue
-    namespaces:
-      - eas
+  ospl-daemon: ""
+  kafka-producers: "calsys"
+  lsstcam: "simonyitel"

@@ -14,7 +14,7 @@ A Helm chart for deploying the MTM2 CSC.
 | entrypoint | string | `nil` | This key allows specification of a script to override the entrypoint |
 | env | object | `{}` | This section holds a set of key, value pairs for environmental variables (ENV_VAR: value) |
 | envSecrets | list | `[]` | This section holds specifications for secret injection. If this section is used, each object listed must have the following attributes defined: _name_ (The label for the secret), _secretName_ (The name of the vault store reference. Uses the _namespace_ attribute to construct the full name), _secretKey_ (The key in the vault store containing the necessary secret) |
-| image.nexus3 | string | `nil` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
+| image.nexus3 | string | `"pull-secret"` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | image.pullPolicy | string | `"IfNotPresent"` | The policy to apply when pulling an image for deployment |
 | image.repository | string | `"lsstts/test"` | The Docker registry name of the container image to use for the CSC |
 | image.tag | string | `"develop"` | The tag of the container image to use for the CSC |

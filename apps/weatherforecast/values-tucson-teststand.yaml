@@ -1,9 +1,8 @@
 namespace: eas
 image:
   repository: ts-dockerhub.lsst.org/weatherforecast
-  tag: c0035
+  tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_SITE: tucson
@@ -12,7 +11,6 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-weatherforecast.log
 envSecrets:
 - name: METEOBLUE_API_KEY
-  secretName: meteoblue
-  secretKey: api-key
+  secretKey: meteoblue-api-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4

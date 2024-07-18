@@ -78,6 +78,6 @@ spec:
                   claimName: {{ .Values.persistentVolume.claimName }}
               restartPolicy: Never
               imagePullSecrets:
-              - name: {{ .Values.namespace }}-nexus3-docker
+              - name: pull-secret
               hostIPC: true
               hostPID: true

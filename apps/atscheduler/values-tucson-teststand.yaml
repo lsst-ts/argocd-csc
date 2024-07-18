@@ -1,9 +1,8 @@
 namespace: obssys
 image:
   repository: ts-dockerhub.lsst.org/scheduler
-  tag: c0035
+  tag: c0037
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_SITE: tucson
@@ -13,16 +12,12 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-atscheduler.log
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
-  secretName: lfa
   secretKey: aws-access-key-id
 - name: AWS_SECRET_ACCESS_KEY
-  secretName: lfa
   secretKey: aws-secret-access-key
 - name: MYS3_ACCESS_KEY
-  secretName: lfa
   secretKey: aws-access-key-id
 - name: MYS3_SECRET_KEY
-  secretName: lfa
   secretKey: aws-secret-access-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4

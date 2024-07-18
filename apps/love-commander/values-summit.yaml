@@ -3,7 +3,6 @@ image:
   repository: ts-dockerhub.lsst.org/love-commander
   tag: c0037.000
   pullPolicy: Always
-  nexus3: nexus3-docker
 env:
   LSST_DDS_PARTITION_PREFIX: summit
   S3_ENDPOINT_URL: https://s3.cp.lsst.org
@@ -12,16 +11,12 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-love-commander.log
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
-  secretName: lfa
   secretKey: aws-access-key-id
 - name: AWS_SECRET_ACCESS_KEY
-  secretName: lfa
   secretKey: aws-secret-access-key
 - name: MYS3_ACCESS_KEY
-  secretName: lfa
   secretKey: aws-access-key-id
 - name: MYS3_SECRET_KEY
-  secretName: lfa
   secretKey: aws-secret-access-key
 shmemDir: /run/ospl
 osplVersion: V6.10.4
