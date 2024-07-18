@@ -2,7 +2,6 @@ vaultPathPrefix: secret/phalanx/summit-lsp
 secrets:
   ospl-daemon: ""
   kafka-producers: "calsys"
-  calsys-lab: ""
   auxtel: "auxtel"
   calsys: "calsys"
   dds-test: ""
