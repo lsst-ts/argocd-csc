@@ -44,7 +44,7 @@ spec:
           {{- end }}
       {{- if $.Values.image.nexus3 }}
       imagePullSecrets:
-        - name: {{ $.Values.namespace }}-{{ $.Values.image.nexus3 }}
+        - name: {{ $.Values.image.nexus3 }}
       {{- end }}
       {{- with $.Values.nodeSelector }}
       nodeSelector:
