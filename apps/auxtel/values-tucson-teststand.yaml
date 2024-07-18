@@ -1,8 +1,5 @@
 env: tucson-teststand
 namespace: auxtel
-spec:
-  source:
-    targetRevision: tickets/DM-45060
 cscs:
   - ataos
   - atdome

@@ -1,4 +1,1 @@
 env: tucson-teststand
-spec:
-  source:
-    targetRevision: tickets/DM-45060

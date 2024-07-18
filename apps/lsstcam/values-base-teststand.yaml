@@ -1,8 +1,5 @@
 env: base-teststand
 namespace: lsstcam
-spec:
-  source:
-    targetRevision: tickets/DM-45060
 cscs:
   - mtheaderservice
   - mtoods
