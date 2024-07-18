@@ -1,4 +1,4 @@
-secret_path: summit-lsp.lsst.codes
+vaultSecretPath: secret/phalanx/summit
 manager:
   frontend:
     image:
