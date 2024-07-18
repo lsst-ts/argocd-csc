@@ -1,4 +1,4 @@
-vaultPathPrefix: secret/phalanx/summit-lsp
+vaultPathPrefix: secret/phalanx/summit
 secrets:
   ospl-daemon: ""
   kafka-producers: "calsys"
