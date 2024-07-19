@@ -71,6 +71,7 @@ producers:
       FiberSpectrograph
       LEDProjector
       LinearStage
+      MTReflector
       TunableLaser
   mtaircompressor:
     cscs: MTAirCompressor
