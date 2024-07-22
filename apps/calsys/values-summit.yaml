@@ -1,7 +1,8 @@
 env: summit
 namespace: calsys
 cscs:
-  - electrometer1
+  - electrometer101
+  - electrometer102
   - electrometer201
   - atwhitelight
   - atmonochromator
@@ -9,5 +10,6 @@ cscs:
   - tunablelaser
   - cbp
 renameMap:
-  electrometer1: comcam-electrometer
+  electrometer101: comcam-electrometer-101
+  electrometer102: cbpcal-electrometer-102
   electrometer201: auxtel-electrometer-201
