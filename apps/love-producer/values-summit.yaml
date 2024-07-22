@@ -4,85 +4,240 @@ image:
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
-  WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
 shmemDir: /run/ospl
 producers:
-  ataos: ATAOS:0
-  atcamera: ATCamera:0
-  atdome: ATDome:0
-  atdometrajectory: ATDomeTrajectory:0
-  atheaderservice: ATHeaderService:0
-  athexapod: ATHexapod:0
-  atmcs: ATMCS:0
-  atmonochromator: ATMonochromator:0
-  atocps: OCPS:1
-  atoods: ATOODS:0
-  atpneumatics: ATPneumatics:0
-  atptg: ATPtg:0
-  atscheduler: Scheduler:2
-  atscriptqueue: ScriptQueue:2
-  atspectrograph: ATSpectrograph:0
-  atwhitelight: ATWhiteLight:0
-  auxteless201: ESS:201
-  auxteless202: ESS:202
-  auxteless203: ESS:203
-  auxteless204: ESS:204
-  auxteless205: ESS:205
-  calibhilless301: ESS:301
-  camerahexapod: MTHexapod:1
-  cbp: CBP:0
-  cccamera: CCCamera:0
-  ccheaderservice: CCHeaderService:0
-  ccocps: OCPS:2
-  ccoods: CCOODS:0
-  dimm1: DIMM:1
-  dimm2: DIMM:2
-  dsm1: DSM:1
-  dsm2: DSM:2
-  electrometer101: Electrometer:101
-  electrometer102: Electrometer:102
-  electrometer201: Electrometer:201
-  epm301: EPM:301
-  fiberspectrograph3: FiberSpectrograph:3
-  gcheaderservice101: GCHeaderService:101
-  gcheaderservice102: GCHeaderService:102
-  gcheaderservice103: GCHeaderService:103
-  genericcamera101: GenericCamera:101
-  genericcamera102: GenericCamera:102
-  genericcamera103: GenericCamera:103
-  gis: GIS:0
-  hvac: HVAC:0
-  lasertracker1: LaserTracker:1
-  love: LOVE:0
-  m2ess106: ESS:106
-  m2hexapod: MTHexapod:2
-  mtaircompressor1: MTAirCompressor:1
-  mtaircompressor2: MTAirCompressor:2
-  mtaos: MTAOS:0
-  mtcamera: MTCamera:0
-  mtdome: MTDome:0
-  mtdomeess101: ESS:101
-  mtdomeess102: ESS:102
-  mtdomeess103: ESS:103
-  mtdomeess107: ESS:107
-  mtdomeess108: ESS:108
-  mtdometrajectory: MTDomeTrajectory:0
-  mtm1m3: MTM1M3:0
-  mtm1m3ts: MTM1M3TS:0
-  mtm2: MTM2:0
-  mtmount: MTMount:0
-  mtptg: MTPtg:0
-  mtrotator: MTRotator:0
-  mtscheduler: Scheduler:1
-  mtscriptqueue: ScriptQueue:1
-  ocsscheduler: Scheduler:3
-  ocsscriptqueue: ScriptQueue:3
-  pmd1: PMD:1
-  raocps: OCPS:101
-  tmaess001: ESS:1
-  tmaess104: ESS:104
-  tmaess105: ESS:105
-  tunablelaser: TunableLaser:0
-  watcher: Watcher:0
-  weatherforecast: WeatherForecast:0
+  ataos:
+    name_index: ATAOS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atcamera:
+    name_index: ATCamera:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atdome:
+    name_index: ATDome:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atdometrajectory:
+    name_index: ATDomeTrajectory:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atheaderservice:
+    name_index: ATHeaderService:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  athexapod:
+    name_index: ATHexapod:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atmcs:
+    name_index: ATMCS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atmonochromator:
+    name_index: ATMonochromator:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atocps:
+    name_index: OCPS:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atoods:
+    name_index: ATOODS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atpneumatics:
+    name_index: ATPneumatics:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atptg:
+    name_index: ATPtg:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atscheduler:
+    name_index: Scheduler:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atscriptqueue:
+    name_index: ScriptQueue:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/queue/ws/subscription
+  atspectrograph:
+    name_index: ATSpectrograph:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atwhitelight:
+    name_index: ATWhiteLight:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  auxteless201:
+    name_index: ESS:201
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  auxteless202:
+    name_index: ESS:202
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  auxteless203:
+    name_index: ESS:203
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  auxteless204:
+    name_index: ESS:204
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  auxteless205:
+    name_index: ESS:205
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  calibhilless301:
+    name_index: ESS:301
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  camerahexapod:
+    name_index: MTHexapod:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  cbp:
+    name_index: CBP:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  cccamera:
+    name_index: CCCamera:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  ccheaderservice:
+    name_index: CCHeaderService:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  ccocps:
+    name_index: OCPS:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  ccoods:
+    name_index: CCOODS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  dimm1:
+    name_index: DIMM:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  dimm2:
+    name_index: DIMM:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  dsm1:
+    name_index: DSM:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  dsm2:
+    name_index: DSM:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  electrometer101:
+    name_index: Electrometer:101
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  electrometer102:
+    name_index: Electrometer:102
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  electrometer201:
+    name_index: Electrometer:201
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  epm301:
+    name_index: EPM:301
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  fiberspectrograph3:
+    name_index: FiberSpectrograph:3
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  gcheaderservice101:
+    name_index: GCHeaderService:101
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  gcheaderservice102:
+    name_index: GCHeaderService:102
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  gcheaderservice103:
+    name_index: GCHeaderService:103
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  genericcamera101:
+    name_index: GenericCamera:101
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  genericcamera102:
+    name_index: GenericCamera:102
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  genericcamera103:
+    name_index: GenericCamera:103
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  gis:
+    name_index: GIS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  hvac:
+    name_index: HVAC:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  lasertracker1:
+    name_index: LaserTracker:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  love:
+    name_index: LOVE:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  m2ess106:
+    name_index: ESS:106
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  m2hexapod:
+    name_index: MTHexapod:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtaircompressor1:
+    name_index: MTAirCompressor:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtaircompressor2:
+    name_index: MTAirCompressor:2
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtaos:
+    name_index: MTAOS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtcamera:
+    name_index: MTCamera:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdome:
+    name_index: MTDome:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdomeess101:
+    name_index: ESS:101
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdomeess102:
+    name_index: ESS:102
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdomeess103:
+    name_index: ESS:103
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdomeess107:
+    name_index: ESS:107
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdomeess108:
+    name_index: ESS:108
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtdometrajectory:
+    name_index: MTDomeTrajectory:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtm1m3:
+    name_index: MTM1M3:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/m1m3/ws/subscription
+  mtm1m3ts:
+    name_index: MTM1M3TS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtm2:
+    name_index: MTM2:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtmount:
+    name_index: MTMount:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtptg:
+    name_index: MTPtg:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtrotator:
+    name_index: MTRotator:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtscheduler:
+    name_index: Scheduler:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtscriptqueue:
+    name_index: ScriptQueue:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/queue/ws/subscription
+  ocsscheduler:
+    name_index: Scheduler:3
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  ocsscriptqueue:
+    name_index: ScriptQueue:3
+    WEBSOCKET_HOST: love-nginx-service/love/manager/queue/ws/subscription
+  pmd1:
+    name_index: PMD:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  raocps:
+    name_index: OCPS:101
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tmaess001:
+    name_index: ESS:1
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tmaess104:
+    name_index: ESS:104
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tmaess105:
+    name_index: ESS:105
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tunablelaser:
+    name_index: TunableLaser:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  watcher:
+    name_index: Watcher:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  weatherforecast:
+    name_index: WeatherForecast:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
 osplVersion: V6.10.4
