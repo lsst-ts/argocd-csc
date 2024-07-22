@@ -29,7 +29,9 @@ spec:
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           env:
             - name: LOVE_CSC_PRODUCER
-              value: {{ $csc | quote }}
+              value: {{ $csc.name_index | quote }}
+            - name: WEBSOCKET_HOST
+              value: {{ $csc.WEBSOCKET_HOST | quote }}
           {{- range $env_var, $env_value := $.Values.env }}
             - name: {{ $env_var }}
               value: {{ $env_value | quote }}

@@ -14,7 +14,6 @@ image:
 # -- This section holds a set of key, value pairs for environmental variables
 env:
   LSST_DDS_PARTITION_PREFIX: test
-  WEBSOCKET_HOST: love-nginx/manager/ws/subscription
   OSPL_INFOFILE: /tmp/ospl-info-love-producer.log
   OSPL_ERRORFILE: /tmp/ospl-error-love-producer.log
 # -- This section holds a set of key, value pairs for secrets

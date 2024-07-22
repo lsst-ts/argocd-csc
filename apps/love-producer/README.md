@@ -7,7 +7,7 @@ Helm chart for the LOVE producer.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity rules for the LOVE producer pods |
-| env | object | `{"LSST_DDS_PARTITION_PREFIX":"test","OSPL_ERRORFILE":"/tmp/ospl-error-love-producer.log","OSPL_INFOFILE":"/tmp/ospl-info-love-producer.log","WEBSOCKET_HOST":"love-nginx/manager/ws/subscription"}` | This section holds a set of key, value pairs for environmental variables |
+| env | object | `{"LSST_DDS_PARTITION_PREFIX":"test","OSPL_ERRORFILE":"/tmp/ospl-error-love-producer.log","OSPL_INFOFILE":"/tmp/ospl-info-love-producer.log"}` | This section holds a set of key, value pairs for environmental variables |
 | envSecrets | object | `{"PROCESS_CONNECTION_PASS":"process-connection-pass"}` | This section holds a set of key, value pairs for secrets |
 | image.nexus3 | string | `"pull-secret"` | The tag name for the Nexus3 Docker repository secrets if private images need to be pulled |
 | image.pullPolicy | string | `"IfNotPresent"` | The pull policy on the LOVE producer image |

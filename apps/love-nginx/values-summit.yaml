@@ -48,7 +48,23 @@ nginxConfig: |
         proxy_redirect off;
     }
     location /love/manager/producers {
-        proxy_pass http://love-manager-producers-service:8000;
+        proxy_pass http://love-manager-producer-general-service:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_redirect off;
+    }
+    location /love/manager/m1m3 {
+        proxy_pass http://love-manager-producer-m1m3-service:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_redirect off;
+    }
+    location /love/manager/queue {
+        proxy_pass http://love-manager-producer-queue-service:8000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
