@@ -32,3 +32,15 @@ nfsMountpoint:
   readOnly: true
   server: nfs-obsenv.tu.lsst.org
   serverPath: /obs-env
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: csc
+          operator: In
+          values:
+          - atscheduler
+          - mtscheduler
+          - ocsscheduler
+      topologyKey: kubernetes.io/hostname
