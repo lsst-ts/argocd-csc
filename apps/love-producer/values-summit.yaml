@@ -39,7 +39,8 @@ producers:
   dimm2: DIMM:2
   dsm1: DSM:1
   dsm2: DSM:2
-  electrometer1: Electrometer:1
+  electrometer101: Electrometer:101
+  electrometer102: Electrometer:102
   electrometer201: Electrometer:201
   epm301: EPM:301
   fiberspectrograph3: FiberSpectrograph:3

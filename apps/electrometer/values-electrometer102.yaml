@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-comcam-electrometer102.log
+  OSPL_ERRORFILE: /tmp/ospl-error-comcam-electrometer102.log
+  RUN_ARG: 102
