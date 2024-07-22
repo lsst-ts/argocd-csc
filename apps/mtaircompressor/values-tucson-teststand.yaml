@@ -1,7 +1,7 @@
 namespace: maintel
 image:
   repository: ts-dockerhub.lsst.org/mtaircompressor
-  tag: c0037
+  tag: c0038
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
