@@ -30,7 +30,7 @@ spec:
         templateRef:
           name: cleanup-reports-workflow
           template: cleanup-reports
-      - name: sensor_cscs
+      - name: sensor-cscs
         depends: call-cleanup-reports
         templateRef:
           name: integration-test-job-template
@@ -40,9 +40,9 @@ spec:
           - name: integrationtest
             value: "-A Test_Report_SensorCSCs.list"
           - name: jobname
-            value: sensor_cscs
+            value: sensor-cscs
       - name: call-save-reports
-        depends: shutdown
+        depends: sensor-cscs
         templateRef:
           name: save-reports-workflow
           template: save-reports
