@@ -1,5 +1,5 @@
 image:
-  tag: c0037
+  tag: c0038
   pullPolicy: Always
   # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
   nexus3: nexus3-docker

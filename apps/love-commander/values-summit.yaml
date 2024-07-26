@@ -1,7 +1,7 @@
 namespace: love
 image:
   repository: ts-dockerhub.lsst.org/love-commander
-  tag: c0037.000
+  tag: c0038.000
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
