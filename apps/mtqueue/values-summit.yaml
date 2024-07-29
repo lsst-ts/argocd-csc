@@ -1,7 +1,7 @@
 namespace: obssys
 image:
   repository: ts-dockerhub.lsst.org/scriptqueue
-  tag: c0037
+  tag: c0038
   pullPolicy: Always
 env:
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml

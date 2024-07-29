@@ -38,13 +38,24 @@ def update_tag(values, top_key, update_key, update_value):
     for tag in tags[1:]:
         vtt = vtt[tag]
     keys = update_key.split(".")
-    try:
-        for key in keys[:-1]:
-            vtt = vtt[key]
-    except KeyError:
-        return
 
-    vtt[keys[-1]] = update_value
+    if isinstance(vtt, list):
+        for vtt1 in vtt:
+            try:
+                for key in keys[:-1]:
+                    vtt2 = vtt1[key]
+            except KeyError:
+                return
+
+            vtt2[keys[-1]] = update_value
+    else:
+        try:
+            for key in keys[:-1]:
+                vtt = vtt[key]
+        except KeyError:
+            return
+
+        vtt[keys[-1]] = update_value
 
 
 def main(opts):

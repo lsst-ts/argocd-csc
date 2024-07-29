@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/love-producer
-  tag: c0037.000
+  tag: c0038.000
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
@@ -186,6 +186,9 @@ producers:
   mtdometrajectory:
     name_index: MTDomeTrajectory:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtheaderservice:
+    name_index: MTHeaderService:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtm1m3:
     name_index: MTM1M3:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/m1m3/ws/subscription
@@ -197,6 +200,9 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtmount:
     name_index: MTMount:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  mtoods:
+    name_index: MTOODS:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtptg:
     name_index: MTPtg:0

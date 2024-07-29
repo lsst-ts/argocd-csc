@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/audio_broadcaster
-  tag: c0037
+  tag: c0038
   pullPolicy: Always
 ingress:
   hostname: summit-lsp.lsst.codes

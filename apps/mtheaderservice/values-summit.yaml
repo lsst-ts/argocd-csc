@@ -1,12 +1,17 @@
-namespace: calsys
+namespace: maintel
 image:
-  repository: ts-dockerhub.lsst.org/electrometer
+  repository: ts-dockerhub.lsst.org/headerservice
   tag: c0038
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
-  LSST_SITE: summit
+  LSST_DDS_RESPONSIVENESS_TIMEOUT: 15s
+  URL_SPEC: --lfa_mode s3 --s3instance cp
   S3_ENDPOINT_URL: https://s3.cp.lsst.org
+  TSTAND_HEADERSERVICE: LEVEL3_CLEANROOM
+  CAMERA: mt
+  OSPL_INFOFILE: /tmp/ospl-info-mtheaderservice.log
+  OSPL_ERRORFILE: /tmp/ospl-error-mtheaderservice.log
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
   secretKey: aws-access-key-id
