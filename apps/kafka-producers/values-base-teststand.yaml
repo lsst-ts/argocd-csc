@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/salkafka
-  tag: c0037
+  tag: c0038
   pullPolicy: Always
   nexus3: pull-secret
 env:
