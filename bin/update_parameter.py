@@ -17,6 +17,7 @@ IGNORE_LIST = [
     "eas",
     "hexapodsim",
     "love",
+    "lsstcam",
     "maintel",
     "obssys",
     "ospl-config",
