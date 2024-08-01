@@ -1,13 +1,21 @@
 namespace: lsstcam
 image:
   repository: ts-dockerhub.lsst.org/mtoods
-  tag: c0038
+  tag: m0001
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: base
   OSPL_INFOFILE: /tmp/ospl-info-mtoods.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtoods.log
   CTRL_OODS_CONFIG_FILE: /etc/mtoods.yaml
+  AWS_ACCESS_KEY_ID: oods-lsstcam
+  AWS_ENDPOINT_URL: https://s3-butler.ls.lsst.org
+  LSST_KAFKA_SECURITY_USERNAME: ts-salkafka
+envSecrets:
+- name: AWS_SECRET_ACCESS_KEY
+  secretKey: oods-lsstcam-secret-key
+- name: LSST_KAFKA_SECURITY_PASSWORD
+  secretKey: ts-salkafka-password
 shmemDir: /run/ospl
 osplVersion: V6.10.4
 butlerSecret:
@@ -27,44 +35,26 @@ configfile:
         seconds: 0
 
     ingester:
-        imageStagingDirectory: /data/staging/maintel/oods
+        kafka:
+            brokers:
+                - sasquatch-kafka-brokers.sasquatch:9092
+            topics:
+                - mtoods
+            group_id: MTOODS
+            max_messages: 10
         butlers:
             - butler:
-                instrument: lsst.obs.lsst.Latiss
+                instrument: lsst.obs.lsst.LsstCam
                 class:
-                    import : lsst.ctrl.oods.gen3ButlerIngester
-                    name : Gen3ButlerIngester
-                stagingDirectory : /data/lsstdata/BTS/maintel/oods/gen3butler/raw
-                badFileDirectory: /data/lsstdata/BTS/maintel/oods/gen3butler/badfiles
-                repoDirectory : /repo/LATISS
+                    import : lsst.ctrl.oods.messageAttendant
+                    name : MessageAttendant
+                repoDirectory : /tmp/repo/LSSTCam
                 collections:
-                    - LATISS/raw/all
+                    - LSSTCam/raw/all
                 scanInterval:
                     <<: *interval
-                    hours: 1
+                    seconds: 10
                 filesOlderThan:
                     <<: *interval
-                    days: 30
+                    seconds: 30
         batchSize: 20
-        scanInterval:
-            <<: *interval
-            seconds: 2
-
-    cacheCleaner:
-        # ONLY clean out empty directories here, never files
-        clearEmptyDirectories:
-            - /data/lsstdata/BTS/maintel/oods/gen3butler/raw
-        # clean out empty directories and old files from these directories
-        clearEmptyDirectoriesAndOldFiles:
-            - /data/lsstdata/BTS/maintel/oods/gen3butler/badfiles
-            - /data/staging/maintel/oods
-            - /data/staging/maintel/forwarder
-        scanInterval:
-            <<: *interval
-            hours: 1
-        filesOlderThan:
-            <<: *interval
-            days: 31
-        directoriesEmptyForMoreThan:
-            <<: *interval
-            days: 2
