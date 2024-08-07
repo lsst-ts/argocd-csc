@@ -1,6 +1,6 @@
 {{ $_ := set $.Values "script" $.Values.workerSet }}
 {{ $script := $.Values.workerSet }}
-{{- if .Values.name }}
+{{- if $script.name }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
