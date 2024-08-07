@@ -6,6 +6,9 @@ location: SUMMIT
 env:
   DAF_BUTLER_REPOSITORY_INDEX: /project/data-repos.yaml
 scripts:
+###
+### AuxTel pods
+###
 - name: summit/auxTel/runBackgroundService.py
   podAnnotations:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
@@ -54,6 +57,9 @@ scripts:
     limits:
       cpu: 1.0
       memory: 4G
+###
+### ComCamSim pods
+###
 - name: summit/LSSTComCamSim/runButlerWatcher.py
 - name: summit/LSSTComCamSim/runHeadNode.py
 - name: summit/LSSTComCamSim/runMetadataServer.py
@@ -109,6 +115,9 @@ scripts:
     limits:
       cpu: 1
       memory: 6G
+###
+### Misc pods
+###
 - name: summit/misc/runAllSky.py
   podAnnotations:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
@@ -140,6 +149,9 @@ scripts:
 - name: summit/misc/runTmaTelemetry.py
   podAnnotations:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
+###
+### ComCam pods
+###
 - name: summit/LSSTComCam/runButlerWatcher.py
 - name: summit/LSSTComCam/runHeadNode.py
 - name: summit/LSSTComCam/runMetadataServer.py
@@ -148,6 +160,20 @@ scripts:
 - name: summit/LSSTComCam/runPlotter.py
   podAnnotations:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
+###
+### LSSTCam pods
+###
+- name: summit/LSSTCam/runButlerWatcher.py
+- name: summit/LSSTCam/runHeadNode.py
+- name: summit/LSSTCam/runMetadataServer.py
+  podAnnotations:
+    k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
+- name: summit/LSSTCam/runPlotter.py
+  podAnnotations:
+    k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
+###
+### ComCamSim StatefulSets
+###
 comCamSimWorkerSet:
   name: summit/LSSTComCamSim/runSfmRunner.py
   replicas: 9
@@ -178,6 +204,9 @@ comCamSimGatherRollupSet:
     limits:
       cpu: 1.0
       memory: 24G
+###
+### ComCam StatefulSets
+###
 comCamWorkerSet:
   name: summit/LSSTComCam/runSfmRunner.py
   replicas: 36
@@ -188,6 +217,19 @@ comCamWorkerSet:
     limits:
       cpu: 1.0
       memory: 8G
+###
+### ComCam StatefulSets
+###
+lsstCamWorkerSet:
+  name: summit/LSSTCam/runSfmRunner.py
+  replicas: 189  # 1 deep for now - in-focus chips only
+  resources:
+    requests:
+      cpu: 1.0
+      memory: 4G
+    limits:
+      cpu: 1.0
+      memory: 8G  # we should check this value
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: pull-secret
