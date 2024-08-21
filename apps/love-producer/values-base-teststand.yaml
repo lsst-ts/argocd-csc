@@ -8,64 +8,64 @@ env:
   WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
 shmemDir: /run/ospl
 producers:
-  ataos: ATAOS:0
-  atcamera: ATCamera:0
-  atdome: ATDome:0
-  atdometrajectory: ATDomeTrajectory:0
-  atheaderservice: ATHeaderService:0
-  athexapod: ATHexapod:0
-  atmcs: ATMCS:0
-  atpneumatics: ATPneumatics:0
-  atocps: OCPS:1
-  atoods: ATOODS:0
-  atptg: ATPtg:0
-  atscheduler: Scheduler:2
-  atscriptqueue: ScriptQueue:2
-  atspectrograph: ATSpectrograph:0
-  auxteless201: ESS:201
-  auxteless202: ESS:202
-  auxteless203: ESS:203
-  auxteless204: ESS:204
-  auxteless205: ESS:205
-  calibhilless301: ESS:301
-  camerahexapod: MTHexapod:1
-  dimm1: DIMM:1
-  dimm2: DIMM:2
-  dsm1: DSM:1
-  dsm2: DSM:2
-  epm001: EPM:1
-  gcheaderservice1: GCHeaderService:1
-  genericcamera1: GenericCamera:1
-  lasertracker1: LaserTracker:1
-  love: LOVE:0
-  m2ess106: ESS:106
-  m2hexapod: MTHexapod:2
-  mtaircompressor1: MTAirCompressor:1
-  mtaircompressor2: MTAirCompressor:2
-  mtaos: MTAOS:0
-  mtcamera: MTCamera:0
-  mtdome: MTDome:0
-  mtdomeess101: ESS:101
-  mtdomeess102: ESS:102
-  mtdomeess103: ESS:103
-  mtdomeess107: ESS:107
-  mtdomeess108: ESS:108
-  mtdometrajectory: MTDomeTrajectory:0
-  mtheaderservice: MTHeaderService:0
-  mtm1m3: MTM1M3:0
-  mtm2: MTM2:0
-  mtmount: MTMount:0
-  mtocps: OCPS:3
-  mtoods: MTOODS:0
-  mtptg: MTPtg:0
-  mtrotator: MTRotator:0
-  mtscheduler: Scheduler:1
-  mtscriptqueue: ScriptQueue:1
-  ocsscheduler: Scheduler:3
-  ocsscriptqueue: ScriptQueue:3
-  tmaess001: ESS:1
-  tmaess104: ESS:104
-  tmaess105: ESS:105
-  watcher: Watcher:0
-  weatherforecast: WeatherForecast:0
+  ataos: ATAOS:0 --log-level 10
+  atcamera: ATCamera:0 --log-level 10
+  atdome: ATDome:0 --log-level 10
+  atdometrajectory: ATDomeTrajectory:0 --log-level 10
+  atheaderservice: ATHeaderService:0 --log-level 10
+  athexapod: ATHexapod:0 --log-level 10
+  atmcs: ATMCS:0 --log-level 10
+  atpneumatics: ATPneumatics:0 --log-level 10
+  atocps: OCPS:1 --log-level 10
+  atoods: ATOODS:0 --log-level 10
+  atptg: ATPtg:0 --log-level 10
+  atscheduler: Scheduler:2 --log-level 10
+  atscriptqueue: ScriptQueue:2 --log-level 10
+  atspectrograph: ATSpectrograph:0 --log-level 10
+  auxteless201: ESS:201 --log-level 10
+  auxteless202: ESS:202 --log-level 10
+  auxteless203: ESS:203 --log-level 10
+  auxteless204: ESS:204 --log-level 10
+  auxteless205: ESS:205 --log-level 10
+  calibhilless301: ESS:301 --log-level 10
+  camerahexapod: MTHexapod:1 --log-level 10
+  dimm1: DIMM:1 --log-level 10
+  dimm2: DIMM:2 --log-level 10
+  dsm1: DSM:1 --log-level 10
+  dsm2: DSM:2 --log-level 10
+  epm001: EPM:1 --log-level 10
+  gcheaderservice1: GCHeaderService:1 --log-level 10
+  genericcamera1: GenericCamera:1 --log-level 10
+  lasertracker1: LaserTracker:1 --log-level 10
+  love: LOVE:0 --log-level 10
+  m2ess106: ESS:106 --log-level 10
+  m2hexapod: MTHexapod:2 --log-level 10
+  mtaircompressor1: MTAirCompressor:1 --log-level 10
+  mtaircompressor2: MTAirCompressor:2 --log-level 10
+  mtaos: MTAOS:0 --log-level 10
+  mtcamera: MTCamera:0 --log-level 10
+  mtdome: MTDome:0 --log-level 10
+  mtdomeess101: ESS:101 --log-level 10
+  mtdomeess102: ESS:102 --log-level 10
+  mtdomeess103: ESS:103 --log-level 10
+  mtdomeess107: ESS:107 --log-level 10
+  mtdomeess108: ESS:108 --log-level 10
+  mtdometrajectory: MTDomeTrajectory:0 --log-level 10
+  mtheaderservice: MTHeaderService:0 --log-level 10
+  mtm1m3: MTM1M3:0 --log-level 10
+  mtm2: MTM2:0 --log-level 10
+  mtmount: MTMount:0 --log-level 10
+  mtocps: OCPS:3 --log-level 10
+  mtoods: MTOODS:0 --log-level 10
+  mtptg: MTPtg:0 --log-level 10
+  mtrotator: MTRotator:0 --log-level 10
+  mtscheduler: Scheduler:1 --log-level 10
+  mtscriptqueue: ScriptQueue:1 --log-level 10
+  ocsscheduler: Scheduler:3 --log-level 10
+  ocsscriptqueue: ScriptQueue:3 --log-level 10
+  tmaess001: ESS:1 --log-level 10
+  tmaess104: ESS:104 --log-level 10
+  tmaess105: ESS:105 --log-level 10
+  watcher: Watcher:0 --log-level 10
+  weatherforecast: WeatherForecast:0 --log-level 10
 osplVersion: V6.10.4
