@@ -22,7 +22,7 @@ Helm chart for the Rubin Observatory Log EXplorer (ROLEX) app.
 | ingress.hosts[0].paths | list | `[{"path":"/","pathType":"ImplementationSpecific"}]` | Paths for the ingress service |
 | initialDelaySeconds | int | `10` | Initial delay in verifying service liveness status |
 | nameOverride | string | `""` | Adds an extra string to the release name. |
-| namespace | string | `"rolex"` | This is the namespace in which rolex will be placed |
+| namespace | string | `"rolex2"` | This is the namespace in which rolex will be placed |
 | nodeSelector | object | `{}` | Configurations for the deployment node selector |
 | periodSeconds | int | `300` | How frequent to verify service liveness status |
 | podAnnotations | object | `{}` | This allows the specification of pod annotations. |
