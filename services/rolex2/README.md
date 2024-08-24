@@ -1,6 +1,6 @@
-# rolex
+# rolex2
 
-Helm chart for the Rubin Observatory Log EXplorer (ROLEX) app.
+Helm chart for the Rubin Observatory Log EXplorer (ROLEX) v2 app.
 
 ## Values
 
