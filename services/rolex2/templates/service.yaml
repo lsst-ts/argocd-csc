@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "schedview.fullname" . }}
+  name: {{ include "rolex2.fullname" . }}
   namespace: {{ .Values.namespace }}
   labels:
-    {{- include "schedview.labels" . | nindent 4 }}
+    {{- include "rolex2.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,4 +13,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "schedview.selectorLabels" . | nindent 4 }}
+    {{- include "rolex2.selectorLabels" . | nindent 4 }}
