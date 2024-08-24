@@ -20,7 +20,7 @@ metadata:
     app.kubernetes.io/name: rolex2
 service:
   port: 3000
-  path: /rolex2
+  path: /
 ingress:
   enabled: true
   className: nginx
