@@ -10,9 +10,9 @@ timeoutSeconds: 120
 periodSeconds: 600
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: pull-secret
-credentialSecretsPath: rolex2
+credentialSecretsPath: rolex
 imagePullSecrets:
-- name: rolex2-pull-secret
+- name: rolex-pull-secret
 metadata:
   name: rolex2
   namespace: rolex2
