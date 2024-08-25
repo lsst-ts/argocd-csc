@@ -31,5 +31,3 @@ ingress:
     paths:
     - path: /rolex2
       pathType: Prefix
-    - path: /log_explorer_app
-      pathType: Prefix
