@@ -3,8 +3,6 @@ image:
   pullPolicy: Always
   # -- The tag name for the Nexus3 Docker repository secrets if private images need to be pulled
   nexus3: nexus3-docker
-env:
-  BOKEH_ALLOW_WS_ORIGIN: summit-lsp.lsst.codes
 initialDelaySeconds: 5
 timeoutSeconds: 120
 periodSeconds: 600
@@ -28,6 +26,7 @@ ingress:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: '1800'
     nginx.ingress.kubernetes.io/proxy-send-timeout: '1800'
     nginx.ingress.kubernetes.io/proxy-read-timeout: '1800'
+    nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
   - host: summit-lsp.lsst.codes
     paths:
