@@ -52,10 +52,10 @@ configfile:
                     - LSSTComCam/raw/all
                 scanInterval:
                     <<: *interval
-                    hours: 1
+                    minutes: 1
                 filesOlderThan:
                     <<: *interval
-                    days: 30
+                    minutes: 5
         batchSize: 20
         scanInterval:
             <<: *interval
