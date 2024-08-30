@@ -1,5 +1,5 @@
-{{ $_ := set $.Values "script" $.Values.gather2aSet }}
-{{ $script := $.Values.gather2aSet }}
+{{ $_ := set $.Values "script" $.Values.lsstcamGather2aSet }}
+{{ $script := $.Values.lsstcamGather2aSet }}
 {{- if $script.name }}
 ---
 apiVersion: apps/v1

@@ -61,7 +61,7 @@ scripts:
 - name: summit/LSSTCam/runHeadNode.py
 - name: summit/LSSTCam/runMetadataServer.py
 - name: summit/LSSTCam/runPlotter.py
-comCamWorkerSet:
+comcamWorkerSet:
   name: summit/LSSTComCam/runSfmRunner.py
   replicas: 36  # 4 deep
   resources:
@@ -71,7 +71,7 @@ comCamWorkerSet:
     limits:
       cpu: 1.0
       memory: 8G
-comCamGather2aSet:
+comcamGather2aset:
   name: summit/LSSTComCam/runStep2aWorker.py
   replicas: 4  # 4 deep to match comcamWorkerSet
   resources:
@@ -81,7 +81,7 @@ comCamGather2aSet:
     limits:
       cpu: 1.0
       memory: "8G"
-comCamGatherRollupSet:
+comcamGatherRollupSet:
   name: summit/LSSTComCam/runNightlyWorker.py
   replicas: 2  # 2 is probably plenty, 1 might even be fine
   resources:
@@ -91,7 +91,7 @@ comCamGatherRollupSet:
     limits:
       cpu: 1.0
       memory: "24G"
-lsstCamWorkerSet:
+lsstcamWorkerSet:
   name: summit/LSSTCam/runSfmRunner.py
   replicas: 189  # 1 deep for now - in-focus chips only
   resources:

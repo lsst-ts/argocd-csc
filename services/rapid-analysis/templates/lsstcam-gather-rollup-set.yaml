@@ -1,5 +1,5 @@
-{{ $_ := set $.Values "script" $.Values.gatherRollupSet }}
-{{ $script := $.Values.gatherRollupSet }}
+{{ $_ := set $.Values "script" $.Values.lsstcamGatherRollupSet }}
+{{ $script := $.Values.lsstcamGatherRollupSet }}
 {{- if $script.name }}
 ---
 apiVersion: apps/v1
