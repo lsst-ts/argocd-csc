@@ -1,5 +1,5 @@
-{{ $_ := set $.Values "script" $.Values.workerSet }}
-{{ $script := $.Values.workerSet }}
+{{ $_ := set $.Values "script" $.Values.lsstcamWorkerSet }}
+{{ $script := $.Values.lsstcamWorkerSet }}
 {{- if $script.name }}
 ---
 apiVersion: apps/v1
