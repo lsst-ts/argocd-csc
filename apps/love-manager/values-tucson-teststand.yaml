@@ -3,7 +3,7 @@ manager:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0038
+      tag: c0039
       pullPolicy: Always
     env:
       SERVER_URL: tucson-teststand.lsst.codes
@@ -247,6 +247,6 @@ viewBackup:
   enabled: true
   image:
     repository: ts-dockerhub.lsst.org/love-view-backup
-    tag: c0038
+    tag: c0039
     pullPolicy: Always
   schedule: 0 12 * * *
