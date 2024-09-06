@@ -16,17 +16,17 @@ butlerSecret:
 secretPermFixer:
 - name: butler-secret
   containerPath: *bS-cP
-# nfsMountpoint:
-# - name: lsstcam-gen3-butler
-#   containerPath: /repo/LSSTCam
-#   readOnly: false
-#   server: <fixme>.cp.lsst.org
-#   serverPath: /repo/LSSTCam
-# - name: lsstcam-oods-data
-#   containerPath: /data
-#   readOnly: false
-#   server: <fixme>.cp.lsst.org
-#   serverPath: /data
+nfsMountpoint:
+- name: lsstcam-gen3-butler
+  containerPath: /repo/LSSTCam
+  readOnly: false
+  server: nfs3.cp.lsst.org
+  serverPath: /lsstcam/repo/LSSTCam
+- name: lsstcam-oods-data
+  containerPath: /data
+  readOnly: false
+  server: nfs3.cp.lsst.org
+  serverPath: /lsstcam
 configfile:
   path: /etc
   filename: mtoods.yaml
@@ -45,8 +45,8 @@ configfile:
                 class:
                     import : lsst.ctrl.oods.gen3ButlerIngester
                     name : Gen3ButlerIngester
-                stagingDirectory : /data/lsstdata/maintel/oods/gen3butler/raw
-                badFileDirectory: /data/lsstdata/maintel/oods/gen3butler/badfiles
+                stagingDirectory : /data/lsstdata/base/maintel/oods/gen3butler/raw
+                badFileDirectory: /data/lsstdata/base/maintel/oods/gen3butler/badfiles
                 repoDirectory : /repo/LSSTCam
                 collections:
                     - LSSTCam/raw/all
@@ -64,12 +64,11 @@ configfile:
     cacheCleaner:
         # ONLY clean out empty directories here, never files
         clearEmptyDirectories:
-            - /data/lsstdata/maintel/oods/gen3butler/raw
+            - /data/lsstdata/base/maintel/oods/gen3butler/raw
         # clean out empty directories and old files from these directories
         clearEmptyDirectoriesAndOldFiles:
-            - /data/lsstdata/maintel/oods/gen3butler/badfiles
+            - /data/lsstdata/base/maintel/oods/gen3butler/badfiles
             - /data/staging/maintel/oods
-            - /data/staging/maintel/forwarder
         scanInterval:
             <<: *interval
             hours: 1
