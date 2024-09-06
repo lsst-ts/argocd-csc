@@ -45,6 +45,8 @@ scripts:
   podAnnotations:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
 - name: summit/auxTel/runSpecExaminer.py
+  podAnnotations:
+    k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
   resources:
     requests:
       cpu: 0.5
