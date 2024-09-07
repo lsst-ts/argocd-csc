@@ -12,6 +12,7 @@ env:
   OSPL_ERRORFILE: /tmp/ospl-error-ocsqueue.log
   RUN_ARG: 3 --state enabled
   S3_ENDPOINT_URL: https://s3.tu.lsst.org
+  IMAGE_SERVER_URL: http://comcam-mcm.tu.lsst.org
 envSecrets:
 - name: USER_USER_PASS
   secretKey: user-user-pass
