@@ -13,12 +13,12 @@ initContainers:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-frontend-k8s
-      tag: c0038
+      tag: c0039
       pullPolicy: Always
   manager:
     image:
       repository: ts-dockerhub.lsst.org/love-manager-static
-      tag: c0038
+      tag: c0039
       pullPolicy: Always
     command:
     - /bin/ash

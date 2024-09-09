@@ -1,6 +1,6 @@
 envEfd: tucson_teststand_efd
 image:
-  tag: c0038
+  tag: c0039
 siteTag: tucson
 s3Endpoint: s3.tu.lsst.org
 s3Bucket: rubinobs-lfa-tuc
