@@ -1,7 +1,7 @@
 namespace: rubintv-comcamsim
 image:
   repository: lsstts/rapid-analysis
-  tag: c0037_usdf
+  tag: c0038_usdf
   pullPolicy: Always
 location: USDF
 env:
