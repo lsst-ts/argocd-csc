@@ -81,6 +81,9 @@ producers:
   ccoods:
     name_index: CCOODS:0 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  cleanroomess109:
+    name_index: ESS:109
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   dimm1:
     name_index: DIMM:1 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
