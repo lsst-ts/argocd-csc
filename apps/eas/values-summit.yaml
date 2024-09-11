@@ -14,6 +14,7 @@ cscs:
   - ess106
   - ess107
   - ess108
+  - ess109
   - ess201
   - ess202
   - ess203
@@ -31,6 +32,7 @@ renameMap:
   ess106: m2-ess106
   ess107: mtdome-ess107
   ess108: mtdome-ess108
+  ess109: cleanroom-ess109
   ess201: auxtel-ess201
   ess202: auxtel-ess202
   ess203: auxtel-ess203
