@@ -316,17 +316,6 @@ spec:
             value: "-A Test_Report_LOVE_Stress_Test.list"
           - name: jobname
             value: love-stress-test
-      - name: shutdown
-        depends: love-stress-test
-        templateRef:
-          name: integration-test-job-template
-          template: inttest-template
-        arguments:
-          parameters:
-          - name: integrationtest
-            value: "-A Test_Report_Shutdown.list"
-          - name: jobname
-            value: shutdown
       - name: call-save-reports
         depends: shutdown
         templateRef:
