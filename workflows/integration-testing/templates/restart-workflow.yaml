@@ -74,6 +74,17 @@ spec:
             value: "-A Test_Report_Enabled.list"
           - name: jobname
             value: enabled
+      - name: sensor-cscs
+        depends: enabled
+        templateRef:
+          name: integration-test-job-template
+          template: inttest-template
+        arguments:
+          parameters:
+          - name: integrationtest
+            value: "-A Test_Report_SensorCSCs.list"
+          - name: jobname
+            value: sensor-cscs
       - name: auxtel-housekeeping
         depends: enabled
         templateRef:
@@ -119,7 +130,7 @@ spec:
           - name: jobname
             value: bigcam-image-verification
       - name: love-stress-test
-        depends: auxtel-image-verification && bigcam-image-verification
+        depends: auxtel-image-verification && bigcam-image-verification && sensor-cscs
         templateRef:
           name: integration-test-job-template
           template: inttest-template
