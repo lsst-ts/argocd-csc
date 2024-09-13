@@ -1,7 +1,7 @@
 namespace: auxtel
 image:
   repository: ts-dockerhub.lsst.org/ataos
-  tag: c0038
+  tag: c0039
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
