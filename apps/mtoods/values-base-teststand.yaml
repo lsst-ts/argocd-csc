@@ -1,7 +1,7 @@
 namespace: lsstcam
 image:
   repository: ts-dockerhub.lsst.org/mtoods
-  tag: c0039
+  tag: m0001
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: base
