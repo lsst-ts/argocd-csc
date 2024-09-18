@@ -42,9 +42,9 @@ configfile:
         butlers:
             - butler:
                 instrument: lsst.obs.lsst.Latiss
-                class:
-                    import : lsst.ctrl.oods.fileAttendant
-                    name : FileAttendant
+                ingesterClass:
+                    ingesterType: lsst.ctrl.oods.fileAttendant
+                    ingesterName : FileAttendant
                 stagingDirectory : /data/lsstdata/TTS/auxtel/oods/gen3butler/raw
                 badFileDirectory: /data/lsstdata/TTS/auxtel/oods/gen3butler/badfiles
                 repoDirectory : /repo/LATISS
