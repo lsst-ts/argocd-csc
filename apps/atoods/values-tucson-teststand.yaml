@@ -43,19 +43,21 @@ configfile:
             - butler:
                 instrument: lsst.obs.lsst.Latiss
                 class:
-                    import : lsst.ctrl.oods.gen3ButlerIngester
-                    name : Gen3ButlerIngester
+                    import : lsst.ctrl.oods.fileAttendant
+                    name : FileAttendant
                 stagingDirectory : /data/lsstdata/TTS/auxtel/oods/gen3butler/raw
                 badFileDirectory: /data/lsstdata/TTS/auxtel/oods/gen3butler/badfiles
                 repoDirectory : /repo/LATISS
                 collections:
                     - LATISS/raw/all
+                cleanCollections:
+                    - collection: LATISS/raw/all
+                      filesOlderThan:
+                          <<: *interval
+                          days: 30
                 scanInterval:
                     <<: *interval
                     hours: 1
-                filesOlderThan:
-                    <<: *interval
-                    days: 30
         batchSize: 20
         scanInterval:
             <<: *interval
@@ -69,7 +71,7 @@ configfile:
         clearEmptyDirectoriesAndOldFiles:
             - /data/lsstdata/TTS/auxtel/oods/gen3butler/badfiles
             - /data/staging/auxtel/oods
-            - /data/staging/auxtel/forwarder
+            - /data/staging/auxtel/camera
         scanInterval:
             <<: *interval
             hours: 1
