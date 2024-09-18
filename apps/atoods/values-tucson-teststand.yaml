@@ -45,6 +45,9 @@ configfile:
         imageStagingDirectory: /data/staging/auxtel/oods
         butlers:
             - butler:
+                class:
+                    import: lsst.ctrl.oods.fileAttendant
+                    name : FileAttendant
                 instrument: lsst.obs.lsst.Latiss
                 stagingDirectory : /data/lsstdata/TTS/auxtel/oods/gen3butler/raw
                 badFileDirectory: /data/lsstdata/TTS/auxtel/oods/gen3butler/badfiles
