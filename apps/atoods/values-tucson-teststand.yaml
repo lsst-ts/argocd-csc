@@ -38,8 +38,8 @@ configfile:
         seconds: 0
 
     ingesterClass:
-        ingesterType: lsst.ctrl.oods.fileAttendant
-        ingesterName : FileAttendant
+        ingesterType: lsst.ctrl.oods.fileIngester
+        ingesterName : FileIngester
 
     ingester:
         imageStagingDirectory: /data/staging/auxtel/oods
