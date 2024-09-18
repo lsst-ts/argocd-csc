@@ -37,14 +37,15 @@ configfile:
         minutes: 0
         seconds: 0
 
+    ingesterClass:
+        ingesterType: lsst.ctrl.oods.fileAttendant
+        ingesterName : FileAttendant
+
     ingester:
         imageStagingDirectory: /data/staging/auxtel/oods
         butlers:
             - butler:
                 instrument: lsst.obs.lsst.Latiss
-                ingesterClass:
-                    ingesterType: lsst.ctrl.oods.fileAttendant
-                    ingesterName : FileAttendant
                 stagingDirectory : /data/lsstdata/TTS/auxtel/oods/gen3butler/raw
                 badFileDirectory: /data/lsstdata/TTS/auxtel/oods/gen3butler/badfiles
                 repoDirectory : /repo/LATISS
