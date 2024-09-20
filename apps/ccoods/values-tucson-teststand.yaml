@@ -37,25 +37,31 @@ configfile:
         minutes: 0
         seconds: 0
 
+    ingesterClass:
+        ingesterType: lsst.ctrl.oods.fileIngester
+        ingesterName : FileIngester
+
     ingester:
         imageStagingDirectory: /data/staging/comcam/oods
         butlers:
             - butler:
-                instrument: lsst.obs.lsst.LsstComCam
                 class:
-                    import : lsst.ctrl.oods.gen3ButlerIngester
-                    name : Gen3ButlerIngester
+                    import : lsst.ctrl.oods.fileAttendant
+                    name : FileAttendant
+                instrument: lsst.obs.lsst.LsstComCam
                 stagingDirectory : /data/lsstdata/TTS/comcam/oods/gen3butler/raw
                 badFileDirectory: /data/lsstdata/TTS/comcam/oods/gen3butler/badfiles
                 repoDirectory : /repo/LSSTComCam
                 collections:
                     - LSSTComCam/raw/all
+                cleanCollections:
+                    - collection: LSSTComCam/raw/all
+                      filesOlderThan:
+                          <<: *interval
+                          days: 30
                 scanInterval:
                     <<: *interval
                     hours: 1
-                filesOlderThan:
-                    <<: *interval
-                    days: 30
         batchSize: 20
         scanInterval:
             <<: *interval
@@ -69,7 +75,7 @@ configfile:
         clearEmptyDirectoriesAndOldFiles:
             - /data/lsstdata/TTS/comcam/oods/gen3butler/badfiles
             - /data/staging/comcam/oods
-            - /data/staging/comcam/forwarder
+            - /data/staging/comcam/camera
         scanInterval:
             <<: *interval
             hours: 1
