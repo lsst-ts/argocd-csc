@@ -174,7 +174,7 @@ scripts:
 ###
 ### ComCamSim StatefulSets
 ###
-comCamSimWorkerSet:
+comcamsimWorkerSet:
   name: summit/LSSTComCamSim/runSfmRunner.py
   replicas: 9
   resources:
@@ -184,7 +184,7 @@ comCamSimWorkerSet:
     limits:
       cpu: 1.0
       memory: 8G
-comCamSimGather2aSet:
+comcamsimGather2aSet:
   name: summit/LSSTComCamSim/runStep2aWorker.py
   replicas: 1
   resources:
@@ -194,7 +194,7 @@ comCamSimGather2aSet:
     limits:
       cpu: 1.0
       memory: 8G
-comCamSimGatherRollupSet:
+comcamsimGatherRollupSet:
   name: summit/LSSTComCamSim/runNightlyWorker.py
   replicas: 1
   resources:
@@ -217,7 +217,7 @@ comcamWorkerSet:
     limits:
       cpu: 1.0
       memory: 8G
-comcamGather2aset:
+comcamGather2aSet:
   name: summit/LSSTComCam/runStep2aWorker.py
   replicas: 4  # 4 deep to match comcamWorkerSet
   resources:

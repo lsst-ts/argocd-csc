@@ -1,5 +1,5 @@
-{{ $_ := set $.Values "script" $.Values.comcamWorkerSet }}
-{{ $script := $.Values.comcamWorkerSet }}
+{{ $_ := set $.Values "script" $.Values.comcamsimWorkerSet }}
+{{ $script := $.Values.comcamsimWorkerSet }}
 {{- if $script.name }}
 ---
 apiVersion: apps/v1

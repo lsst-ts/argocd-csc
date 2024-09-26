@@ -1,11 +1,11 @@
-{{ $_ := set $.Values "script" $.Values.comcamWorkerSet }}
-{{ $script := $.Values.comcamWorkerSet }}
+{{ $_ := set $.Values "script" $.Values.comcamsimGatherRollupSet }}
+{{ $script := $.Values.comcamsimGatherRollupSet }}
 {{- if $script.name }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "rapid-analysis.deploymentName" $ }}-wokerset
+  name: {{ include "rapid-analysis.deploymentName" $ }}-gatherrollupset
   namespace: {{ $.Values.namespace }}
   labels:
     {{- include "rapid-analysis.labels" $ | nindent 4 }}
