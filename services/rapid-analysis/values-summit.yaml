@@ -217,8 +217,28 @@ comCamWorkerSet:
     limits:
       cpu: 1.0
       memory: 8G
+comCamGather2aSet:
+  name: summit/LSSTComCam/runStep2aWorker.py
+  replicas: 4  # 4 deep to match comcamWorkerSet
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "4G"
+    limits:
+      cpu: 1.0
+      memory: "8G"
+comCamGatherRollupSet:
+  name: summit/LSSTComCam/runNightlyWorker.py
+  replicas: 2  # 2 is probably plenty, 1 might even be fine
+  resources:
+    requests:
+      cpu: 1.0
+      memory: "12G"
+    limits:
+      cpu: 1.0
+      memory: "24G"
 ###
-### ComCam StatefulSets
+### LSSTCam StatefulSets
 ###
 lsstCamWorkerSet:
   name: summit/LSSTCam/runSfmRunner.py
