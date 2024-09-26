@@ -140,7 +140,15 @@ scripts:
 - name: summit/misc/runTmaTelemetry.py
   podAnnotations:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
-workerSet:
+- name: summit/LSSTComCam/runButlerWatcher.py
+- name: summit/LSSTComCam/runHeadNode.py
+- name: summit/LSSTComCam/runMetadataServer.py
+  podAnnotations:
+    k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
+- name: summit/LSSTComCam/runPlotter.py
+  podAnnotations:
+    k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
+comCamSimWorkerSet:
   name: summit/LSSTComCamSim/runSfmRunner.py
   replicas: 9
   resources:
@@ -150,7 +158,7 @@ workerSet:
     limits:
       cpu: 1.0
       memory: 8G
-gather2aSet:
+comCamSimGather2aSet:
   name: summit/LSSTComCamSim/runStep2aWorker.py
   replicas: 1
   resources:
@@ -160,7 +168,7 @@ gather2aSet:
     limits:
       cpu: 1.0
       memory: 8G
-gatherRollupSet:
+comCamSimGatherRollupSet:
   name: summit/LSSTComCamSim/runNightlyWorker.py
   replicas: 1
   resources:
@@ -170,24 +178,16 @@ gatherRollupSet:
     limits:
       cpu: 1.0
       memory: 24G
-# - name: summit/LSSTComCam/runButlerWatcher.py
-# - name: summit/LSSTComCam/runHeadNode.py
-# - name: summit/LSSTComCam/runMetadataServer.py
-#   podAnnotations:
-#     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
-# - name: summit/LSSTComCam/runPlotter.py
-#   podAnnotations:
-#     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
-# workerSet:
-#   name: summit/LSSTComCam/runSfmRunner.py
-#   replicas: 36
-#   resources:
-#     requests:
-#       cpu: 1.0
-#       memory: 4G
-#     limits:
-#       cpu: 1.0
-#       memory: 8G
+comCamWorkerSet:
+  name: summit/LSSTComCam/runSfmRunner.py
+  replicas: 36
+  resources:
+    requests:
+      cpu: 1.0
+      memory: 4G
+    limits:
+      cpu: 1.0
+      memory: 8G
 credentialFile: google_write_creds
 vaultPrefixPath: secret/k8s_operator/summit-lsp.lsst.codes
 pullSecretsPath: pull-secret
