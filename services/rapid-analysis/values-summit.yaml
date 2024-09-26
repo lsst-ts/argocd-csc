@@ -142,7 +142,7 @@ scripts:
     k8s.v1.cni.cncf.io/networks: "kube-system/lhn"
 workerSet:
   name: summit/LSSTComCamSim/runSfmRunner.py
-  replicas: 45
+  replicas: 9
   resources:
     requests:
       cpu: 1.0
@@ -152,7 +152,7 @@ workerSet:
       memory: 8G
 gather2aSet:
   name: summit/LSSTComCamSim/runStep2aWorker.py
-  replicas: 5
+  replicas: 1
   resources:
     requests:
       cpu: 1.0
@@ -162,7 +162,7 @@ gather2aSet:
       memory: 8G
 gatherRollupSet:
   name: summit/LSSTComCamSim/runNightlyWorker.py
-  replicas: 2
+  replicas: 1
   resources:
     requests:
       cpu: 1.0
