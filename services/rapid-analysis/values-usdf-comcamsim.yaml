@@ -37,7 +37,7 @@ scripts:
     limits:
       cpu: 1
       memory: 6G
-workerSet:
+comcamWorkerSet:
   name: slac/LSSTComCamSim/runSfmRunner.py
   replicas: 9
   resources:
@@ -47,7 +47,7 @@ workerSet:
     limits:
       cpu: 1.0
       memory: "8G"
-gather2aSet:
+comcamGather2aSet:
   name: slac/LSSTComCamSim/runStep2aWorker.py
   replicas: 1
   resources:
@@ -57,7 +57,7 @@ gather2aSet:
     limits:
       cpu: 1.0
       memory: "8G"
-gatherRollupSet:
+comcamGatherRollupSet:
   name: slac/LSSTComCamSim/runNightlyWorker.py
   replicas: 1
   resources:
