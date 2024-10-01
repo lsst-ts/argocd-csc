@@ -20,13 +20,13 @@ nfsMountpoint:
 - name: comcam-gen3-butler
   containerPath: /repo/LSSTComCam
   readOnly: false
-  server: comcam-archiver.cp.lsst.org
-  serverPath: /repo/LSSTComCam
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/repo/LSSTComCam
 - name: comcam-oods-data
   containerPath: /data
   readOnly: false
-  server: comcam-archiver.cp.lsst.org
-  serverPath: /data
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam
 configfile:
   path: /etc
   filename: ccoods.yaml

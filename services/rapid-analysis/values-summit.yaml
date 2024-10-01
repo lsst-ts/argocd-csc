@@ -87,8 +87,8 @@ nfsMountpoint:
 - name: comcam-gen3-data
   containerPath: /repo/LSSTComCam
   readOnly: false
-  server: comcam-archiver.cp.lsst.org
-  serverPath: /repo/LSSTComCam
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/repo/LSSTComCam
 - name: auxtel-data
   containerPath: /readonly/lsstdata/auxtel
   readOnly: true
@@ -97,8 +97,8 @@ nfsMountpoint:
 - name: comcam-data
   containerPath: /readonly/lsstdata/comcam
   readOnly: true
-  server: comcam-archiver.cp.lsst.org
-  serverPath: /lsstdata
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/lsstdata
 - name: project-shared
   containerPath: /project
   readOnly: false
@@ -112,8 +112,8 @@ nfsMountpoint:
 - name: comcam-gen3-data-temp
   containerPath: /data/lsstdata/base/comcam
   readOnly: true
-  server: comcam-archiver.cp.lsst.org
-  serverPath: /lsstdata/base/comcam
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/lsstdata/base/comcam
 - name: allsky-data
   containerPath: /data/allsky
   readOnly: true
