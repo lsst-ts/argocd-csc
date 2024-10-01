@@ -242,7 +242,7 @@ comcamGatherRollupSet:
 ###
 lsstcamWorkerSet:
   name: summit/LSSTCam/runSfmRunner.py
-  replicas: 189  # 1 deep for now - in-focus chips only
+  replicas: 1  # 1 deep for now - in-focus chips only
   resources:
     requests:
       cpu: 1.0
