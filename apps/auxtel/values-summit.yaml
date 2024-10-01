@@ -5,7 +5,9 @@ cscs:
   - atdome
   - atdometrajectory
   - athexapod
+  - atmcs
   - atoods
+  - atpneumatics
   - atptg
   - atspectrograph
   - atheaderservice
