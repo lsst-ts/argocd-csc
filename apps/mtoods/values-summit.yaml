@@ -55,7 +55,7 @@ configfile:
                     hours: 1
                 filesOlderThan:
                     <<: *interval
-                    days: 30
+                    days: 2
         batchSize: 20
         scanInterval:
             <<: *interval
