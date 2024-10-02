@@ -65,6 +65,7 @@ configfile:
         # ONLY clean out empty directories here, never files
         clearEmptyDirectories:
             - /data/lsstdata/base/maintel/oods/gen3butler/raw
+            - /data/staging/maintel/camera
         # clean out empty directories and old files from these directories
         clearEmptyDirectoriesAndOldFiles:
             - /data/lsstdata/base/maintel/oods/gen3butler/badfiles
