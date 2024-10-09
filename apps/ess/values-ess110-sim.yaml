@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-tma-labjack01.log
+  OSPL_ERRORFILE: /tmp/ospl-error-tma-labjack01.log
+  RUN_ARG: 110 --simulate

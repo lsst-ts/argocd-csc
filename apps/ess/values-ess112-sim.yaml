@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-m2-ess01.log
+  OSPL_ERRORFILE: /tmp/ospl-error-m2-ess01.log
+  RUN_ARG: 112 --simulate

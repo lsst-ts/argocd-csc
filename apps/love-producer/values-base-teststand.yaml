@@ -26,8 +26,8 @@ producers:
   auxteless202: ESS:202 --log-level 10
   auxteless203: ESS:203 --log-level 10
   auxteless204: ESS:204 --log-level 10
-  auxteless205: ESS:205 --log-level 10
   calibhilless301: ESS:301 --log-level 10
+  cameraess111: ESS:111 --log-level 10
   camerahexapod: MTHexapod:1 --log-level 10
   dimm1: DIMM:1 --log-level 10
   dimm2: DIMM:2 --log-level 10
@@ -38,16 +38,15 @@ producers:
   genericcamera1: GenericCamera:1 --log-level 10
   lasertracker1: LaserTracker:1 --log-level 10
   love: LOVE:0 --log-level 10
+  m1m3ess113: ESS:113 --log-level 10
   m2ess106: ESS:106 --log-level 10
+  m2ess112: ESS:112 --log-level 10
   m2hexapod: MTHexapod:2 --log-level 10
   mtaircompressor1: MTAirCompressor:1 --log-level 10
   mtaircompressor2: MTAirCompressor:2 --log-level 10
   mtaos: MTAOS:0 --log-level 10
   mtcamera: MTCamera:0 --log-level 10
   mtdome: MTDome:0 --log-level 10
-  mtdomeess101: ESS:101 --log-level 10
-  mtdomeess102: ESS:102 --log-level 10
-  mtdomeess103: ESS:103 --log-level 10
   mtdomeess107: ESS:107 --log-level 10
   mtdomeess108: ESS:108 --log-level 10
   mtdometrajectory: MTDomeTrajectory:0 --log-level 10
@@ -66,6 +65,7 @@ producers:
   tmaess001: ESS:1 --log-level 10
   tmaess104: ESS:104 --log-level 10
   tmaess105: ESS:105 --log-level 10
+  tmaess110: ESS:110 --log-level 10
   watcher: Watcher:0 --log-level 10
   weatherforecast: WeatherForecast:0 --log-level 10
 osplVersion: V6.10.4

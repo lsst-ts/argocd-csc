@@ -1,4 +1,0 @@
-env:
-  OSPL_INFOFILE: /tmp/ospl-info-auxtel-ess05.log
-  OSPL_ERRORFILE: /tmp/ospl-error-auxtel-ess05.log
-  RUN_ARG: 205 --simulate

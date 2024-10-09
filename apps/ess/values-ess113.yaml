@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-m1m3-ess01.log
+  OSPL_ERRORFILE: /tmp/ospl-error-m1m3-ess01.log
+  RUN_ARG: 113

@@ -6,36 +6,36 @@ cscs:
   - hvac
   - epm301
   - ess1
-  - ess101
-  - ess102
-  - ess103
   - ess104
   - ess105
   - ess106
   - ess107
   - ess108
   - ess109
+  - ess110
+  - ess111
+  - ess112
+  - ess113
   - ess201
   - ess202
   - ess203
   - ess204
-  - ess205
   - ess301
   - weatherforecast
 renameMap:
   ess1: tma-ess001
-  ess101: mtdome-ess101
-  ess102: mtdome-ess102
-  ess103: mtdome-ess103
   ess104: tma-ess104
   ess105: tma-ess105
   ess106: m2-ess106
   ess107: mtdome-ess107
   ess108: mtdome-ess108
   ess109: cleanroom-ess109
+  ess110: tma-ess110
+  ess111: camera-ess111
+  ess112: m2-ess112
+  ess113: m1m3-ess113
   ess201: auxtel-ess201
   ess202: auxtel-ess202
   ess203: auxtel-ess203
   ess204: auxtel-ess204
-  ess205: auxtel-ess205
   ess301: calibhill-ess301
