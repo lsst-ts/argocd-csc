@@ -66,11 +66,11 @@ producers:
   auxteless204:
     name_index: ESS:204
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  auxteless205:
-    name_index: ESS:205
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   calibhilless301:
     name_index: ESS:301
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  cameraess111:
+    name_index: ESS:111
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   camerahexapod:
     name_index: MTHexapod:1
@@ -150,8 +150,14 @@ producers:
   love:
     name_index: LOVE:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  m1m3ess113:
+    name_index: ESS:113
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   m2ess106:
     name_index: ESS:106
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  m2ess112:
+    name_index: ESS:112
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   m2hexapod:
     name_index: MTHexapod:2
@@ -170,15 +176,6 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtdome:
     name_index: MTDome:0
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  mtdomeess101:
-    name_index: ESS:101
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  mtdomeess102:
-    name_index: ESS:102
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  mtdomeess103:
-    name_index: ESS:103
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtdomeess107:
     name_index: ESS:107
@@ -239,6 +236,9 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   tmaess105:
     name_index: ESS:105
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tmaess110:
+    name_index: ESS:110
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   tunablelaser:
     name_index: TunableLaser:0
