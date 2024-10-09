@@ -1,4 +1,0 @@
-env:
-  OSPL_INFOFILE: /tmp/ospl-info-mtdome-ess03.log
-  OSPL_ERRORFILE: /tmp/ospl-error-mtdome-ess03.log
-  RUN_ARG: 103

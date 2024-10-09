@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-camera-ess01.log
+  OSPL_ERRORFILE: /tmp/ospl-error-camera-ess01.log
+  RUN_ARG: 111 --simulate
