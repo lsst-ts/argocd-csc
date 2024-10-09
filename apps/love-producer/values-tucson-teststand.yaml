@@ -60,11 +60,11 @@ producers:
   auxteless204:
     name_index: ESS:204 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  auxteless205:
-    name_index: ESS:205 --log-level 10
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   calibhilless301:
     name_index: ESS:301 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  cameraess111:
+    name_index: ESS:111 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   camerahexapod:
     name_index: MTHexapod:1 --log-level 10
@@ -111,8 +111,14 @@ producers:
   love:
     name_index: LOVE:0 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  m1m3ess113:
+    name_index: ESS:113 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   m2ess106:
     name_index: ESS:106 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  m2ess112:
+    name_index: ESS:112 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   m2hexapod:
     name_index: MTHexapod:2 --log-level 10
@@ -128,15 +134,6 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtdome:
     name_index: MTDome:0 --log-level 10
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  mtdomeess101:
-    name_index: ESS:101 --log-level 10
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  mtdomeess102:
-    name_index: ESS:102 --log-level 10
-    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
-  mtdomeess103:
-    name_index: ESS:103 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   mtdomeess107:
     name_index: ESS:107 --log-level 10
@@ -182,6 +179,9 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   tmaess105:
     name_index: ESS:105 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tmaess110:
+    name_index: ESS:110 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   watcher:
     name_index: Watcher:0 --log-level 10
