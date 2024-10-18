@@ -1,0 +1,18 @@
+namespace: uws
+image:
+  repository: ts-dockerhub.lsst.org/dmocps
+  tag: c0039
+  pullPolicy: Always
+env:
+  LSST_DDS_PARTITION_PREFIX: tucson
+  LSST_SITE: tucson
+  OSPL_INFOFILE: /tmp/ospl-info-raocps.log
+  OSPL_ERRORFILE: /tmp/ospl-error-raocps.log
+  RUN_ARG: 101
+  REDIS_HOST: redis-service.rapid-analysis.svc.cluster.local
+  REDIS_PORT: 6379
+shmemDir: /run/ospl
+osplVersion: V6.10.4
+envSecrets:
+- name: REDIS_PASSWORD
+  secretKey: redis-password
