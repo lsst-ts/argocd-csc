@@ -21,6 +21,7 @@ producers:
   auxtel:
     cscs: >-
       ATAOS
+      ATBuilding
       ATDome
       ATDomeTrajectory
       ATHexapod
@@ -76,7 +77,7 @@ producers:
   mtaircompressor:
     cscs: MTAirCompressor
   eas:
-    cscs: DIMM DSM EPM ESS WeatherForecast
+    cscs: DIMM DREAM DSM EPM ESS WeatherForecast
   lasertracker:
     cscs: LaserTracker
   genericcamera:
