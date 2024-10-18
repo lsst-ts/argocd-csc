@@ -15,5 +15,4 @@ shmemDir: /run/ospl
 osplVersion: V6.10.4
 envSecrets:
 - name: REDIS_PASSWORD
-  secretName: rubintv-secrets
   secretKey: redis-password
