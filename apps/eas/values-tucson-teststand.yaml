@@ -5,6 +5,7 @@ cscs:
   - dsm2
   - dimm1
   - dimm2
+  - dream
   - epm1
   - ess1
   - ess104
@@ -28,6 +29,7 @@ isSim:
   - dsm2
   - dimm1
   - dimm2
+  - dream
   - epm1
   - ess1
   - ess104

@@ -9,6 +9,9 @@ producers:
   ataos:
     name_index: ATAOS:0 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  atbuilding:
+    name_index: ATBuilding:0 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   atcamera:
     name_index: ATCamera:0 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
@@ -89,6 +92,9 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   dimm2:
     name_index: DIMM:2 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  dream:
+    name_index: DREAM:0 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   dsm1:
     name_index: DSM:1 --log-level 10

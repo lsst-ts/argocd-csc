@@ -2,6 +2,7 @@ env: tucson-teststand
 namespace: auxtel
 cscs:
   - ataos
+  - atbuilding
   - atdome
   - atdometrajectory
   - atheaderservice
@@ -11,6 +12,7 @@ cscs:
   - atspectrograph
   - hexapodsim
 isSim:
+  - atbuilding
   - atdome
   - athexapod
   - atspectrograph

@@ -1,0 +1,4 @@
+name: atbuilding
+apiVersion: v2
+version: 0.13.0
+description: A Helm chart for deploying the ATBuilding CSC.
