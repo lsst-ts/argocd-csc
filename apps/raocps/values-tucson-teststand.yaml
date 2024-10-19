@@ -4,8 +4,8 @@ image:
   tag: c0039
   pullPolicy: Always
 env:
-  LSST_DDS_PARTITION_PREFIX: summit
-  LSST_SITE: summit
+  LSST_DDS_PARTITION_PREFIX: tucson
+  LSST_SITE: tucson
   OSPL_INFOFILE: /tmp/ospl-info-raocps.log
   OSPL_ERRORFILE: /tmp/ospl-error-raocps.log
   RUN_ARG: 101
@@ -15,5 +15,4 @@ shmemDir: /run/ospl
 osplVersion: V6.10.4
 envSecrets:
 - name: REDIS_PASSWORD
-  secretName: rubintv-secrets
   secretKey: redis-password
