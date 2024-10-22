@@ -105,6 +105,9 @@ producers:
   dsm2:
     name_index: DSM:2
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  earthquakeess302:
+    name_index: ESS:302
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   electrometer101:
     name_index: Electrometer:101
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
