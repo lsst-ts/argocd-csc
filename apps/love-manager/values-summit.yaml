@@ -3,7 +3,7 @@ manager:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0039.004
+      tag: c0039.006
       pullPolicy: Always
     env:
       SERVER_URL: summit-lsp.lsst.codes
