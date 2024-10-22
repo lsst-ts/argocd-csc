@@ -21,6 +21,7 @@ cscs:
   - ess203
   - ess204
   - ess301
+  - ess302
   - weatherforecast
 renameMap:
   ess1: tma-ess001
@@ -39,3 +40,4 @@ renameMap:
   ess203: auxtel-ess203
   ess204: auxtel-ess204
   ess301: calibhill-ess301
+  ess302: earthquake-ess302
