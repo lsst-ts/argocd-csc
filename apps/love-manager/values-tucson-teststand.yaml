@@ -8,6 +8,9 @@ manager:
     env:
       SERVER_URL: tucson-teststand.lsst.codes
       OLE_API_HOSTNAME: tucson-teststand.lsst.codes
+      REDIS_CONFIG_EXPIRY: 10
+      REDIS_CONFIG_CAPACITY: 100
+      REDIS_CONFIG_GROUP_EXPIRY: 86400
       AUTH_LDAP_1_SERVER_URI: ldap://ipa1.tu.lsst.org
       AUTH_LDAP_2_SERVER_URI: ldap://ipa2.tu.lsst.org
       AUTH_LDAP_3_SERVER_URI: ldap://ipa3.tu.lsst.org
@@ -63,8 +66,7 @@ manager:
       JIRA_PROJECT_ID: 10063
       LOVE_SITE: tucson
       OLE_API_HOSTNAME: tucson-teststand.lsst.codes
-      REDIS_CONFIG_CAPACITY: 5000
-      REDIS_CONFIG_EXPIRY: 5
+      REDIS_CONFIG_GROUP_EXPIRY: 31536000
       REDIS_HOST: love-manager-redis-service
       REMOTE_STORAGE: true
       SERVER_URL: tucson-teststand.lsst.codes
@@ -128,8 +130,7 @@ manager:
       JIRA_PROJECT_ID: 10063
       LOVE_SITE: tucson
       OLE_API_HOSTNAME: tucson-teststand.lsst.codes
-      REDIS_CONFIG_CAPACITY: 5000
-      REDIS_CONFIG_EXPIRY: 5
+      REDIS_CONFIG_GROUP_EXPIRY: 31536000
       REDIS_HOST: love-manager-redis-service
       REMOTE_STORAGE: true
       SERVER_URL: tucson-teststand.lsst.codes
@@ -193,8 +194,7 @@ manager:
       JIRA_PROJECT_ID: 10063
       LOVE_SITE: tucson
       OLE_API_HOSTNAME: tucson-teststand.lsst.codes
-      REDIS_CONFIG_CAPACITY: 5000
-      REDIS_CONFIG_EXPIRY: 5
+      REDIS_CONFIG_GROUP_EXPIRY: 31536000
       REDIS_HOST: love-manager-redis-service
       REMOTE_STORAGE: true
       SERVER_URL: tucson-teststand.lsst.codes
