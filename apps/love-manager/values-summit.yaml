@@ -43,7 +43,7 @@ manager:
   - name: general
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0039.000
+      tag: c0039.006
       pullPolicy: Always
       nexus3: pull-secret
     env:
@@ -108,7 +108,7 @@ manager:
   - name: queue
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0039.000
+      tag: c0039.006
       pullPolicy: Always
       nexus3: pull-secret
     env:
@@ -173,7 +173,7 @@ manager:
   - name: m1m3
     image:
       repository: ts-dockerhub.lsst.org/love-manager
-      tag: c0039.000
+      tag: c0039.006
       pullPolicy: Always
       nexus3: pull-secret
     env:
