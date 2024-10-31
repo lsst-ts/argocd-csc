@@ -48,7 +48,7 @@ configfile:
                 class:
                     import : lsst.ctrl.oods.messageAttendant
                     name : MessageAttendant
-                repoDirectory : /tmp/repo/LSSTCam
+                repoDirectory : s3://rubinobs-butler-lsstcam
                 collections:
                     - LSSTCam/raw/all
                 scanInterval:
