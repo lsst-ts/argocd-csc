@@ -39,7 +39,7 @@ configfile:
             brokers:
                 - sasquatch-kafka-brokers.sasquatch:9092
             topics:
-                - mtoods
+                - lsst.s3.butler.mtoods
             group_id: MTOODS
             max_messages: 10
         butlers:
