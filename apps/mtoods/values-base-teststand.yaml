@@ -11,7 +11,6 @@ env:
   AWS_ACCESS_KEY_ID: oods-lsstcam
   AWS_ENDPOINT_URL: https://s3-butler.ls.lsst.org
   LSST_KAFKA_SECURITY_USERNAME: ts-salkafka
-  LSST_KAFKA_SECURITY_PROTOCOL: SASL_SSL
 envSecrets:
 - name: AWS_SECRET_ACCESS_KEY
   secretKey: oods-lsstcam-secret-key
