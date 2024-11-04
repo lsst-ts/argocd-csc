@@ -40,8 +40,8 @@ configfile:
             brokers:
                 - sasquatch-kafka-brokers.sasquatch:9092
             topics:
-                - lsst.s3.butler.mtoods
-            group_id: MTOODS
+                - lsst.s3.raw.lsstcam
+            group_id: MTOODS-S3
             max_messages: 10
         butlers:
             - butler:
