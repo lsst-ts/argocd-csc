@@ -85,6 +85,7 @@ producers:
       CBP
       Electrometer
       FiberSpectrograph
+      LEDProjector
       LinearStage
       TunableLaser
   mtaircompressor:

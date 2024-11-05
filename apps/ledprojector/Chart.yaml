@@ -1,0 +1,4 @@
+name: ledprojector
+apiVersion: 2
+version: 0.13.0
+description: A Helm chart for deploying the LEDProjector CSC.

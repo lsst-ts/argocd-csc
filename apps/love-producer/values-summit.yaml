@@ -150,6 +150,9 @@ producers:
   lasertracker1:
     name_index: LaserTracker:1
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  ledprojector:
+    name_index: LEDProjector:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   love:
     name_index: LOVE:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription

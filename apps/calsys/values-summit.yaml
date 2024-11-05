@@ -9,6 +9,7 @@ cscs:
   - gcheaderservice1
   - tunablelaser
   - cbp
+  - ledprojector
 renameMap:
   electrometer101: comcam-electrometer-101
   electrometer102: cbpcal-electrometer-102
