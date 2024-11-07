@@ -24,6 +24,7 @@ The following is the procedure to add a new application to the system.
    The files should be named ``values-<csc name><csc index>.yaml``.
    Simulator variants of indexed components should have values files like ``values-<csc name><csc index>-sim.yaml``.
 #. If the application needs to be integrated with a :ref:`collector application <CSC-Ops-with-ArgoCD-Collector-Apps>`, add the application name to the list in the appropriate environment file in the collector.
+#. Add the application reference to the love and kafka producers on the desired site yaml file.
 
 If the application is part of a :ref:`collector application <CSC-Ops-with-ArgoCD-Collector-Apps>`, then once the change with the application is committed and pushed to GitHub, syncing the collector application will create the application.
 After the application is created, it can then be synced via methods described in :ref:`CSC-Ops-with-ArgoCD-Upgrade-Application`.
