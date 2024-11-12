@@ -1,0 +1,26 @@
+nfsMountpoint:
+- name: comcam-gen3-data
+  containerPath: /repo/LSSTComCam
+  readOnly: false
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/repo/LSSTComCam
+- name: comcam-gen3-data-temp
+  containerPath: /data/lsstdata/base/comcam
+  readOnly: true
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/lsstdata/base/comcam
+- name: comcam-data
+  containerPath: /readonly/lsstdata/comcam
+  readOnly: true
+  server: nfs3.cp.lsst.org
+  serverPath: /comcam/lsstdata
+- name: project-shared
+  containerPath: /project
+  readOnly: false
+  server: nfs1.cp.lsst.org
+  serverPath: /project
+- name: obs-env
+  containerPath: /net/obs-env
+  readOnly: true
+  server: nfs-obsenv.cp.lsst.org
+  serverPath: /obs-env
