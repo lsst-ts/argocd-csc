@@ -1,0 +1,6 @@
+nfsMountpoint:
+- name: obs-env
+  containerPath: /net/obs-env
+  readOnly: true
+  server: nfs-obsenv.cp.lsst.org
+  serverPath: /obs-env
