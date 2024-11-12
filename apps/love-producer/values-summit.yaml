@@ -153,6 +153,18 @@ producers:
   ledprojector:
     name_index: LEDProjector:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage101:
+    name_index: LinearStage:101
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage102:
+    name_index: LinearStage:102
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage103:
+    name_index: LinearStage:103
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage104:
+    name_index: LinearStage:104
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   love:
     name_index: LOVE:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
