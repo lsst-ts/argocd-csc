@@ -1,6 +1,0 @@
-env: tucson-teststand
-namespace: calsys-lab
-cscs:
-  - linearstage1
-  - linearstage2
-  - linearstage3
