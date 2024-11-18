@@ -29,6 +29,14 @@ spec:
         {{- include "helpers.envFromList" $data | indent 10 }}
         {{- $data := dict "env" .Values.redis.envSecrets "secretName" .Values.envSecretKeyName }}
         {{- include "helpers.envFromList" $data | indent 10 }}
+        livenessProbe:
+          exec:
+            command:
+            - bash
+            - -c
+            - "exit 1"
+          failureThreshold: 1
+          periodSeconds: 43200
         volumeMounts:
           - mountPath: /etc/redis
             name: redis-conf
