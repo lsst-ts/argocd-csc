@@ -266,6 +266,7 @@ redis:
   # -- Configuration specification for the redis service
   config: |
     timeout 60
+    save ""
 viewBackup:
   # -- Whether view backup is active
   enabled: false
