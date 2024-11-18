@@ -110,7 +110,7 @@ Helm chart for the LOVE manager service.
 | manager.producers_ports.node | int | `30000` | The port on the node for normal communcations |
 | namespace | string | `"love"` | The overall namespace for the application |
 | redis.affinity | object | `{}` | Affinity rules for the LOVE redis pods |
-| redis.config | string | `"timeout 60\n"` | Configuration specification for the redis service |
+| redis.config | string | `"timeout 60\nsave \"\"\n"` | Configuration specification for the redis service |
 | redis.envSecrets.REDIS_PASS | string | `"redis-pass"` | The redis password secret key name |
 | redis.image.pullPolicy | string | `"IfNotPresent"` | The pull policy for the redis image |
 | redis.image.repository | string | `"redis"` | The redis image to use |
