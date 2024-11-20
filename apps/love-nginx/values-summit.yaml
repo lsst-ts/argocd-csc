@@ -13,7 +13,7 @@ initContainers:
   frontend:
     image:
       repository: ts-dockerhub.lsst.org/love-frontend-k8s
-      tag: c0039.006
+      tag: c0039.008
       pullPolicy: Always
   manager:
     image:
