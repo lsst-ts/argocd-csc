@@ -2,6 +2,7 @@ env: summit
 namespace: auxtel
 cscs:
   - ataos
+  - atbuilding
   - atdome
   - atdometrajectory
   - athexapod

@@ -21,6 +21,7 @@ producers:
   auxtel:
     cscs: >-
       ATAOS
+      ATBuilding
       ATDome
       ATDomeTrajectory
       ATHexapod
@@ -44,6 +45,7 @@ producers:
   eas:
     cscs: >-
       DIMM
+      DREAM
       DSM
       EPM
       ESS
