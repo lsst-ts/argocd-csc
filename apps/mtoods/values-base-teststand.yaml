@@ -42,7 +42,7 @@ configfile:
             topics:
                 - lsst.s3.raw.lsstcam
             group_id: MTOODS-S3
-            max_messages: 10
+            max_messages: 250
         butlers:
             - butler:
                 instrument: lsst.obs.lsst.LsstCam
