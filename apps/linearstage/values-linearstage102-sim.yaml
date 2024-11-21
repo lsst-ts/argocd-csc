@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-linearstage102.log
+  OSPL_ERRORFILE: /tmp/ospl-error-linearstage102.log
+  RUN_ARG: --simulate 102

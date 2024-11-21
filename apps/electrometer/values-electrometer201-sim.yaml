@@ -1,0 +1,4 @@
+env:
+  OSPL_INFOFILE: /tmp/ospl-info-auxtel-electrometer201.log
+  OSPL_ERRORFILE: /tmp/ospl-error-auxtel-electrometer201.log
+  RUN_ARG: --simulate 201
