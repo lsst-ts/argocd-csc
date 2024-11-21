@@ -59,4 +59,4 @@ configfile:
                         days: 5
                 scanInterval:
                     <<: *interval
-                    seconds: 10
+                    hours: 1
