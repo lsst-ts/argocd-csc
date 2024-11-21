@@ -52,10 +52,11 @@ configfile:
                 repoDirectory : s3://rubinobs-butler-lsstcam
                 collections:
                     - LSSTCam/raw/all
+                cleanCollections:
+                    - collection: LSSTCam/raw/all
+                      filesOlderThan:
+                        <<: *interval
+                        days: 5
                 scanInterval:
                     <<: *interval
                     seconds: 10
-                filesOlderThan:
-                    <<: *interval
-                    seconds: 30
-        batchSize: 20
