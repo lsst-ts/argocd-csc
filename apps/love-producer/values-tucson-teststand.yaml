@@ -72,6 +72,9 @@ producers:
   camerahexapod:
     name_index: MTHexapod:1 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  cbp:
+    name_index: CBP:0 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   cccamera:
     name_index: CCCamera:0 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
@@ -102,6 +105,15 @@ producers:
   dsm2:
     name_index: DSM:2 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  electrometer101:
+    name_index: Electrometer:101 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  electrometer102:
+    name_index: Electrometer:102 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  electrometer201:
+    name_index: Electrometer:201 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   epm1:
     name_index: EPM:1 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
@@ -113,6 +125,21 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   lasertracker1:
     name_index: LaserTracker:1 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  ledprojector:
+    name_index: LEDProjector:0 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage101:
+    name_index: LinearStage:101 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage102:
+    name_index: LinearStage:102 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage103:
+    name_index: LinearStage:103 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  linearstage104:
+    name_index: LinearStage:104 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   love:
     name_index: LOVE:0 --log-level 10
@@ -191,6 +218,9 @@ producers:
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   tmaess110:
     name_index: ESS:110 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  tunablelaser:
+    name_index: TunableLaser:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   watcher:
     name_index: Watcher:0 --log-level 10
