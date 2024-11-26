@@ -51,6 +51,7 @@ producers:
   atscriptqueue:
     name_index: ScriptQueue:2
     WEBSOCKET_HOST: love-nginx-service/love/manager/queue/ws/subscription
+    FINISHED_SCRIPTS_LIST_SIZE: 100
   atspectrograph:
     name_index: ATSpectrograph:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
@@ -240,12 +241,14 @@ producers:
   mtscriptqueue:
     name_index: ScriptQueue:1
     WEBSOCKET_HOST: love-nginx-service/love/manager/queue/ws/subscription
+    FINISHED_SCRIPTS_LIST_SIZE: 100
   ocsscheduler:
     name_index: Scheduler:3
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   ocsscriptqueue:
     name_index: ScriptQueue:3
     WEBSOCKET_HOST: love-nginx-service/love/manager/queue/ws/subscription
+    FINISHED_SCRIPTS_LIST_SIZE: 100
   pmd1:
     name_index: PMD:1
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
