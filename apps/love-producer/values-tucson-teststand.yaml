@@ -114,6 +114,9 @@ producers:
   electrometer201:
     name_index: Electrometer:201 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  eas:
+    name_index: EAS:0 --log-level 10
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   epm1:
     name_index: EPM:1 --log-level 10
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
