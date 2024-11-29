@@ -32,6 +32,10 @@ spec:
               value: {{ $csc.name_index | quote }}
             - name: WEBSOCKET_HOST
               value: {{ $csc.WEBSOCKET_HOST | quote }}
+          {{ if $csc.FINISHED_SCRIPTS_LIST_SIZE }}
+            - name: FINISHED_SCRIPTS_LIST_SIZE
+              value: {{ $csc.FINISHED_SCRIPTS_LIST_SIZE | quote }}
+          {{ end }}
           {{- range $env_var, $env_value := $.Values.env }}
             - name: {{ $env_var }}
               value: {{ $env_value | quote }}
