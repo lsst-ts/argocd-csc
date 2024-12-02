@@ -106,6 +106,9 @@ producers:
   dream:
     name_index: DREAM:0
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
+  eas:
+    name_index: EAS:0
+    WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
   dsm1:
     name_index: DSM:1
     WEBSOCKET_HOST: love-nginx-service/love/manager/producers/ws/subscription
