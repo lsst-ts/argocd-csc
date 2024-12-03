@@ -6,7 +6,7 @@ image:
 env:
   LSST_DDS_PARTITION_PREFIX: tucson
   LSST_SITE: tucson
-  S3_ENDPOINT_URL: https://s3.tuc.lsst.org
+  S3_ENDPOINT_URL: https://s3.tu.lsst.org
 envSecrets:
 - name: AWS_ACCESS_KEY_ID
   secretKey: aws-access-key-id
