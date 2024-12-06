@@ -1,13 +1,22 @@
 namespace: maintel
 image:
   repository: ts-dockerhub.lsst.org/mtoods
-  tag: c0039.000
+  tag: c0039
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
   OSPL_INFOFILE: /tmp/ospl-info-mtoods.log
   OSPL_ERRORFILE: /tmp/ospl-error-mtoods.log
   CTRL_OODS_CONFIG_FILE: /etc/mtoods.yaml
+  AWS_ACCESS_KEY_ID: oods-lsstcam
+  AWS_ENDPOINT_URL: https://s3-butler.cp.lsst.org
+  LSST_KAFKA_SECURITY_USERNAME: ts-salkafka
+  PYTHONASYNCIODEBUG: 1
+envSecrets:
+- name: AWS_SECRET_ACCESS_KEY
+  secretKey: oods-lsstcam-secret-key
+- name: LSST_KAFKA_SECURITY_PASSWORD
+  secretKey: ts-salkafka-password
 shmemDir: /run/ospl
 osplVersion: V6.10.4
 butlerSecret:
@@ -16,17 +25,6 @@ butlerSecret:
 secretPermFixer:
 - name: butler-secret
   containerPath: *bS-cP
-nfsMountpoint:
-- name: lsstcam-gen3-butler
-  containerPath: /repo/LSSTCam
-  readOnly: false
-  server: nfs3.cp.lsst.org
-  serverPath: /lsstcam/repo/LSSTCam
-- name: lsstcam-oods-data
-  containerPath: /data
-  readOnly: false
-  server: nfs3.cp.lsst.org
-  serverPath: /lsstcam
 configfile:
   path: /etc
   filename: mtoods.yaml
@@ -38,44 +36,27 @@ configfile:
         seconds: 0
 
     ingester:
-        imageStagingDirectory: /data/staging/maintel/oods
+        kafka:
+            brokers:
+                - sasquatch-kafka-brokers.sasquatch:9092
+            topics:
+                - lsst.s3.raw.lsstcam
+            group_id: MTOODS-S3
+            max_messages: 250
         butlers:
             - butler:
                 instrument: lsst.obs.lsst.LsstCam
                 class:
-                    import : lsst.ctrl.oods.gen3ButlerIngester
-                    name : Gen3ButlerIngester
-                stagingDirectory : /data/lsstdata/base/maintel/oods/gen3butler/raw
-                badFileDirectory: /data/lsstdata/base/maintel/oods/gen3butler/badfiles
-                repoDirectory : /repo/LSSTCam
+                    import : lsst.ctrl.oods.messageAttendant
+                    name : MessageAttendant
+                repoDirectory : s3://rubinobs-butler-lsstcam
                 collections:
                     - LSSTCam/raw/all
+                cleanCollections:
+                    - collection: LSSTCam/raw/all
+                      filesOlderThan:
+                        <<: *interval
+                        days: 30
                 scanInterval:
                     <<: *interval
                     hours: 1
-                filesOlderThan:
-                    <<: *interval
-                    days: 2
-        batchSize: 20
-        scanInterval:
-            <<: *interval
-            seconds: 2
-
-    cacheCleaner:
-        # ONLY clean out empty directories here, never files
-        clearEmptyDirectories:
-            - /data/lsstdata/base/maintel/oods/gen3butler/raw
-            - /data/staging/maintel/camera
-        # clean out empty directories and old files from these directories
-        clearEmptyDirectoriesAndOldFiles:
-            - /data/lsstdata/base/maintel/oods/gen3butler/badfiles
-            - /data/staging/maintel/oods
-        scanInterval:
-            <<: *interval
-            hours: 1
-        filesOlderThan:
-            <<: *interval
-            days: 31
-        directoriesEmptyForMoreThan:
-            <<: *interval
-            days: 2
