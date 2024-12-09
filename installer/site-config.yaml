@@ -29,7 +29,6 @@ applications:
   - test42
   - auxtel
   - calsys
-  - calsys-lab
   - dmocps
   - eas
   - love
@@ -40,25 +39,7 @@ applications:
   - ospl-config
   - ospl-daemon
   - kafka-producers
-  - test42
-  - auxtel
-  - calsys
-  - dmocps
-  - eas
-  - love
-  - maintel
-  - obssys
   - lsstcam
-  - mtm1m3-sim
-  - mtm2-sim
-  - mtmount-sim
 services:
   summit:
-  - uws
   - schedview
-  - rapid-analysis
-  tucson-teststand:
-  - uws
-  - rapid-analysis
-  base-teststand:
-  - uws
