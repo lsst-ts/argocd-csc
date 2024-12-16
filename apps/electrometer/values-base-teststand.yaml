@@ -1,0 +1,20 @@
+namespace: calsys
+image:
+  repository: ts-dockerhub.lsst.org/electrometer
+  tag: c0039
+  pullPolicy: Always
+env:
+  LSST_DDS_PARTITION_PREFIX: base
+  LSST_SITE: base
+  S3_ENDPOINT_URL: https://s3.ls.lsst.org
+envSecrets:
+- name: AWS_ACCESS_KEY_ID
+  secretKey: aws-access-key-id
+- name: AWS_SECRET_ACCESS_KEY
+  secretKey: aws-secret-access-key
+- name: MYS3_ACCESS_KEY
+  secretKey: aws-access-key-id
+- name: MYS3_SECRET_KEY
+  secretKey: aws-secret-access-key
+shmemDir: /run/ospl
+osplVersion: V6.10.4

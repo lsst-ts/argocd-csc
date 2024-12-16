@@ -1,0 +1,12 @@
+namespace: calsys
+image:
+  repository: ts-dockerhub.lsst.org/linearstage
+  tag: c0039
+  pullPolicy: Always
+env:
+  LSST_DDS_PARTITION_PREFIX: base
+  LSST_SITE: base
+  OSPL_INFOFILE: /tmp/ospl-info-linearstage.log
+  OSPL_ERRORFILE: /tmp/ospl-error-linearstage.log
+shmemDir: /run/ospl
+osplVersion: V6.10.4

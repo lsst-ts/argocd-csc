@@ -3,5 +3,26 @@ namespace: calsys
 cscs:
   - genericcamera1
   - gcheaderservice1
+  - electrometer101
+  - electrometer102
+  - electrometer201
+  - tunablelaser
+  - cbp
+  - ledprojector
+  - linearstage101
+  - linearstage102
+  - linearstage103
+  - linearstage104
+isSim:
+  - electrometer101
+  - electrometer102
+  - electrometer201
+  - tunablelaser
+  - cbp
+  - ledprojector
+  - linearstage101
+  - linearstage102
+  - linearstage103
+  - linearstage104
 renameMap:
   genericcamera1: simulation-gencam

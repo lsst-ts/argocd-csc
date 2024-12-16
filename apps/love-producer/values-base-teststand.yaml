@@ -29,10 +29,14 @@ producers:
   calibhilless301: ESS:301 --log-level 10
   cameraess111: ESS:111 --log-level 10
   camerahexapod: MTHexapod:1 --log-level 10
+  cbp: CBP:0 --log-level 10
   dimm1: DIMM:1 --log-level 10
   dimm2: DIMM:2 --log-level 10
   dsm1: DSM:1 --log-level 10
   dsm2: DSM:2 --log-level 10
+  electrometer101: Electrometer:101 --log-level 10
+  electrometer102: Electrometer:102 --log-level 10
+  electrometer201: Electrometer:201 --log-level 10
   epm001: EPM:1 --log-level 10
   gcheaderservice1: GCHeaderService:1 --log-level 10
   genericcamera1: GenericCamera:1 --log-level 10
@@ -60,12 +64,18 @@ producers:
   mtrotator: MTRotator:0 --log-level 10
   mtscheduler: Scheduler:1 --log-level 10
   mtscriptqueue: ScriptQueue:1 --log-level 10
+  ledprojector: LEDProjector:0 --log-level 10
+  linearstage101: LinearStage:101 --log-level 10
+  linearstage102: LinearStage:102 --log-level 10
+  linearstage103: LinearStage:103 --log-level 10
+  linearstage104: LinearStage:104 --log-level 10
   ocsscheduler: Scheduler:3 --log-level 10
   ocsscriptqueue: ScriptQueue:3 --log-level 10
   tmaess001: ESS:1 --log-level 10
   tmaess104: ESS:104 --log-level 10
   tmaess105: ESS:105 --log-level 10
   tmaess110: ESS:110 --log-level 10
+  tunablelaser: TunableLaser:0 --log-level 10
   watcher: Watcher:0 --log-level 10
   weatherforecast: WeatherForecast:0 --log-level 10
 osplVersion: V6.10.4
