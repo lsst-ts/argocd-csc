@@ -1,6 +1,6 @@
 image:
   repository: ts-dockerhub.lsst.org/love-producer
-  tag: c0039.010
+  tag: c0039.011
   pullPolicy: Always
 env:
   LSST_DDS_PARTITION_PREFIX: summit
